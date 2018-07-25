@@ -1,0 +1,236 @@
+<!-- Листинг 8.3. Опции, переключатели и списки выбора -->
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Листинг 8.3</title>
+<!-- Начало сценария -->
+<script type="text/javascript">
+	 // Переменные для записи ссылок на объекты элементов:
+ var fitalic,fbold,family,fsize,fcolor,stext,tfamily,tstyle,tsize,tcolor
+	 // Функция для определения ссылок на объекты:
+	 function setRefs(){
+			// Ссылка на текстовый блок с шаблонным текстом:
+			stext=document.getElementById("sampleText")
+			// Ссылка на опцию применения курсивного стиля:
+			fitalic=document.getElementById("italicFont")
+			// Ссылка на опцию применения жирного стиля:
+			fbold=document.getElementById("boldFont")
+			// Ссылка на группу переключателей, используемую
+			// для определения типа шрифта:
+			family=document.getElementsByName("fontFamily")
+			// Ссылка на раскрывающийся список, предназначенный
+			// для выбора размера шрифта:
+			fsize=document.getElementById("fontSize")
+			// Ссылка на список выбора, используемый
+			// для определения цвета шрифта:
+			fcolor=document.getElementById("fontColor")
+			// Ссылка на блок для вставки названия шрифта:
+			tfamily=document.getElementById("A")
+			// Ссылка на блок для вставки стиля шрифта:
+			tstyle=document.getElementById("B")
+			// Ссылка на блок для вставки размера шрифта:
+			tsize=document.getElementById("C")
+			// Ссылка на блок для вставки цвета шрифта:
+			tcolor=document.getElementById("D")
+	 }
+	 // Функция для определения обработчиков событий
+	 // для элементов управления в документе:
+	 function setHandlers(){
+			// Обработчик события, связанного с изменением
+			// состояния опции применения курсивного стиля:
+			fitalic.addEventListener("change",getStyle)
+			// Обработчик события, связанного с изменением
+			// состояния опции применения жирного стиля:
+			fbold.onchange=getStyle
+			// Обработчики для переключателей:
+			for(var k=0;k<family.length;k++){
+				 family[k].addEventListener("change",getFamily)
+			}
+			// Обработчик для раскрывающегося списка:
+			fsize.addEventListener("change",getSize)
+			// Обработчик для списка выбора:
+			fcolor.onchange=function(){
+				 getColor()
+			}
+	 }
+	 // Функция для определения стиля шрифта:
+	 function getStyle(){
+			// Текст с описанием стиля шрифта:
+			var txt=""
+			// Если установлен флажок опции применения
+			// жирного стиля:
+			if(fbold.checked){
+				 // Применение жирного стиля:
+				 stext.style.fontWeight="bold"
+				 // Уточнение текста с описанием стиля:
+				 txt+=" жирный"
+			}
+			// Если флажок опции применения жирного стиля
+			// не установлен:
+			else{
+				 // Применение обычного стиля:
+				 stext.style.fontWeight="normal"
+			}
+			// Если установлен флажок опции применения
+			// курсивного стиля:
+			if(fitalic.checked){
+ // Применение курсивного стиля:
+				 stext.style.fontStyle="italic"
+				 // Уточнение текста с описанием стиля:
+				 txt+=" курсивный"
+			}
+			// Если флажок опции применения курсивного стиля
+			// не установлен:
+			else{
+				 // Применение обычного стиля:
+				 stext.style.fontStyle="normal"
+			}
+			// Проверка текстового значения:
+			if(txt==""){
+				 txt=" обычный"
+			}
+			// Добавление текста в текстовый блок:
+			tstyle.innerHTML=txt
+	 }
+	 // Функция для определения типа шрифта:
+	 function getFamily(){
+			// Поиск выбранного пункта списка:
+			for(var k=0;k<family.length;k++){
+				 // Если элемент выбран:
+				 if(family[k].checked){
+						// Применение стиля:
+						stext.style.fontFamily=family[k].value
+						// Добавление текста в текстовый блок:
+						tfamily.innerHTML=family[k].value
+						// Завершение выполнения функции:
+						return
+				 }
+			}
+	 }
+	 // Функция для определения размера шрифта:
+	function getSize(){
+			// Применение стиля:
+			stext.style.fontSize=fsize.value+"pt"
+			// Добавление текста в текстовый блок:
+			tsize.innerHTML=fsize.value
+	 }
+	 // Функция для определения цвета шрифта:
+	 function getColor(){
+			// Применение стиля:
+			stext.style.color=fcolor.value
+			// Добавление текста в текстовый блок:
+			tcolor.innerHTML=convertColor(fcolor.value)
+	 }
+	 // Функция для преобразования английского названия
+	 // цвета в русское название:
+	 function convertColor(clr){
+			if(clr=="red") return "красный"
+			if(clr=="blue") return "синий"
+			if(clr=="green") return "зеленый"
+	 }
+	 // Функция для выполнения при загрузке документа:
+	 function set(){
+			// Определение ссылок на объекты элементов:
+			setRefs()
+			// Флажок опции применения жирного стиля
+			// не установлен:
+			fitalic.checked=false
+			// Флажок опции применения курсивного стиля
+			// не установлен:
+			fbold.checked=false
+			// Начальный выбор в группе переключателей
+			// для определения типа шрифта:
+			family[0].checked=true
+			// Начальный выбор в списке определения размера:
+ fsize[0].selected=true
+			// Начальный выбор в списке определения цвета:
+			fcolor[0].selected=true
+			// Определение обработчиков для элементов:
+			setHandlers()
+			// Вызов функций для формирования шаблонного текста
+			// и применения стилевых параметров в соответствии
+			// с начальными настройками:
+			getStyle()  // Стиль шрифта
+			getFamily() // Тип шрифта
+			getSize()   // Размер шрифта
+			getColor()  // Цвет шрифта
+	 }
+</script>
+<!-- Завершение сценария -->
+<!-- Определение стилей -->
+<style type="text/css">
+	 /* Стиль для столбика таблицы */
+	 td{
+			width: 30%;
+			background-color: #fcfcfc;
+			vertical-align: top;
+			font-size: 15pt;
+			border-style: ridge;
+			padding: 10px;
+	 }
+	 /* Стиль для блока с текстом */
+	 #sampleText{
+			border: outset;
+			border-width: 5px;
+			border-color: gray;
+			text-align: center;
+			padding: 20px;
+	 }
+</style>
+<!-- Завершение описания стилей -->
+</head>
+<body onload="set()">
+	 <h3>Листинг 8.3</h3><hr>
+	 <!-- Блок с шаблонным текстом -->
+	 <p id="sampleText">
+		Используется шрифт <span id="A"></span>, стиль -<span id="B"></span>, размер <span 
+id="C"></span>, цвет - <span id="D"></span>.
+	 </p>
+	 <!-- Таблица с элементами управления -->
+	 <table style="width:100%;">
+			<!-- Первая и единственная строка таблицы -->
+			<tr>
+				 <!-- Первый столбец -->
+				 <td>
+						<b>Стиль шрифта</b><br><br>
+						<!-- Опция применения жирного стиля -->
+						<input type="checkbox" id="boldFont">Жирный шрифт<br>
+						<!-- Опция применения курсивного стиля -->
+						<input type="checkbox" id="italicFont">Курсивный шрифт
+				 </td>
+				 <!-- Второй столбец -->
+				 <td>
+						<b>Тип шрифта</b><br><br>
+						<!-- Первый переключатель -->
+						<input type="radio" name="fontFamily" value="Times New Roman">Шрифт Times<br>
+						<!-- Второй переключатель -->
+						<input type="radio" name="fontFamily" value="Arial">Шрифт Arial<br>
+						<!-- Третий переключатель -->
+						<input type="radio" name="fontFamily" value="Courier New">Шрифт Courier
+				 </td>
+				 <!-- Третий столбец -->
+				 <td>
+						<b>Размер шрифта</b><br>
+ Шрифт размера
+						<!-- Раскрывающийся список -->
+						<select size="1" id="fontSize" style="font-size:11pt;font-weight:900;">
+							 <option value="15">15</option>
+							 <option value="18">18</option>
+							 <option value="20">20</option>
+							 <option value="22">22</option>
+							 <option value="25">25</option>
+						</select><br><br>
+						<b>Цвет шрифта</b><br>
+						<!-- Список выбора -->
+						<select size="3" id="fontColor" style="font-size:12pt;">
+							 <option value="red">Красный цвет</option>
+							 <option value="blue">Синий цвет</option>
+							 <option value="green">Зеленый цвет</option>
+						</select>
+				 </td>
+			</tr>
+	 </table>
+</body>
+</html>
+
