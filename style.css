@@ -1,6 +1,56 @@
+/* CSS Display Property Tutorial
+https://youtu.be/xcTEDlgkD7o */
+
+span {
+	font-weight: bold;
+	color: orange;
+	background-color: yellow;
+/* 	display: inline-block;
+	text-align: center;
+	padding: 5px;
+	margin-bottom: 100px; */
+}
+
+main div {
+	background-color: #81b3e6;
+	width: 60%;
+	padding: 30px;
+	font-size: 212%;
+	color: #FFF;
+	display: block;
+}
+
+main div p {
+	margin: 0;
+}
+
+img {
+	max-width: 200px;
+	height: auto;
+}
+
+main {
+	display: block;
+	margin-bottom: 30px;
+	border: solid 5px blue;
+}
+
+/* ================================================= */
 div a {
 	display: block;
 	padding: 20px;
 	border: 2px solid green;
 	margin: 5px;
+}
+
+
+/* .post-footer ol li {
+	display: block;
+} */
+
+/* ====================================================== */
+li {
+	list-style: ;
+	display: inline;
+	margin: 1rem;
 }
