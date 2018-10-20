@@ -55,6 +55,8 @@ li {
 	margin: 1rem;
 }
 
+/* =====================================================
+https://matthewlein.com/tools/ceaser */
 .square {
 	width: 80px;
 	height: 80px;
@@ -76,6 +78,13 @@ li {
 	animation-direction: alternate;
 
 	animation: spin 2s ease-in-out 1s infinite alternate;
+}
+
+.square2 {
+	animation: spin 2s cubic-bezier(0.820, 0, 0.000, 1) 1s infinite alternate;
+}
+.square2:hover {
+	animation-play-state: paused;
 }
 
 @keyframes spin {
