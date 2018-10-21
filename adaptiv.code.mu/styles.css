@@ -1,0 +1,36 @@
+#wrapper {
+	border: 1px solid black;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.block {
+	box-sizing: border-box;
+	background: green;
+	height: 300px;
+	margin-bottom: 10px;
+	color: white;
+	padding: 10px;
+}
+
+@media screen and (min-width: 800px) {
+	.block {
+		width: 24%;
+		float: left;
+	}
+	.block:not(:nth-child(4n)) {
+		margin-right: 1.33333%;
+	}
+}
+@media screen and (min-width: 500px) and (max-width: 800px){
+	.block {
+		width: 49%;
+		float: left;
+	}
+	.block:not(:nth-child(2n)) {
+		margin-right: 2%;
+	}
+}
+@media screen and (max-width: 500px) {
+	
+}
