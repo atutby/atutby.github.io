@@ -58,9 +58,10 @@ li {
 /* =====================================================
 https://matthewlein.com/tools/ceaser */
 .square {
+	display: inline-block;
 	width: 80px;
 	height: 80px;
-	margin: 30px auto;
+	margin: 15px auto;
 	background-color: #8BC34A;
 	
 
@@ -95,29 +96,35 @@ https://matthewlein.com/tools/ceaser */
 	
 	25%, 50% {
 		background-color: #ffeb3b;
+		
 	}
 	
 	100% {
 		transform: rotate(360deg);
 	}
 
+
 }
 
 /* ======================================================
 https://youtu.be/TycjrhobRqw?t=303 */
 @media screen and (max-width: 480px) {
-	#block {
+	.block {
 		color: red;
 	}
 }
 @media screen and (min-width: 480px) and (max-width: 800px) {
-	#block {
+	.block {
 		color: green;
 	}
 }
 @media screen and (min-width: 800px) {
-	#block {
+	.block {
 		color: blue;
 	}
 }
 
+/* ==================================== */
+.container {
+	display: flex;
+}

@@ -15,15 +15,15 @@
 
 </head>
 <body>
-	<header>
-		<div class="square">spin(1)</div>
-		<div id="block">Текст будет разного цвета в зависимости от размера экрана. <br>
+	<header class="container">
+		<div class="square inline-block">spin(1)</div>
+		<div class="block">Текст будет разного цвета в зависимости от размера экрана. <br>
 		Точки: <br>
 		до 480px - красный, после зелёный <br>
 		свыше 800px - синий</div>
 	</header>
 
-	<nav style="background: yellow;">
+	<nav style="background: yellow;" class="container">
 		<ul>
 			<li><a href="header-footer.html">Header &amp; Footer</a></li>
 			<li><a href="ids-classes.html">IDs &amp; Classes</a></li>
@@ -31,7 +31,7 @@
 		</ul>
 	</nav>
 
-	<article>
+<!-- 	<article>
 		<section class="post-heading">
 			<h1></h1>
 		</section>
@@ -43,9 +43,9 @@
 				<li>(3)</li>
 			</ol>
 		</section>
-		</article>
+	</article> -->
 
-	<main>
+	<main class="container">
 		<p>By default the <span>&ldquo;span&rdquo;</span> element is an inline element.</p>
 
 		<div>
@@ -57,7 +57,7 @@
 	</main>
 
 
-	<div style="display: inline-block; width: 50%; float: left;">
+	<div class="container">
 		<!-- Графическая область -->
 		<canvas height="250" width="215" id="mycanvas" style="border:3px solid #00f;"></canvas><br>
 
@@ -68,7 +68,7 @@
 
 	</div>
 
-	<div style="display: inline-block; align-content: left; width: 50%;  float: left;">
+	<div class="container">
 		<a href="https://github.com/28Halavach">My www.GitHub.com</a>
 		<a href="https://www.facebook.com/28Halavach">My www.FaceBook.com</a>
 		<a href="https://vk.com/aleksandrjkl">My www.vk.com</a>
