@@ -11,13 +11,32 @@
 </style>
 <!-- Завершение описания стиля -->
 </head>
-<body>
+<body style="display: flex; flex-wrap: wrap;">
 <h3>Листинг 8.5</h3><hr>
+	<section>
 	<!-- Графическая область -->
-	<canvas height="250" width="215" id="mycanvas" style="border:3px solid #00f;"></canvas><br>
+		<canvas height="250" width="215" id="mycanvas" style="border:3px solid #00f;"></canvas><br>
 
-	<a href="listing0803">listing0803</a><br>
-	<a href="listing0806/index.html">listing0806</a><br>
-	<a href="listing0807/index.html">listing0807</a><br>
+		<a href="listing0803">listing0803</a><br>
+		<a href="listing0806/index.html">listing0806</a><br>
+		<a href="listing0807/index.html">listing0807</a><br>
+	</section>
+
+	<div>
+		<svg height="250" width="330">
+			<rect class="leg" width="15" height="35" x="45" y="195" rx="5" fill="black" />
+			<rect class="leg" width="15" height="35" x="260" y="195" rx="5" fill="black" />
+		  
+			<rect class="case" width="300" height="200" x="10" y="10" rx="50" fill="dimgray" />
+			<rect class="screen" width="200" height="160" x="30" y="30" rx="30" fill="deepskyblue" />
+		  
+			<rect class="panel" width="50" height="90" x="245" y="70" rx=10 fill="black" />
+		  
+			<rect class="button" width="30" height="15" x="255" y="80" rx="5" fill="red" />
+			<rect class="button" width="30" height="15" x="255" y="105" rx="5" fill="gold" />
+			<rect class="button" width="30" height="15" x="255" y="130" rx="5" fill="lime" />
+		  </svg>		  
+	</div>
+
 </body>
 </html>
