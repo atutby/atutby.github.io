@@ -4,6 +4,12 @@
 	<meta charset="utf-8">
 	<title>Листинг 8.5</title>
 
+	<style>
+		div {
+			margin: 1em;
+		}	
+	</style>
+
 	<script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
 	<script type="text/javascript">
 	  VK.init({apiId: 6976745, onlyWidgets: true});
@@ -12,10 +18,12 @@
 <body>
 	<div style="max-width: 90%; margin-left: auto; margin-right: auto;">
 		<header>
-			<a href="https://vk.com/webvo">Logo VK</a>
+			<a href="https://vk.com/webvo">Logo_VK</a>
 			<h3>Листинг 8.5</h3><hr>
 		</header>
-		<main style="display: flex; flex-wrap: wrap; justify-content: space-around">
+		<main style="display: flex; flex-wrap: wrap; justify-content: space-around; 
+		justify-content: center;
+		align-content: space-around;">
 			<div>
 				<!-- Графическая область -->
 				<canvas height="250" width="215" id="mycanvas" style="border:3px solid #00f;"></canvas><br>
@@ -24,6 +32,7 @@
 				<a href="listing0806/index.html">listing0806</a><br>
 				<a href="listing0807/index.html">listing0807</a><br>
 			</div>
+			
 			
 			<div>
 				<svg height="250" width="330">
@@ -35,14 +44,40 @@
 					
 					<rect class="panel" width="50" height="90" x="245" y="70" rx=10 fill="black" />
 					
-					<rect class="button" width="30" height="15" x="255" y="80" rx="5" fill="red" />
+					<a href="http://bookwebmaster.narod.ru/" target="_blank">
+						<rect class="button" width="30" height="15" x="255" y="80" rx="5" fill="red" />
+					</a>
 					<rect class="button" width="30" height="15" x="255" y="105" rx="5" fill="gold" />
 					<rect class="button" width="30" height="15" x="255" y="130" rx="5" fill="lime" />
 				</svg>		  
-			</div>			
+			</div>	
+			<div>
+				<svg width="540" height="290">
+					<rect width="540" height="290"fill="skyblue"/>
+					<rect width="540" height="100" y="190" fill="yellow"/>
+					
+					<polygon points="90,240 390,240 240,70" fill="goldenrod"/>
+					<polygon points="250,260 450,260 350,150" fill="darkgoldenrod"/>
+				</svg>
+			</div>	
+			<div>
+				<svg width="300" height="290">
+					<rect width=300 height=290 fill=skyblue />
+					<rect width=300 height=110 y=180 fill=yellowgreen />
+					<rect width=10 height=30 rx=5 x=80 y=230 fill=black />
+					<rect width=10 height=30 rx=5 x=210 y=230 fill=black />
+					
+					
+					<circle r=100 cx=50% cy=160 fill=crimson /> 
+					<circle r=80 cx=50% cy=160 fill=white /> 
+					<circle r=60 cx=50% cy=160 fill=crimson /> 
+					<circle r=40 cx=50% cy=160 fill=white /> 
+					<circle r=20 cx=50% cy=160 fill=crimson /> 
+				</svg>
+			</div>	
 		</main>
 
-		<div id="vk_comments" style="max-width: 80%;"></div>
+		<div id="vk_comments"></div>
 		<script type="text/javascript">
 			VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
 		</script>
