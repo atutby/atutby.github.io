@@ -1,0 +1,111 @@
+h1 {
+  display: flex;
+  justify-content: center;
+}
+/*Copyright www.Master-CSS.com*/
+.my-logo {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+.my-logo__pic {
+  border: 0;
+  vertical-align: middle;
+} /*end copyright*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font: 1em/1.4em sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*Ð’Ð½ÐµÑˆÐ¸Ð¹ Ð²Ð¸Ð´ Ð¼ÐµÐ½ÑŽ*/
+
+.side {
+  width: 200px;
+  margin: 20px;
+}
+
+.menu a {
+  background: #3d3d3d;
+  color: #fff;
+  padding: 10px;
+  display: block;
+  border-bottom: 1px solid #666;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+}
+
+.menu a:hover {
+  background: #666;
+  padding: 10px 0 10px 20px;
+}
+
+.menu li:first-child a,
+.menu li .menu__drop li:first-child a {
+  border-radius: 3px 3px 0 0;
+}
+
+.menu li:last-child a,
+.menu li .menu__drop li:last-child a {
+  border-radius: 0 0 3px 3px;
+  border-bottom: 0;
+}
+
+.menu li .menu__drop li a {
+  border-radius: 0;
+  border-bottom: 1px solid #666;
+}
+
+/*Ð’ÑÐ¿Ð»Ñ‹Ð²Ð°ÑŽÑ‰Ð¸Ðµ Ð¼ÐµÐ½ÑŽ*/
+
+.menu__list {
+  position: relative;
+}
+
+.menu__drop {
+  position: absolute;
+  width: 100%;
+  left: 100%;
+  top: -9999em;
+  opacity: 0;
+  border-left: 10px solid transparent;
+  -webkit-transition: 0.5s opacity;
+  transition: 0.5s opacity;
+}
+
+.menu__list:hover .menu__drop {
+  opacity: 1;
+  top: 0;
+}
+
+/*Ð˜ÐºÐ¾Ð½ÐºÐ¸ Ð´Ð»Ñ Ð²ÑÐ¿Ð»Ñ‹Ð²Ð°ÑŽÑ‰Ð¸Ñ… Ð¼ÐµÐ½ÑŽÑˆÐµÐº*/
+
+.menu__list::after {
+  content: " ";
+  position: absolute;
+  border: 5px solid;
+  border-color: transparent transparent transparent #eee;
+  top: 1em;
+  right: 0.7em;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.menu__list:hover::after {
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
