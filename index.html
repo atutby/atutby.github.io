@@ -45,7 +45,7 @@
 			</li>
 			<li><a href="http://code.mu/">http://code.mu/</a></li>
 			<li><a href="https://atutby.github.io/cache1/">/cache1/</a></li>
-			
+
 			<li class="menu__list"><a href="#">Пункт 5</a>
 				<ul class="menu__drop">
 					<li><a href="https://webcademy.ru/links.html">webCademy.ru/links.html</a></li>
@@ -57,11 +57,37 @@
 			</li>
 		</ul>
 	</div>
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/EdhGBZEBvF8" frameborder="0"
-		allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/7H7FE71xS9w" frameborder="0"
-		allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+	<!-- <div>
+
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/EdhGBZEBvF8" frameborder="0"
+			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/7H7FE71xS9w" frameborder="0"
+			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+				
+	</div> -->
 	<!-- // Menu site___End -->
+
+	<script>
+		class Animal {
+
+			constructor(name) {
+				this.name = name;
+			}
+
+		}
+
+		class Rabbit extends Animal {
+			constructor(name) {
+				super(name);
+				this.created = Date.now();
+			}
+		}
+
+		let rabbit = new Rabbit("White Rabbit"); // ok now
+		alert(rabbit.name); // White Rabbit
+	</script>
 
 	<div style="max-width: 90%; margin-left: auto; margin-right: auto;">
 		<header>
@@ -86,10 +112,8 @@
 					<rect width="320" height="460" x=20 y=20 rx="20" ry="20" fill=lemonchiffon />
 					<circle r=100 cx=140 cy=170 fill=crimson />
 					<ellipse rx=60 ry=80 cx=250 cy=210 fill=gold />
-					<polyline points="140,270 150,300 135,330 150,360 135,390 150,420" stroke=brown stroke-width=1
-						fill=none />
-					<polyline points="250,290 260,320 245,350 260,380 245,410 260,440" stroke=brown stroke-width=1
-						fill=none />
+					<polyline points="140,270 150,300 135,330 150,360 135,390 150,420" stroke=brown stroke-width=1 fill=none />
+					<polyline points="250,290 260,320 245,350 260,380 245,410 260,440" stroke=brown stroke-width=1 fill=none />
 					<polygon points="140,270 150,280 130,280" fill=crimson />
 					<polygon points="250,290 240,300 260,300" fill=gold />
 				</svg>
@@ -164,8 +188,7 @@
 					<line x1=450 y1=75 x2=540 y2=75 stroke=orange stroke-width=20 />
 				</svg>
 				<svg width="200" height="200">
-					<polyline points="50,180 100,20 150,180 20,80 180,80 50,180 100,20" stroke=red stroke-width=5
-						fill=none />
+					<polyline points="50,180 100,20 150,180 20,80 180,80 50,180 100,20" stroke=red stroke-width=5 fill=none />
 				</svg>
 			</div>
 		</main>
