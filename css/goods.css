@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     margin: 0;
     box-sizing: border-box;
     background: #f6f8f9;
@@ -10,9 +11,7 @@ p {
     margin: 0;
 }
 
-h1 {
-
-}
+h1 {}
 
 h3 {
     margin: 20px 0;
@@ -31,7 +30,7 @@ h3 span {
 
 .container {
     width: 1200px;
-    margin:10px auto;
+    margin: 10px auto;
 }
 
 .goods-block {
@@ -39,11 +38,12 @@ h3 span {
 }
 
 .goods-cart {
+    
     width: 250px;
     height: 365px;
     margin: 0 15px 0 15px;
     background: #fff;
-    float:left;
+    float: left;
     text-align: center;
     font-size: 18px;
 }
