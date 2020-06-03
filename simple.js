@@ -1,13 +1,21 @@
 let animal = {
-	eats: true
+	walk() {
+		if(!this.isSleeping) {
+			alert(`I walk ${isSleeping}`)
+		}
+	},
+	sleep() {
+		this.isSleeping = true;
+	}
 };
+
 let rabbit = {
-	jumps: true
+	name: 'White Rabbit',
+	__proto__: animal
 };
 
-rabbit.__proto__ = animal;
+rabbit.sleep();
 
-// alert( rabbit.eats );
-// alert( rabbit.jumps );
-// alert(rabbit);
-console.log(rabbit);
+// alert(rabbit.isSleeping);
+// alert(animal.isSleeping);
+rabbit.walk();
