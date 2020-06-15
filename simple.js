@@ -1,4 +1,4 @@
-let num = +prompt("Enter a positive integer number?", 7)
+let num = +prompt("Enter a positive integer number?", 35)
 
 let diff, result;
 
