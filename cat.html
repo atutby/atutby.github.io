@@ -7,6 +7,21 @@
 </head>
 <body>
 
+	<p id="text">
+		He is said.
+		I am at the airport.
+		See you later.
+		Are you free?
+		Yes, I am free.
+		I need space.
+		How are you?
+	</p>
+	<script>
+		let elem = document.getElementById('text');
+let text = elem.innerHTML.replace(/([\.\?\!])/g, "$1<br>");
+elem.innerHTML = text;
+	</script>
+
 	<p><a href="https://www.youtube.com/watch?v=kHNKmaZ3N80&pbjreload=101">
 		George Floyd, Racism, and Protests in America⎢English Lesson</a>
 		The amount of people looting, or causing destruction, is much smaller  
