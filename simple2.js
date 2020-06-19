@@ -1,15 +1,21 @@
-'use strict';
+let promise = new Promise(function(resolve, reject) {
+	setTimeout(() => resolve("done!"), 1000);
+  });
+  
+  // resolve запустит первую функцию, переданную в .then
+  promise.then(
+	result => alert(result), // выведет "done!" через одну секунду
+	error => alert(error) // не будет запущена
+  );
+  
 
-function loadScript(src, callback) {
-	let script = document.createElement('script')
-	script.src = src;
-	script.onload = () => callback(script)
-	document.head.append(script)
-}
+  let promise2 = new Promise(function(resolve, reject) {
+	setTimeout(() => reject(new Error("Whoops!")), 1000);
+  });
+  
+  // reject запустит вторую функцию, переданную в .then
+  promise2.then(
+	result => alert(result), // не будет запущена
+	error => alert(error) // выведет "Error: Whoops!" спустя одну секунду
+  );
 
-loadScript('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js',
-	script => {
-		alert(`Здорово, скрипт ${script.src} загрузился`);
-		alert( _ );
-	}
-)
