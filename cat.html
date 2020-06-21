@@ -7,14 +7,90 @@
 </head>
 <body>
 
-	<p id="text">
+	<p>
+		Can I use your phone?
+		I'd like a taxi, please.
+		I want to eat pizza. Let's go to a restaurant.
+		I have an exam later What career do you want?
+		Very good How much time do I have
+		Just a little Very bad.
+		I am in a It is cold
+		Do you know what this means?
+		Let's go out I have a new cell phone.
+		What's your phone number?
+		It is easy to remember.
+		Let's go and have a look.
+		Close the door.
+		What do you want to do? Where is it?
+		Am I Do you remember me?
+		I have something for you
+		May I help you?
+		I will go tomorrow.
+		Can you help me?
+		Can I bring my friend?
+		I will help you. Are you kidding me?
+		I am walking home. Who is doing it?
+		Thanks for your help. It is complicated.
+		Hurry up! Are you going too? I Arrived late.
+		Can I leave now? You must be tired.
+		I am scared. I am going to sleep. I just woke up. Brush your teeth.
+		Good idea. It is almost ready. 
+		I am not sleepy. Excuse me. I need to study.
+		The exam was difficult. Tell me how you feel. I did it.
+		It is easy. Look over there. Where's the restroom?
+		Be quet
+		I have homework
+		  
+
+	</p>
+
+	<p class ='text'>
+		How can you learn to speak like a native.
+		Where are the keys? I lost my keys.
+		Did you think I left - I don't know where it is.
+		Good afternoon I will be outside.
+		See you tomorrow -- I will try my best
+		I am dirty -- Good night --- I don't believe you.
+		Did you see me? -- I don't have children -- Where's the toilet?
+		What's there to drink?
+		Pass me the salt, please.
+		Do you have salt.
+		You should be drinking more water.
+		Do you want something to drink?
+		Let's eat -- It looks perferct.
+		I am eating breakfast -- Try this.
+		Which one do you want -- Which one do you want?
+		It looks 
+		This tastes good.
+		Can you give me one?
+		I like to eat fruit -- It is expensive.
+		How do you know it -- Let's eat lunch
+		Thanks for the food -- I want more.
+		There is no food -- Anything else?
+		Thanks for inviting me to your home.
+		It is cheap -- Did you receive my message?
+		Can you wash the dishes?
+		Time for bed. I am in bed Do you want to play a game?
+		Please help me You scared me.
+		Where is my stuff?
+		I am thirsty -- I need water.
+		What is that?
+		My favorite drink is tea What are you studyiing?
+		I have an exam later 
+		What career do you want?
+	</p>
+
+	<p class ="text">
 		He is said. I am at the airport. See you later. Are you free? Yes, I am free. I need space. How are you? I am single. What do you have in mind? Open the window. I will open the door. I have a cold. Are you okay? From time to time. I am running late. Can you call me a taxi? I feel nervous.
 		I lost my keys. Did you think I left?
 	</p>
+
 	<script>
-		let elem = document.getElementById('text');
-let text = elem.innerHTML.replace(/([\.\?\!])/g, "$1<br>");
-elem.innerHTML = text;
+		let elems = document.getElementsByClassName('text');
+		for(let i = 0; i < elems.length; i++) {		
+			let text = elems[i].innerHTML.replace(/([\.\?\!])/g, "$1<br>");
+			elems[i].innerHTML = text;	
+		}
 	</script>
 
 	<p><a href="https://www.youtube.com/watch?v=kHNKmaZ3N80&pbjreload=101">
