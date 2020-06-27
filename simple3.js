@@ -1,0 +1,1 @@
+alert('Hello I am simple3.js');

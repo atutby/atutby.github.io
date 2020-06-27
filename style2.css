@@ -1,0 +1,13 @@
+.message-ball {
+    font-size: 20px;
+    line-height: 200px;
+    text-align: center;
+  }
+  .circle {
+    transition-property: width, height, margin-left, margin-top;
+    transition-duration: 2s;
+    position: fixed;
+    transform: translateX(100%) translateY(10%);
+    background-color: red;
+    border-radius: 50%;
+  }
