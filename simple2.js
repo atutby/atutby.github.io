@@ -1,7 +1,6 @@
-function loadScript(src) {
-  let script = document.createElement('script');
-  script.src = src;
-  document.head.append(script);
-}
+let promise = Promise.reject(new Error("Ошибка в промисе!"));
 
-loadScript('simple3.js');
+setTimeout(() => promise.catch(err => alert('поймана')), 1000);
+
+// Ошибка в промисе!
+window.addEventListener('unhandledrejection', event => alert(event.reason));
