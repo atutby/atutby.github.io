@@ -1,6 +1,13 @@
-let promise = Promise.reject(new Error("Ошибка в промисе!"));
+async function loadJson(url) {
+  let response = await fetch(url);
 
-setTimeout(() => promise.catch(err => alert('поймана')), 1000);
+  if (response.status == 200) {
+    let json = await response.json();
+    return json;
+  }
 
-// Ошибка в промисе!
-window.addEventListener('unhandledrejection', event => alert(event.reason));
+  throw new Error(response.status);
+}
+
+loadJson('no-such-user.json')
+  .catch(alert);
