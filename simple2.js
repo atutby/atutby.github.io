@@ -1,44 +1,36 @@
-let range = {
-  from: 1,
-  to: 3,
+async function* fetchCommits(repo) {
+  let url = `https://api.github.com/repos/${repo}/commits`;
 
-  // for await..of calls this method once in the very beginning
-  [Symbol.asyncIterator]() {
-    // ...it returns the iterator object:
-    // onward, for await..of works only with that object,
-    // asking it for next values using next()
-    return {
-      current: this.from,
-      last: this.to,
+  while (url) {
+    const response = await fetch(url, { // (1)
+      headers: {'User-Agent': 'Our script'}, // GitHub требует заголовок user-agent
+    });
 
-      // next() is called on each iteration by the for await..of loop
-      async next() {
-        // it should return the value as an object {done:.., value:...}
-        // (automatically wrapped into a promise by async)
+    const body = await response.json(); // (2) ответ в формате JSON (массив коммитов)
 
-        // can use await inside, do async suff:
-        await new Promise(resolve => setTimeout(resolve, 1000));
+    // (3) Ссылка на следующую страницу находится в заголовках, извлекаем её
+    let nextPage = response.headers.get('Link').match(/<(.*?)>; rel="next"/);
+    nextPage = nextPage && nextPage[1];
 
-        if (this.current <= this.last) {
-          return { done: false, value: this.current++ };
-        } else {
-          return { done: true };
-        }
+    url = nextPage;
 
-      }
-    };
+    for(let commit of body) { // (4) вернуть коммиты один за другим, до окончания страницы
+      yield commit;
+    }
   }
-
-};
-
-function go() {
-  alert('I am here');
 }
-
 
 const go2 = (async () => {
 
-  for await (let value of range) {
-    alert(value); // 1,2,3,4,5
+  let count = 0;
+
+  for await (const commit of fetchCommits('atutby/atutby.github.io')) {
+
+    console.log(commit.commit.message);
+
+    if (++count == 100) { // остановимся на 100 коммитах
+      break;
+    }
   }
-})
+
+});
