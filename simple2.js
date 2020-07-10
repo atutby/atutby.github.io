@@ -1,21 +1,18 @@
-let numbers = [];
-
-numbers = new Proxy(numbers, { // (*)
-  set(target, prop, val) { // для перехвата записи свойства
-    if (typeof val == 'number') {
-      target[prop] = val;
-      return true;
-    } else {
-      return false;
+function delay(f, ms) {
+  return new Proxy(f, {
+    apply(target, thisArg, args) {
+      setTimeout(() => target.apply(thisArg, args), ms);
     }
-  }
-});
+  });
+}
 
-numbers.push(1); // добавилось успешно
-numbers.push(2); // добавилось успешно
-console.log(numbers);
-console.log("Длина: " + numbers.length); // 2
+function sayHi(user) {
+  alert(`Hello, ${user}!`);
+}
 
-numbers.push('text'); // TypeError (ловушка set на прокси вернула false)
-console.log(numbers);
-console.log("Интерпретатор никогда не доходит до этой строки (из-за ошибки в строке выше)");
+sayHi = delay(sayHi, 3000);
+
+alert(sayHi.length);
+alert(sayHi.name);
+
+sayHi('John');
