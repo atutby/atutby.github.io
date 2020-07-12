@@ -1,18 +1,11 @@
-function delay(f, ms) {
-  return new Proxy(f, {
-    apply(target, thisArg, args) {
-      setTimeout(() => target.apply(thisArg, args), ms);
-    }
-  });
-}
+let map = new Map();
 
-function sayHi(user) {
-  alert(`Hello, ${user}!`);
-}
+let proxy = new Proxy(map, {
+  get(target, prop, receiver) {
+    let value = Reflect.get(...arguments);
+    return typeof value == 'function' ? value.bind(target) : value;
+  }
+});
 
-sayHi = delay(sayHi, 3000);
-
-alert(sayHi.length);
-alert(sayHi.name);
-
-sayHi('John');
+proxy.set('test', 1);
+alert(proxy.get('test'));
