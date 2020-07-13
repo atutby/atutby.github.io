@@ -1,11 +1,15 @@
-let map = new Map();
+let revokes = new WeakMap();
 
-let proxy = new Proxy(map, {
-  get(target, prop, receiver) {
-    let value = Reflect.get(...arguments);
-    return typeof value == 'function' ? value.bind(target) : value;
-  }
-});
+let object = {
+  data: "Valuable data"
+};
 
-proxy.set('test', 1);
-alert(proxy.get('test'));
+let {proxy, revoke} = Proxy.revocable(object, {});
+
+revokes.set(proxy, revoke);
+
+// ..later in our code..
+revoke = revokes.get(proxy);
+revoke();
+
+alert(proxy.data);
