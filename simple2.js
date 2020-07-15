@@ -1,15 +1,29 @@
-let revokes = new WeakMap();
+let handlers = Symbol('handlers');
 
-let object = {
-  data: "Valuable data"
-};
+function makeObservable(target) {
+  target[handlers] = [];
 
-let {proxy, revoke} = Proxy.revocable(object, {});
+  target.observe = function(handler) {
+    this[handlers].push(handler);
+  };
 
-revokes.set(proxy, revoke);
+  return new Proxy(target, {
+    set(target, property, value, receiver) {
+      let success = Reflect.set(...arguments);
+      if (success) {
+        target[handlers].forEach(handler => handler(property, value));
+      }
+      return success;
+    }
+  });
+}
 
-// ..later in our code..
-revoke = revokes.get(proxy);
-revoke();
+let user = {};
 
-alert(proxy.data);
+user = makeObservable(user);
+
+user.observe((key, value) => {
+  console.log(`SET ${key} = ${value}`);
+});
+
+user.name = "John"; 
