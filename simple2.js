@@ -1,29 +1,23 @@
-let handlers = Symbol('handlers');
+function curry(func) {
 
-function makeObservable(target) {
-  target[handlers] = [];
-
-  target.observe = function(handler) {
-    this[handlers].push(handler);
+  return function curried(...args) {
+    if (args.length >= func.length) {
+      return func.apply(this, args);
+    } else {
+      return function(...args2) {
+        return curried.apply(this, args.concat(args2));
+      }
+    }
   };
 
-  return new Proxy(target, {
-    set(target, property, value, receiver) {
-      let success = Reflect.set(...arguments);
-      if (success) {
-        target[handlers].forEach(handler => handler(property, value));
-      }
-      return success;
-    }
-  });
 }
 
-let user = {};
+function sum(a, b, c) {
+  return a + b + c;
+}
 
-user = makeObservable(user);
+let curriedSum = curry(sum);
 
-user.observe((key, value) => {
-  console.log(`SET ${key} = ${value}`);
-});
-
-user.name = "John"; 
+console.log( curriedSum(1, 2, 3) );
+console.log( curriedSum(1)(2,3) );
+console.log( curriedSum(1)(2)(3) );
