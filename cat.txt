@@ -1,0 +1,770 @@
+What is your name?
+My name is Sasha.
+Good morning.
+Are you Spanish?
+I lost my phone.
+Do I know you?
+Thank you.
+Are you busy?
+Yes, I am busy.
+Do I have to wait?
+I want to go with you. 
+Please.
+Who are you?
+Listen to me.
+Do you like dancing?
+You are my best friend.
+How is your family?
+My parents are here.
+How old are you.
+I am 35 years old.
+You are old.
+I'd like to go shopping.
+Where do you live?
+Hello.
+Do you know where I can get a taxi?
+See you soon.
+Please take me to this address.
+Who is with you?
+I want to stay here.
+Do you have a boyfriend?
+I need more information.
+You are young.
+Do you have an idea?
+Call me!
+I will call you.
+Are you lying?
+I love life.
+It is the truth.
+Look at me.
+Promise me.
+Who is she?
+She is my sister.
+Do you believe me?
+I don't know her.
+Can I talk to her?
+She is sick.
+I am sorry!
+I live with a friend.
+What does he look like?
+He is nice.
+Be careful, don't fall.
+Are you married?
+They are married.
+How did it happen?
+It happened suddenly.
+Is he a teacher?
+How is everything?
+Everything will be okay.
+That hurts.
+Can you hear me?
+He is sad.
+I am at the airport.
+See you later.
+Are you free?
+Yes, I am free
+I need space.
+How are you?
+I am fine, and you?
+Hug me!
+That sounds like a good idea.
+I was just thinking the same thing.
+shut up.
+I am married.
+It is not your fault.
+It is a good story.
+Close the curtains!
+Whose turn is it?
+It is my turn.
+Did you leave a message?
+I have a boyfriend.
+Kiss me.
+That sounds like a bad idea.
+Where is the teacher?
+It is time for class.
+There are no classes today.
+We can meet tomorrow.
+Can you teach me?
+I don't want to hear any excuses.
+We can do this.
+You have little time.
+Where is the bathroom?
+I am single.
+What do you have in mind?
+Open the window.
+I will open the door.
+I have a cold.
+Are you okay?
+From time to time.
+I am running late.
+Can you call me a taxi?
+I feel nervous.
+Me too.
+When does the plane arrive?
+Nobody is here.
+Goodbye!
+Can I see you tomorrow?
+I am in touch.
+See you later!
+I wonder why.
+At what time does the bus arrive? 
+How are you doing?
+Don't talk to strangers.
+What are you doing?
+Nothing
+Do you have a job?
+Nice to meet you.
+You're welcome.
+Where are the keys?
+I lost my keys.
+Did you think I left?
+I don't know where it is.
+Good afternoon.
+I will be outside.
+See you tomorrow.
+I will try my best.
+Is everyone okay?
+I am dirty.
+I promise you.
+Good night.
+I don't believe you.
+Did you see me?
+I don't have children.
+Excuse me, Where's the toilet?
+What's there to eat?
+I am hungry.
+It always happens.
+What's there to drink?
+Do you want something to eat?
+Pass me the salt, please.
+Do you have salt?
+You should be drinking more water.
+Do you want something to drink?
+Let's eat.
+What is for breakfast?
+Close your eyes.
+It looks perfect.
+Who ate my chocolate?
+Let's begin.
+I am eating breakfast.
+Try this.
+Which one do you want?
+It looks delicious.
+This tastes good.
+Can you give me one?
+I like to eat fruit.
+It is expensive.
+How do you know it?
+Let's eat lunch.
+Thanks for the food.
+I want more.
+There is no food.
+Anything else?
+Thanks for inviting me to your home.
+It is cheap.
+Did you receive my message?
+It is time for dinner.
+Can you wash the dishes?
+It is half past nine.
+Time for bed.
+I am in bed.
+Do you want to play a game?
+Please help me.
+You scared me.
+Where is my stuff?
+I am thirsty.
+I need water.
+What is that?
+My favorite drink is tea.
+What are you studying?
+I have an exam later.
+What career do you want?
+Very good.
+How much time do I have?
+Just a little.
+Very bad.
+I am in a difficult situation.
+It is cold.
+Do you know what this means?
+I miss you.
+Let's go out.
+I have a new cell phone.
+What's your phone number.
+It is easy to remember.
+That is funny.
+Let's go and have a look.
+The train has already left.
+Close the door.
+What do you want to do?
+Where is it?
+The train arrives in two minutes.
+Am I bothering you?
+It is okay.
+What are you up to?
+I don't feel like it.
+Do you remember me?
+I have something for you.
+May I help you?
+I will go tomorrow.
+Can you help me?
+Can I bring my friend?
+I will help you.
+Are you kidding me? 
+I am walking home.
+Who is doing it?
+Thanks for your help.
+What are you thinking about?
+It is complicated.
+Hurry up!
+Are you going too?
+I arrived late.
+Can I leave now?
+I arrived early.
+You must be tired.
+Are you worried?
+I am scared.
+I am going to sleep.
+I just woke up.
+Brush your teeth.
+Good idea.
+It is almost ready.
+I am not sleepy.
+Excuse me.
+I need to study.
+The exam was difficult.
+Tell me how you feel.
+I did it.
+It is easy.
+Look over there.
+It is interesting.
+Where's the restroom?
+Be quiet!
+I have homework.
+We have time.
+What day is it?
+It is Monday.
+It is over there - Это там.
+Have you been there - Ты был там?
+How many are there?
+Clean your room.
+Have a nice day.
+What are you selling?
+You too.
+It's good.
+Do you understand?
+I am sorry.
+Can you do me a favor?
+I don't understand.
+I am happy to be here.
+Do you need anything?
+I understand now.
+Do you want anything?
+I am reading the news.
+It is raining.
+Can you give me a hand?
+Yesterday.
+What did you do yesterday?
+I believe you.
+What's wrong?
+Tomorrow.
+Are you all right?
+Don't hit me. Не бей меня.
+What did you do today? Что вы делали сегодня?
+I am not from here.
+Where are you from?
+I am from New York.
+I like this place.
+Do you live in New York?
+I was born here.
+Where is the entrance?
+They are my parents?
+Where do you come from?
+I am from a big city.
+Do you want to live here?
+How beautiful.
+What is your address?
+Is everything okay?
+My parents are okay.
+I can't handle it -- Я не могу справиться с этим.
+What are you saying?
+I am watching the game.
+I like it.
+Me too.
+What are you listening to?
+What's happened?
+I found the problem.
+I think so.
+What's the matter?
+I will arrive late.
+Put it away.
+Do you want some?
+I don't think so.
+Are you coming?
+I have to go. Я должен идти.
+Do you smoke?
+It is a good job.
+Do you drink?
+I have work to do.
+I am unemployed.
+Would you like something to eat?
+I need help.
+what would you like to eat?
+It's almost Christmas.
+What a surprise Какой сюрприз.
+Are you hungry?
+Is he right?
+She's right.
+Everyone is busy.
+I want to go there.
+What would you like to drink.
+It is a pleasure.
+I am so tired.
+Are you thirsty?
+Open the door!
+It is my advice.
+Good luck.
+Really?
+Welcome.
+Can the baby walk?
+Long time no see.
+I want to practice with you.
+How long will it take?
+Please speak more slowly.
+Write this down.
+Yes, a little.
+Can you write it down please?
+Happy new year.
+Where is your mom?
+Tell me the truth.
+Get well soon.
+How much is it?
+Draw attention.
+Do you forgive me?
+Happy birthday?
+Who told you that?
+She is talking.
+They are my children.
+Why are you asking?
+I am going to visit my father.
+I live with my parents.
+Merry Christmas.
+Do you play tennis?
+How?
+How do I use this?
+Where?
+Where can we meet?
+You can come.
+What? Какой, какая?
+What is your favorite movie?
+When?
+When is your birthday?
+It is late for me.
+I want to sell it.
+What happened?
+I have something to say.
+What's happening?
+I am free in the afternoon. Я свободен днём.
+I'm on the way. 
+Have you read this book?
+I like you.
+Do you know what it is?
+I have two children.
+Can you believe it?
+Do you like this color?
+I am kidding.
+What do you do in your free time?
+I can't believe it.
+What is your email address?
+I don't want to do it.
+What do you do?
+It is a beautiful day.
+Are you finished?
+Are you waiting for someone?
+It is a rainy day.
+Do you understand me?
+Come in.
+What do you think of it?
+He met her.
+Is it true?
+It stopped raining.
+Where is the nearest bank?
+Let's dance.
+It is sunny.
+Are you sleepy?
+It is dark.
+How do you know? Откуда вы знаете.
+Come with me.
+At what time?
+At what time do you get up?
+I get up at eight o'clock.
+I will see what I can do.
+It is cloudy.
+what do you mean?
+It is snowing.
+May I come in?
+Don't yell in here.
+Do you promise?
+Please sit down.
+Can I go with you?
+It is my favorite song.
+Where can I find (the manager)?
+That's cool.
+How can I help you?
+Stop jumping.
+Who are you looking for?
+Try again.
+what are you going to do tomorrow?
+I am in a meeting.
+What type of music do you like?
+I had an incredible day.
+Do you have a pet?
+Come on in!
+What will you do later?
+I was busy today.
+Can I call you later?
+I will be free later.
+Is that yours?
+When are you free?
+I made this.
+Send me a message when you're free.
+It is too soon.
+What date is it today?
+I don't have a job.
+I am looking for a job.
+Put this over there.
+Where do you work?
+What is he doing?
+I am preparing dinner.
+What is the weather like?
+Is it easy?
+What does this mean?
+It it difficult?
+What time is it?
+It is half past four. Половина четвертого.
+It is late.
+What is the price?
+It's early.
+I am confused.
+Where are you?
+I don't like it.
+What time does it start?
+I am lost.
+I wish you the best.
+How can I find (a bus stop)?
+You have my pen.
+Can you give me a lift?
+I am with my family.
+Is this your (car)?
+I am in my car.
+The bus left. 
+Who's there?
+I like reading books.
+I don't have money.
+I need money.
+Can you give me a ride?
+I am with my friends.
+We are like a family.
+How do you feel?
+I feel good.
+I don't know.
+I feel bad.
+What's the problem?
+I feel sick.
+Send me a message.
+How can I get there?
+I feel okay.
+Did you tell him?
+I feel strange.
+I was worried.
+Can I try it on?
+Thanks for asking.
+Are you at home?
+I am waiting.
+I woke up early.
+Can you fix this?
+I was waiting for you.
+You are so kind.
+Make sure to tell me.
+Did you sleep well?
+Is it over?
+How sad.
+It's boring.
+I like your shirt.
+I will be there soon.
+Do you like it here (there)?
+How lucky.
+Put your shirt on.
+It's noisy.
+Where is this place?
+I have a question.
+Do you have a question?
+My favorite singer is Jennifer Lopez.
+The kids are at school.
+How was your weekend.
+There she is!
+Don't do that.
+Where were you?
+One more time.
+Turn the volume down.
+How was your holiday?
+It is quiet.
+Turn the volume up.
+Have you finished?
+It is worse.
+You need to come home.
+It is better.
+Can you lend me some money?
+That's not right.
+Can I borrow a knife?
+She is my mom.
+I thought you were home.
+What's that noise?
+What are you buying?
+Visit me.
+Which is it?
+Take care.
+He likes to drink milk.
+Are you done?
+I will share this with you.
+How did you like it?
+The water is very hot.
+Who's here?
+He is my brother.
+Do you have brothers?
+I live alone.
+I have a brother.
+Are you ready to order?
+I live with my family.
+Do you have sisters?
+I have two sisters.
+Where did you go?
+I want you to leave.
+My boss fired me.
+What do you have to offer?
+Say something.
+Can you repeat, please?
+I worked overtime yesterday.
+I appreciate it.
+what is English for ...?
+Don't worry.
+You're a good teacher.
+Excuse me, what did you say?
+I am bored.
+You will like it.
+What are they doing?
+I am waiting outside.
+It is so hot today.
+It is cold outside!
+My hair is wet.
+The speed limit is 60.
+Where did you learn English?
+My son has a fever.
+I am hungry. How do you say it in English?
+Great job!
+I hate waking up early.
+Time to sleep.
+I can't see you.
+How many languages do you speak?
+I can't hear you.
+Come here.
+I am here.
+I want to eat pizza.
+He is my dad.
+What is the date today?
+This week is so long.
+When will you come?
+I don't know.
+I will come tomorrow.
+The coffee is very hot.
+It is a secret.
+Do you have any kids?
+What's on your mind?
+I can explain.
+Take your time -- Не торопитесь.
+Do you speak English?
+I have a problem.
+What are you reading?
+Explain this.
+I have a gift for you.
+It was not my intention.
+What is that sound?
+Turn on the light.
+I am on vacation.
+Listen to this song.
+Cheers!
+I will write it.
+Why did you do it?
+Tell me more.
+It is exciting.
+I am making plans.
+Who do you support?
+You have a beautiful house.
+I know what I have to do.
+Is the store open?
+I thought we were friends.
+Just read the book.
+It costs $13.79.
+You shouldn't smoke.596
+It is your fault.
+What are you watching?
+Nothing much.
+What's new?
+Thanks for your hospitality.
+Make yourself comfortable.
+Can I have one?
+Let's meet there.
+I just arrived Я только приехал
+Don't be embarrassed.
+You are wrong.
+Are you going to take out the trash?
+How much does it cost?
+The bill, please.
+Did you pay the bill?
+Where can I pay?
+Turn off the music!
+Can I pay in cash?
+I didn't pay attention.
+Keep the change.
+I hope to see you soon.
+Can I pay with credit card?
+I will tell you later.
+What time are you free?
+I am free this weekend.
+I am busy with school.
+She is beautiful.
+Who did this?
+Let's keep in touch.
+Have fun!
+Is it far from here?
+Let's exercise.
+I need something to drink.
+My head hurts.
+Oh, that's not good.
+I can't remember.
+Do you have any children?
+I have money.
+Where do you find it?
+I don't have money.
+Do you have money?
+I have time.
+How many computers do you have?
+I don't have time.
+I am going to work.
+Which one is the best?
+Thank you for the gift.
+Are you sick?
+Don't tell her the secret.
+Who's calling?
+I would like bread with cheese.
+Do you have a family?
+I have a big family.
+I am doing the same.
+How do you do it?
+It happens to everyone.
+I will take a shower.
+This place is expensive.
+I am happy for you.
+What are you sending me?
+I can't right now.
+what are you drawing?
+Tell me when you're ready.
+Where are we going?
+I am in charge of the store.
+Do you know the date?
+Let's go visit them.
+How did you find me?
+I will wait for you.
+Let's go to the park.
+Is it your baby?
+Wait for me?
+Do you want to talk?
+What is it?
+I need to rest.
+It's normal.
+How is your day going?
+My day is going well.
+That is impossible.
+How would you like to pay?
+This isn't about you.
+I practice when I am free.
+I am sorry, we're so out.
+How do you learn?
+It is very helpful.
+Can I have a discount?
+The car is not working.
+It's a miracle.
+How should we do it?
+Never mind.
+Do you have enough money?
+Are you working?
+I have to take the bus.
+We are not sure.
+What do you need?
+My friend is happy.
+I completely agree with you.
+Are you looking for something?
+I had a wonderful time.
+Please give it to me.
+That breaks my heart.
+Speak slowly.
+what are the options?
+Guess what.
+Please enter.
+I am here to help.
+Who needs help.
+I've got a headache.
+That is perfect!
+Let me check.
+It is terrible.
+It hurts right here.
+I feel better.
+It is good information.
+Don't complain.
+Do you know the answer?
+Send the package to my house.
+Do not make noises.
+It is a mistake.
+I am washing the clothes.
+My mother is old.
+How long have you been there?
+It is true.
+I like how you think.
+Just a moment.
+I am sure.
+My friend is here.
+Are you sure?
+I'm ready.
+Thanks for telling me.
+Are you ready?
+I'm confident.
+Nobody is listening.
+Is someone sitting here?
+It inspires me.
+How far is it?
+Thanks for you support.
+I am resting.
+What's your password?
+You have my support.
+I trust you.
+Time to celebrate. Время праздновать.
+I am getting ready. Я готовлюсь.
+Where are you going.
+Congratulations!
+I am going to the supermarket.
+What time does the store open?
+I bought new shoes.
+Try it on. Примерь.
+I have good news.
+What is your plan?
+I'm staying home.
+I will come back later.
+Did you hear the news?
+I slept like a baby. Я спал как ребенок.
+Can you call back later?
+I had a dream.
+Where are you staying?
+I was thinking of you.
+Watch out!
+How is it possible?
+Wave your hand. Try to draw her attention.
+ 
