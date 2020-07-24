@@ -1,14 +1,10 @@
-let date = new Date(2014, 11, 31, 12, 30, 055);
+let animals = ["тигр", "ёж", "енот", "ехидна", "АИСТ", "ЯК"];
 
-let formatter = new Intl.DateTimeFormat("ru");
-alert( formatter.format(date) );
-
-formatter = new Intl.DateTimeFormat("en-US");
-alert( formatter.format(date) );
-
-formatter = new Intl.DateTimeFormat("ru", {
-  hour: "numeric",
-  minute: "numeric",
-  second: "numeric",
+let collator = new Intl.Collator();
+animals.sort(function(a, b) {
+  return collator.compare(a, b);
 });
-alert( formatter.format(date) );
+
+alert( animals );
+
+alert( animals.sort() );
