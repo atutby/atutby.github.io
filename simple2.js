@@ -1,10 +1,8 @@
-let animals = ["тигр", "ёж", "енот", "ехидна", "АИСТ", "ЯК"];
+console.log(navigator.userAgent);
+console.log(navigator.platform);
+console.log(location);
 
-let collator = new Intl.Collator();
-animals.sort(function(a, b) {
-  return collator.compare(a, b);
-});
-
-alert( animals );
-
-alert( animals.sort() );
+alert(location.href);
+if (confirm("Перейти на Wikipedia?")) {
+  location.href = "https://wikipedia.org";
+}
