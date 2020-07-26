@@ -1,11 +1,11 @@
-console.log(navigator.userAgent);
-console.log(navigator.platform);
-console.log(location);
-
-alert(location.href);
-if (confirm("Go to Wikipedia?")) {
-  location.href = "https://wikipedia.org";
+for (let i = 0; i < document.body.childNodes.length; i++) {
+  console.log( document.body.childNodes[i] );
 }
 
-document.body.style.background = 'red';
-setTimeout(() => document.body.style.background = '', 3000);
+console.log(document.body.hasChildNodes());
+
+for (let node of document.body.childNodes) {
+  console.log(node);
+}
+
+console.log( document.body.childNodes );
