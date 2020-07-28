@@ -3,11 +3,21 @@
     line-height: 200px;
     text-align: center;
   }
-  .circle {
-    transition-property: width, height, margin-left, margin-top;
-    transition-duration: 2s;
-    position: fixed;
-    transform: translateX(100%) translateY(10%);
-    background-color: red;
-    border-radius: 50%;
-  }
+
+.circle {
+  transition-property: width, height, margin-left, margin-top;
+  transition-duration: 2s;
+  position: fixed;
+  transform: translateX(100%) translateY(10%);
+  background-color: red;
+  border-radius: 50%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid black;
+  padding: 3px 5px;
+}
