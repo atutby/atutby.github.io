@@ -1,30 +1,23 @@
-for (let i = 0; i < document.body.children.length; i++) {
-  console.log( document.body.children[i] );
+
+let elements = document.querySelectorAll('ul > li:last-child');
+
+for (let elem of elements) {
+  console.log(elem.innerHTML);
 }
 
-
-console.log(document.body.hasChildNodes());
-
-for (let node of document.body.childNodes) {
-  console.log(node);
+for (let elem of document.body.children) {
+  if (elem.matches('a[href$="zip"]')) {
+    console.log("The archive reference: " + elem.href)
+  }
 }
 
-console.log( document.body.children );
+let chapter = document.querySelector('.chapter');
 
-console.log( document.body.parentNode === document.documentElement );
+console.log(chapter.closest('.book'));
+console.log(chapter.closest('.contents'));
+console.log(chapter.closest('h1'));
 
-console.log( document.body.children[0] );
-console.log( document.body.children[1] );
-console.log( document.body.children[1].lastElementChild );
-
-// https://plnkr.co/edit/I9r1HY4w0O0uRfmR?p=preview&preview
-/*
-  https://learn.javascript.ru/dom-navigation
-  dom-navigation
-*/
-let table = document.body.children[2];
-
-for (let i = 0; i < table.rows.length; i++) {
-  let row = table.rows[i];
-  row.cells[i].style.backgroundColor = 'red';
+let inputs = table.getElementsByTagName('input')
+for (let input of inputs) {
+  console.log( input.value + ': ' + input.checked );
 }
