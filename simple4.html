@@ -6,6 +6,57 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h2>
+        <a href="https://learn.javascript.ru/basic-dom-node-properties#tasks">simple4</a>
+    </h2>
+    <ul>
+        <li>Животные
+          <ul>
+            <li>Млекопитающие
+              <ul>
+                <li>Коровы</li>
+                <li>Ослы</li>
+                <li>Собаки</li>
+                <li>Тигры</li>
+              </ul>
+            </li>
+            <li>Другие
+              <ul>
+                <li>Змеи</li>
+                <li>Птицы</li>
+                <li>Ящерицы</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Рыбы
+          <ul>
+            <li>Аквариумные
+              <ul>
+                <li>Гуппи</li>
+                <li>Рыба-ангел</li>
+              </ul>
+            </li>
+            <li>Морские
+              <ul>
+                <li>Морская форель</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+    </ul>
+
+    <script src="./simple4.js"></script>
+
+    <script>
+        let link = document.querySelector('a');
+        link.firstChild.data = link.href;
+        link.target = '_blank';
+        console.log( link );        
+    </script>
+
+    <script>
+        console.dir(document);
+    </script>
 </body>
 </html>
