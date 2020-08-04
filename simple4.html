@@ -12,14 +12,54 @@
 
     <div id="elem" about="Elephant"></div>
 
-
-    <script src="./simple4.js"></script>
+    <div data-widget-name="menu">Choose the genre</div>
 
     <script>
-        let link = document.querySelector('a');
-        link.firstChild.data = link.href;
-        link.target = '_blank';
-        console.log( link );        
+      let widgetName = document.querySelector('div[data-widget-name');
+      console.log( widgetName );
+      console.log( widgetName.dataset.widgetName );
+    </script>
+
+    <a name="list">The list:</a>
+    <ul>
+      <li><a href="http://google.com">http://google.com</a></li>
+      <li><a href="/tutorial">/tutorial.html</a></li>
+      <li><a href="local/path">local/path</a></li>
+      <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li>
+      <li><a href="http://nodejs.org">http://nodejs.org</a></li>
+      <li><a href="http://internal.com/test">http://internal.com/test</a></li>
+    </ul>
+    <script>
+      // let link = document.querySelector('a');
+      // link.style.color = 'orange';
+  
+      for(let link of document.querySelectorAll('a[href]')) {
+        // вставить соответствующую информацию в поле
+        let href = link.getAttribute('href');
+        console.log( href );
+        if( href.includes("://") && !href.includes("http://internal.com") ) {
+          link.style.color = 'orange';
+        }
+      }
+    </script>
+
+
+    <script src="./simple4.js"></script>
+    
+
+    <script>
+        let links = document.querySelectorAll('a');
+        links[0].firstChild.data = links[0].href;
+        // for (let cat of links) {
+        //   cat.target = '_blank';
+        // }
+        links.forEach(
+          (elem) => {
+            console.log(elem);
+            elem.target = '_blank';
+          }
+        )
+        console.log( links );        
     </script>
 </body>
 </html>
