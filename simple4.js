@@ -1,9 +1,10 @@
-for (let li of document.querySelectorAll('li')) {
-    let title = li.firstChild.data;
+console.log( elem.getAttribute("About") ); // 'Elephant'
 
-    title = title.trim();
+elem.setAttribute('Test', 123);
 
-    let count = li.getElementsByTagName('li').length;
+alert( elem.outerHTML );
 
-    console.log(title + ': ' + count);
+for (let attr of elem.attributes) {
+    console.log( `${attr.name} = ${attr.value}` );
 }
+
