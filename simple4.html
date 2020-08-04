@@ -35,6 +35,7 @@
   
       for(let link of document.querySelectorAll('a[href]')) {
         // вставить соответствующую информацию в поле
+        // let href = link.href // так не работает, но почему!!!???
         let href = link.getAttribute('href');
         console.log( href );
         if( href.includes("://") && !href.includes("http://internal.com") ) {
@@ -45,7 +46,7 @@
 
 
     <script src="./simple4.js"></script>
-    
+
 
     <script>
         let links = document.querySelectorAll('a');
