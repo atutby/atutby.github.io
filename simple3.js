@@ -24,4 +24,4 @@ formSearch.querySelectorAll('input')[0];
 formSearch.querySelector('input');
 
 let inputs = formSearch.querySelectorAll('input')
-console.log(inputs[inputs.length - 1]);
+console.log(inputs[inputs.length - 1]);i
