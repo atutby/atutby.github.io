@@ -15,14 +15,17 @@ div2.querySelector('strong').innerHTML = 'Bye there!';
 div.after(div2);
 
 function getListContent() {
-    let fragment = new DocumentFragment();
+    // let fragment = new DocumentFragment();
+    let result = [];
 
     for(let i=1; i<=3; i++) {
         let li = document.createElement('li');
         li.append(i);
-        fragment.append(li);
+        // fragment.append(li);
+        result.push(li);
     }
 
-    return fragment;
+    // return fragment;
+    return result;
 }
-ul.append(getListContent());
+ul.append(...getListContent());
