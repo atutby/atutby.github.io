@@ -5,14 +5,26 @@ div.innerHTML = "<strong>Hi there!</strong> You've read an important message.";
 let simpleDiv = document.querySelector('.simpleDiv');
 simpleDiv.append(div);
 
-// setTimeout(() => div.remove(), 2000);
-
-second.after(first);
-
 let div2 = div.cloneNode(true);
 div2.querySelector('strong').innerHTML = 'Bye there!';
-
 div.after(div2);
+setTimeout(() => div2.remove(), 2000);
+
+//==============================================
+ol.before(document.createElement('hr'), 'before');
+ol.after('after', document.createElement('hr'));
+let liFirst = document.createElement('li');
+liFirst.innerHTML = 'prepend';
+ol.prepend(liFirst); // вставить liFirst в начало <ol>
+let liLast = document.createElement('li');
+liLast.innerHTML = 'append';
+ol.append(liLast);
+ol.textContent = 'I am here!!!'
+
+
+second.after(first);
+first.after(document.createElement('hr'));
+
 
 function getListContent() {
     // let fragment = new DocumentFragment();
