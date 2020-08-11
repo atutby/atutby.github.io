@@ -35,3 +35,7 @@
     z-index: 9999;
     width: 400px;
 }
+
+#table tr th {
+    cursor: pointer;
+}

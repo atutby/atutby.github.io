@@ -41,3 +41,44 @@ function getListContent() {
     return result;
 }
 ul.append(...getListContent());
+
+console.log(table.rows);
+function name() {
+    let sortedRows = Array.from(table.rows)
+        .slice(1)
+        .sort((rowA, rowB) => rowA.cells[0].innerHTML > rowB.cells[0].innerHTML ? 1 : -1);
+
+    table.tBodies[0].append(...sortedRows);
+}
+function surName() {
+    let sortedRows = Array.from(table.rows)
+        .slice(1)
+        .sort((rowA, rowB) => rowA.cells[1].innerHTML > rowB.cells[1].innerHTML ? 1 : -1);
+
+    table.tBodies[0].append(...sortedRows);
+}
+let ageName = true;
+function age() {
+    if (ageName) {
+        let sortedRows = Array.from(table.rows)
+        .slice(1)
+        .sort((rowA, rowB) => +rowA.cells[2].innerHTML > +rowB.cells[2].innerHTML ? -1 : 1);
+
+        table.tBodies[0].append(...sortedRows);
+        ageName = !ageName;
+    } else {
+        let sortedRows = Array.from(table.rows)
+        .slice(1)
+        .sort((rowA, rowB) => +rowA.cells[2].innerHTML > +rowB.cells[2].innerHTML ? 1 : -1);
+
+        table.tBodies[0].append(...sortedRows);
+        ageName = !ageName;
+    }    
+}
+
+document.querySelector('#table tr th:nth-child(1)').addEventListener('click', name)
+document.querySelector('#table tr th:nth-child(2)').addEventListener('click', surName)
+document.querySelector('#table tr th:nth-child(3)').addEventListener('click', age)
+
+
+one.insertAdjacentHTML('afterend', '<li>2</li><li>3</li>');
