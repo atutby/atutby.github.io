@@ -1,0 +1,20 @@
+table {
+    border-collapse: collapse;
+  }
+
+  td,
+  th {
+    border: 1px solid black;
+    padding: 3px;
+    text-align: center;
+  }
+
+  th {
+    font-weight: bold;
+    background-color: #E6E6E6;
+  }
+
+.calendar {
+    display: inline-block;
+    margin: 1em;
+}

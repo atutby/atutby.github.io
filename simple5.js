@@ -82,3 +82,7 @@ document.querySelector('#table tr th:nth-child(3)').addEventListener('click', ag
 
 
 one.insertAdjacentHTML('afterend', '<li>2</li><li>3</li>');
+
+
+// node.reaplaceWith(...nodes or strings)
+bigFive.replaceWith('<h3>replaceWith BigFive<h3>')
