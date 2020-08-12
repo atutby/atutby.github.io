@@ -12,15 +12,12 @@
     background: #f3f3f3;
     height: 200px;
     box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+    
 }
 
 .poster:hover .descr{
     display: block;
-    position: absolute;
-    top: 20%;
-    left: 25%;
-    z-index: 9999;
-    width: 400px;
+
 }
 
 .poster1 {

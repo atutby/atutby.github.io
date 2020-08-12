@@ -5,7 +5,7 @@ function createCalendar(elem, year, month) {
 
     let table2 = '<table><tr><th>пн</th><th>вт</th><th>ср</th><th>чт</th><th>пт</th><th>сб</th><th>вс</th></tr><tr>';
 
-    let table = '<table><tr><th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th></tr><tr>';
+    let table  = '<table><tr><th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th></tr><tr>';
     // пробелы для первого ряда
     // с понедельника до первого дня месяца
     // * * * 1  2  3  4
