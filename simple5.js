@@ -84,5 +84,42 @@ document.querySelector('#table tr th:nth-child(3)').addEventListener('click', ag
 one.insertAdjacentHTML('afterend', '<li>2</li><li>3</li>');
 
 
-// node.reaplaceWith(...nodes or strings)
-bigFive.replaceWith('<h3>replaceWith BigFive<h3>')
+// /////////////////////////////////////////////////////////////
+// https://learn.javascript.ru/styles-and-classes#sledite-za-edinitsami-izmereniya
+let classNotification = `position: fixed;z-index: 1000;padding: 5px;border: 1px solid black;font-size: 20px;background: white;text-align: center;background: #b80000;color: rgb(255,255,255);`
+
+
+function showNotification({top = 0, right = 0, className, html}) {
+
+    let notification = document.createElement('div');
+    notification.className = "notification";
+    if (className) {
+        notification.classList.add(className);
+    }
+
+    if ( className === 'welcome2') {
+        notification.style.cssText = classNotification;
+    }
+    
+
+    notification.style.top = top + 'px';
+    notification.style.right = right + 'px';
+
+    notification.innerHTML = html;
+    document.body.append(notification);
+
+    // setTimeout(() => notification.remove(), 1500);
+    console.log(notification);
+
+}
+
+// test it
+let i = 1;
+// setInterval(() => {
+    showNotification({
+        top: 10,
+        right: 10,
+        html: 'Hello Sasha ' + ++i,
+        className: "welcome2",
+    });
+// }, 2000);
