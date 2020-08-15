@@ -1,3 +1,9 @@
+    // ball.offsetWidth=0 до того, как изображение загрузилось!
+    // исправим это, установив ширину:
+    ball.style.left = Math.round(field.clientWidth / 2 - ball.offsetWidth / 2) + 'px';
+    ball.style.top = Math.round(field.clientHeight / 2 - ball.offsetHeight / 2) + 'px';
+
+// ////////////////////////////////////////////////////////////////////////////
 let div = document.createElement('div');
 div.className = "alert";
 // div.innerHTML = "<strong>Всем привет!</strong> Вы прочитали важное сообщение.";
@@ -42,7 +48,7 @@ function getListContent() {
 }
 ul.append(...getListContent());
 
-console.log(table.rows);
+// console.dir(table.rows[1].cells);
 function name() {
     let sortedRows = Array.from(table.rows)
         .slice(1)
@@ -109,7 +115,7 @@ function showNotification({top = 0, right = 0, className, html}) {
     document.body.append(notification);
 
     // setTimeout(() => notification.remove(), 1500);
-    console.log(notification);
+    // console.log(notification);
 
 }
 
@@ -123,3 +129,9 @@ let i = 1;
         className: "welcome2",
     });
 // }, 2000);
+
+/////////////////////////////////////////////////////////////////
+// https://learn.javascript.ru/size-and-scroll
+console.log(`layer2.offsetParent.id = ${layer2.offsetParent.id}  
+layer2.offsetTop = ${layer2.offsetTop}  
+layer2.offsetLeft = ${layer2.offsetLeft}`);

@@ -1,3 +1,15 @@
+#field {
+  width: 200px;
+  border: 10px groove black;
+  background-color: #00FF00;
+  position: relative;
+}
+
+#ball {
+  position: absolute;
+}
+/* ////////////////////////////// */
+
 .alert {
     padding: 15px;
     border: 1px solid #d6e9c6;
@@ -20,3 +32,26 @@
     background: #b80000;
     color: yellow;
   } */
+
+  .layer1 {
+    position: relative; /* Относительное позиционирование */
+    background: #f0f0f0; /* Цвет фона */
+    width: 300px;
+    height: 200px; /* Высота блока */
+    border: 1px solid blueviolet;
+    overflow: auto;
+    padding: 0 30px;
+    background: chartreuse;
+   }
+   .layer2 {
+    position: absolute; /* Абсолютное позиционирование */
+    /*top: 15px; /* Положение от нижнего края */
+    /*left: 15px; /* Положение от правого края */
+    left: 50%;
+    line-height: 1px;
+   }
+
+   .layer1:hover {
+     height: 100%;
+   }
+
