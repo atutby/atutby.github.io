@@ -1,0 +1,21 @@
+* {
+    font-size: 32px;
+}
+
+body {
+    width: 768px;
+    margin: auto;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    min-width: 3em;
+  }
+
+.highlight {
+    background: lightgreen;
+}

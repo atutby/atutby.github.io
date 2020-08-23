@@ -4,9 +4,12 @@
 */
 
 let links = document.querySelectorAll('a');
-links[0].textContent = links[0].href;
+
 links.forEach(
   (elem) => {
+    if (!elem.textContent || elem.textContent == ' '){
+      elem.textContent = elem.href;
+    }
     // console.log(elem);
     elem.target = '_blank';
   }
