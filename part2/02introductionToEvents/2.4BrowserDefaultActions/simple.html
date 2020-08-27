@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div>
+<pre style="font-size: 2em;">
+    event.preventDefault()
+    addEventListener
+    on false
+    <a href="/" onclick="return false">click here</a>
+    <a href="/" onclick="event.preventDefault()">here</a>
+
+&lt;ul id="menu" class="menu"&gt;
+    &lt;li&gt;&lt;a href="/html"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/javascript"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/css"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;   &#039;   &quot;   &amp;
+</pre>
+
+<h3>I use &lt;xmp&gt;&lt;/xmp&gt;</h3>
+<xmp style="font-size: 2em; margin-top: -1em;">
+<a href="/" onclick="return false">click here</a>
+<a href="/" onclick="event.preventDefault()">here</a>
+</xmp>
+<pre>
+    menu.onclick = function(event) {
+        if (event.target.nodeName != 'A') return;
+      
+        let href = event.target.getAttribute('href');
+        alert( href ); // может быть подгрузка с сервера, генерация интерфейса и т.п.
+      
+        return false; // отменить действие браузера (переход по ссылке)
+      }; 
+</pre>
+<input value="Фокус работает" onfocus="this.value='LOL'">
+<input onfocus="this.value=''" onmousedown="return false" value="Кликни меня">
+
+<script>
+    let i = 0
+    document.addEventListener('touchmove', function(event) {
+        console.log('cat' + i++);
+        event.defaultPrevented = true;
+    }, {passive: true})
+</script>
+
+<xmp>
+    <p>Правый клик вызывает меню документа (добавлена проверка event.defaultPrevented)</p>
+    <button id="elem">Правый клик вызывает меню кнопки</button>
+    
+    <script>
+      elem.oncontextmenu = function(event) {
+        event.preventDefault();
+        alert("Контекстное меню кнопки");
+      };
+    
+      document.oncontextmenu = function(event) {
+        if (event.defaultPrevented) return;
+    
+        event.preventDefault();
+        alert("Контекстное меню документа");
+      };
+    </script>
+</xmp>
+</div>
+</body>
+</html>
