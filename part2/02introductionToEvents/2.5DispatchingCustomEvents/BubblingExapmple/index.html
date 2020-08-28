@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  <a href="/" id="mainPage">Main page</a>
+    <h1 id="elem">Hello from the script</h1>
+
+    <script>
+        // catch on document
+        document.addEventListener("hello", function(event) { // (1)
+            console.log("Hello from " + event.target.tagName);
+        });
+
+        // ...dispatch on elem!
+        let event = new Event("hello", {bubbles: true}); // (2)
+        elem.dispatchEvent(event);
+
+        // the handler on document will activate and display the message.
+    </script>
+
+    <!-- Notes:
+    1.We should use addEventListener addEventListener Listen 
+    2.Must set bubbles:true, otherwise the event won't bubble up.
+
+    The bubbling mechanics is the same for built-in (click) and custom (hello) event. There are also capturing and bubbling stages.-->
+
+    <script>
+        let eventMouse = new MouseEvent("click", {
+            bubbles: true,
+            cancelable: true,
+            clientX: 100,
+            clientY: 100
+        });
+
+        console.log(eventMouse.clientX);
+    </script>
+
+    
+    <pre id="rabbit">
+        |\   /|
+         \|_|/
+         /. .\
+        =\_Y_/=
+         {>o<}
+    </pre>
+    <button onclick="hide()" style="display: inline-block;">Hide()</button>
+    <button onclick="show()">Show()</button>
+    
+<script src="script.js"></script>
+<script src="/part1/common.js"></script>
+</body>
+</html>
