@@ -17,4 +17,4 @@ rabbit.addEventListener('hide', function(event) {
     if (confirm("Call preventDefault?")) {
         event.preventDefault();
     }
-})G
+})
