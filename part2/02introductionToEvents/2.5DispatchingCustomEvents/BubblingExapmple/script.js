@@ -18,3 +18,6 @@ rabbit.addEventListener('hide', function(event) {
         event.preventDefault();
     }
 })
+
+// setInterval(function() { button.dispatchEvent(new Event('click')); }, 5000)
+// setInterval( show , 8000);

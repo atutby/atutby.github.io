@@ -8,8 +8,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>  <a href="/" id="mainPage">Main page</a>
-    <h1 id="elem">Hello from the script</h1>
 
+    <button id="elem2" onclick="console.log('Click!');"></button>
+    <script>
+        let event2 = new Event('click');
+        elem2.dispatchEvent(event2);
+        console.log(event2.isTrusted);
+    </script>
+
+
+    <h1 id="elem">Hello from the script</h1>
     <script>
         // catch on document
         document.addEventListener("hello", function(event) { // (1)
@@ -41,6 +49,8 @@
     </script>
 
     
+    <button id="button" onclick="hide()" style="display: inline-block;">Hide()</button>
+    <button onclick="show()">Show()</button>
     <pre id="rabbit">
         |\   /|
          \|_|/
@@ -48,10 +58,8 @@
         =\_Y_/=
          {>o<}
     </pre>
-    <button onclick="hide()" style="display: inline-block;">Hide()</button>
-    <button onclick="show()">Show()</button>
     
 <script src="script.js"></script>
-<script src="/part1/common.js"></script>
+<script src="./part1/common.js"></script>
 </body>
 </html>
