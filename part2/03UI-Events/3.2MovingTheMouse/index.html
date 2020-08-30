@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  <a href="/" id="mainPage">Main page</a>
+    <div data-tooltip="Here is the house interior" id="house">
+        <div data-tooltip="Here is the roof" id="roof"></div>
+    
+        <p>Once upon a time there was a mother pig who had three little pigs.</p>
+    
+        <p>The three little pigs grew so big that their mother said to them, "You are too big to live here any longer. You must go and build houses for yourselves. But take care that the wolf does not catch you."
+    
+        <p>The three little pigs set off. "We will take care that the wolf does not catch us," they said.</p>
+    
+        <p>Soon they met a man. <a href="https://en.wikipedia.org/wiki/The_Three_Little_Pigs" data-tooltip="Read on…">Hover over me</a></p>
+    
+    </div>
+      
+<div>
+  <pre>
+    <code>
+        let tooltip;
+
+        document.onmouseover = function(event) {
+          // important: a fast-moving mouse may "jump" right to a child on an annotated node, skipping the parent
+          // so mouseover may happen on a child.
+    
+          let anchorElem = event.target.closest('[data-tooltip]');
+    
+          if (!anchorElem) return;
+    
+          // show tooltip and remember it
+          tooltip = showTooltip(anchorElem, anchorElem.dataset.tooltip);
+        }
+    
+        document.onmouseout = function() {
+          // it is possible that mouseout triggered, but we're still inside the element
+          // (its target was inside, and it bubbled)
+          // but in this case we'll have an immediate mouseover,
+          // so the tooltip will be destroyed and shown again
+          //
+          // luckily, the "blinking" won't be visible,
+          // as both events happen almost at the same time
+          if (tooltip) {
+            tooltip.remove();
+            tooltip = false;
+          }
+    
+        }
+    
+    
+        function showTooltip(anchorElem, html) {
+          let tooltipElem = document.createElement('div');
+          tooltipElem.className = 'tooltip';
+          tooltipElem.innerHTML = html;
+          document.body.append(tooltipElem);
+    
+          let coords = anchorElem.getBoundingClientRect();
+    
+          // position the tooltip over the center of the element
+          let left = coords.left + (anchorElem.offsetWidth - tooltipElem.offsetWidth) / 2;
+          if (left < 0) left = 0;
+    
+          let top = coords.top - tooltipElem.offsetHeight - 5;
+          if (top < 0) {
+            top = coords.top + anchorElem.offsetHeight + 5;
+          }
+    
+          tooltipElem.style.left = left + 'px';
+          tooltipElem.style.top = top + 'px';
+    
+          return tooltipElem;
+        }
+    </code>
+</pre>
+</div>
+
+<div>
+  <pre>
+    Задачи
+Улучшенная подсказка
+важность: 5
+Напишите JavaScript код, который показывает подсказку над элементом с атрибутом data-tooltip. Значение атрибута должно становиться текстом подсказки.
+
+Это похоже на задачу Поведение "подсказка", но здесь элементы с подсказками могут быть вложены друг в друга. Показываться должна подсказка на самом глубоко вложенном элементе.
+
+Только одна подсказка может быть показана в любой момент времени.
+  </pre>
+</div>
+
+    
+<script src="script.js"></script>
+<script src="/part1/common.js"></script>
+</body>
+</html>

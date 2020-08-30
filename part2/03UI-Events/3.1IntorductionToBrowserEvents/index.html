@@ -6,8 +6,8 @@
     <title>stamp</title>
     <link rel="icon" href="/images/flower.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <link rel="stylesheet" href="style.css">
     <style>
         .selected {
@@ -76,6 +76,10 @@
 </pre>
 
 <script>
+  'use strict';
+
+  // ;(function() {})()
+  ;(function() {
       ul.onclick = function(event) {
         if (event.target.tagName != 'LI') return;
   
@@ -100,6 +104,7 @@
         }
         li.classList.add('selected');
       }
+    })()
     </script>
     
 <script src="script.js"></script>
