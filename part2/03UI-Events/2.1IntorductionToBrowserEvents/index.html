@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>stamp</title>
     <link rel="icon" href="/images/flower.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
     <link rel="stylesheet" href="style.css">
     <style>
         .selected {
@@ -39,8 +42,40 @@
       <li>Кролик. Просто Кролик.</li>
       <li>Rabbit. Just rabbit.</li>
     </ul>
-  
-    <script>
+
+<pre>
+  <code>
+    ul.onclick = function(event) {
+      if (event.target.tagName != "LI") return;
+
+      if (event.ctrlKey || event.metaKey) {
+        toggleSelect(event.target);
+      } else {
+        singleSelect(event.target);
+      }
+
+    }
+
+    // предотвращает ненужное выделение элементов списка при клике
+    ul.onmousedown = function() {
+      return false;
+    };
+
+    function toggleSelect(li) {
+      li.classList.toggle('selected');
+    }
+
+    function singleSelect(li) {
+      let selected = ul.querySelectorAll('.selected');
+      for(let elem of selected) {
+        elem.classList.remove('selected');
+      }
+      li.classList.add('selected');
+    }
+  </code>
+</pre>
+
+<script>
       ul.onclick = function(event) {
         if (event.target.tagName != 'LI') return;
   
