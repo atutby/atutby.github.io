@@ -45,7 +45,7 @@
     
       ball.onmouseup = function() {
         document.removeEventListener('mousemove', onMouseMove);
-        ball.onmouseup = null;
+        // ball.onmouseup = null;
       };
     
     };
