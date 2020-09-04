@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #elem3 {
+            visibility:inherit; background:yellow; color: black;text-align: center; font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+Hello
+
+<!-- Frirs comment 28 -->
+    <ul>
+        <li><a href="/" id="mainPage">root Main page</a></li>
+        <li></li>
+    </ul>
+
+    <div id="elem1">'ura1'</div>
+    <div id="elem3">'ura3'</div>
+    <div id="elem2">'ura2'</div>
+    <a id="a" href="/"></a>
+    <input id="input" type="text">
+    <script>
+        // let name = prompt("What's your name?", "<b>Winnie-the-pooh!</b>");
+        let name = "<b>Winnie-the-pooh!</b>";
+
+        elem1.innerHTML = name;
+        elem2.textContent = name;
+
+        console.log(elem2.constructor.name);
+        console.log(document.body.constructor.name);
+        console.log(a.constructor.name);
+        console.log(input.constructor.name);
+        console.log(input.constructor.prototype.constructor);
+        console.log(input);
+        // alert(document.body);
+        console.log(document.constructor.name);
+        console.log(document.body);
+        let log = console.log.bind(console);
+        log(document.body.firstChild.data)
+        document.write('Hello Sasha!!!')
+
+        let div = document.querySelector('#elem3')
+
+        div.outerHTML = '<p id="elem3">New Element</p>';
+        log(div.outerHTML)
+    </script>
+
+    
+<script src="script.js"></script>
+<script src="/part1/common.js"></script>
+</body>
+</html>

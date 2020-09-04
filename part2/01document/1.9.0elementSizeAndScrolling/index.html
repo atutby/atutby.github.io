@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #example {
+          width: 300px;
+          height: 200px;
+          border: 25px solid #E8C48F;
+          padding: 20px;
+          overflow: auto;
+        }
+    </style>
+</head>
+<body>  
+    <ul>
+        <li><a href="/" id="mainPage">root Main page</a></li>
+        <li></li>
+    </ul>
+
+
+    <main style="position: relative" id="main">
+        <article>
+        <div id="example" style="position: absolute; left:50px; top:0px">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque veritatis aperiam cum quidem quo? Commodi illum blanditiis, consequatur nulla velit ullam provident non voluptatibus tempore sequi. Commodi neque nostrum architecto?
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit pariatur facilis cum vel, omnis velit sapiente placeat natus tenetur labore optio hic at. Exercitationem similique harum aut et quod mollitia?
+            </p>
+        </div>
+        </article>
+    </main>
+  <script>
+
+let log = console.log.bind(console);
+    
+    console.log(example.offsetParent.id); // main
+    console.log(example.offsetLeft); // 180 (обратите внимание: число, а не строка "180px")
+    console.log(example.offsetTop); // 180
+
+    log(example.clientWidth);
+    log(example.scrollHeight);
+    log(example.scrollWidth);
+    example.scrollTop = 20;
+  </script>
+
+    
+<script src="script.js"></script>
+<script src="/part1/common.js"></script>
+</body>
+</html>
