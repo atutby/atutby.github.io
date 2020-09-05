@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>English</title>
+	<title>English cat</title>
 	<link rel="stylesheet" href="./video.css">
 	<link rel="stylesheet" href="./cat.css">
 	<style>
@@ -11,9 +11,45 @@
 			max-width: 300px;
 		}
 	</style>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </head>
 <body>
 <div class="wrapper" style="margin: auto; padding: 5px; width: 100%;">
+
+	<div id="SmartBook">
+		<a href="https://www.youtube.com/watch?v=0esI-m4LNFU">
+			<h2>
+				FAST ENGLISH! Here’s exactly how to speak American English…FAST! | Guide to speaking fast English
+			</h2>
+		</a>
+		<ol><h3>We're using the scene Book Smart</h3>
+			<li>
+				Our class's official policy is to not discuss where anyone is attending next year. We don't want them to feel insecure.
+			</li>
+			<li>
+				<a href="https://youtu.be/0esI-m4LNFU?t=853">time 14:13</a>
+				Very thoughtful.
+			</li>
+		</ol>
+
+		<style>
+			#SmartBook a[data-content*="time"] {
+				color: red;
+				background-color: lightblue;
+				font-size: 2em;
+		</style>
+
+		<script>
+			$(function(){
+			  $("#SmartBook a").each(function(){
+			    var $this = $(this);
+			    $this.attr("data-content", $this.text());
+			  });
+			});
+		</script>
+
+	</div>
 
 	<div>
 		<a href="https://www.youtube.com/watch?v=0_IspavyoJI">
