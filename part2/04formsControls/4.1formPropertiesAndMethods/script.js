@@ -9,44 +9,53 @@ document.forms[0];
 
     let log = console.log.bind(console);
 
-let form = document.forms.my;
+    let form = document.forms.my;
 
-let elem = form.elements.one;
+    let elem = form.elements.one;
 
-log(elem.value);
+    log(elem.value);
 
+    form = document.forms[1];
 
-form = document.forms[1];
+    let ageElems = form.elements.age;
 
-let ageElems = form.elements.age;
+    log(ageElems[0]);
 
-log(ageElems[0]);
-
-log(form.elements.login)
-let fieldset = form.elements.userFields;
-log(fieldset);
-log(fieldset.elements.login === form.elements.login);
-log(form.elements.login === form.login);
-form.login.name = "username";
-log(form.elements.login);
-log(form.elements.username);
-log(form.login.form);
-log(form.username.form);
-/*
+    log(form.elements.login)
+    let fieldset = form.elements.userFields;
+    log(fieldset);
+    log(fieldset.elements.login === form.elements.login);
+    log(form.elements.login === form.login);
+    form.login.name = "username";
+    log(form.elements.login);
+    log(form.elements.username);
+    log(form.login.form);
+    log(form.username.form);
+    /*
 input.value = "New value";
 textarea.value = "New text";
 
 input.checked = true;
 */
 
-select.options[2].selected = true;
-select.selectedIndex = 2;
-select.value = 'banana';
+    select.options[2].selected = true;
+    select.selectedIndex = 2;
+    select.value = 'banana';
 
-let selected = Array.from(select2.options)
-    .filter(option => option.selected)
-    .map(option => option.value);
+    let selected = Array.from(select2.options).filter(option=>option.selected).map(option=>option.value);
 
     log(selected);
 
-})();
+    // 1)
+    let selectedOption = genres.options[genres.selectedIndex];
+    log(selectedOption.value);
+
+    // 2)
+    let newOption = new Option("Классика","classic");
+    genres.append(newOption);
+
+    // 3)
+    newOption.selected = true;
+
+}
+)();

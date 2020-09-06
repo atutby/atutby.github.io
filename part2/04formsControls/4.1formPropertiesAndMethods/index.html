@@ -11,6 +11,8 @@
     <title>stamp</title>
     <link rel="icon" href="/images/flower.ico">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+
 </head>
 <body>  
     <ul>
@@ -38,11 +40,86 @@
         </select>
 
         <select name="select2" id="select2" multiple>
-            <option value="blues" selected="selected"></option>
-            <option value="rock" selected="selected"></option>
-            <option value="classic"></option>
+            <option value="blues" selected="selected">Blues</option>
+            <option value="rock" selected="selected">Rock</option>
+            <option value="classic">Classic</option>
+        </select>
+
+        <select name="" id="genres">
+            <option value="rock" >Рок</option>
+            <option value="blues" selected>Блюз</option>
         </select>
     </form>
+
+<pre>
+    <code>
+        "use strict";
+/*
+document.forms.my;
+document.forms[0];
+
+*/
+
+;(function() {
+
+    let log = console.log.bind(console);
+
+let form = document.forms.my;
+
+let elem = form.elements.one;
+
+log(elem.value);
+
+
+form = document.forms[1];
+
+let ageElems = form.elements.age;
+
+log(ageElems[0]);
+
+log(form.elements.login)
+let fieldset = form.elements.userFields;
+log(fieldset);
+log(fieldset.elements.login === form.elements.login);
+log(form.elements.login === form.login);
+form.login.name = "username";
+log(form.elements.login);
+log(form.elements.username);
+log(form.login.form);
+log(form.username.form);
+/*
+input.value = "New value";
+textarea.value = "New text";
+
+input.checked = true;
+*/
+
+select.options[2].selected = true;
+select.selectedIndex = 2;
+select.value = 'banana';
+
+let selected = Array.from(select2.options)
+    .filter(option => option.selected)
+    .map(option => option.value);
+
+    log(selected);
+
+// 1)
+let selectedOption = genres.options[genres.selectedIndex];
+log( selectedOption.value );
+
+// 2)
+let newOption = new Option("Классика","classic");
+genres.append(newOption);
+
+// 3)
+newOption.selected = true;
+
+})();
+    </code>
+</pre>
+
+
 
     
 <script src="script.js"></script>
