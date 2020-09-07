@@ -21,8 +21,19 @@
 <form action="">
     Ваш email: <input type="email" id="input">
     <div id="error"></div>
+    <input type="text" style="width: 280px;" placeholder='введите неверный email'>
 </form>
 
+<ul>
+    <li tabindex="1">Один</li>
+    <li tabindex="0">Ноль</li>
+    <li tabindex="2">Два</li>
+    <li tabindex="-1">Минус один</li>
+</ul>
+<style>
+    li { cursor: pointer; }
+    :focus { outline: 1px dashed green; }
+</style>
 
     
 <script src="script.js"></script>

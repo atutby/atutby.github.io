@@ -1,0 +1,20 @@
+.invalid {
+    border-color: blue;
+    border-width: 10px;
+}
+
+#error {
+    color: red;
+}
+
+.error {
+    background: red;
+}
+
+* :focus {
+    font-size: 3em;
+}
+
+* {
+    font-size: 25px;
+}

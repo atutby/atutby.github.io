@@ -1,0 +1,25 @@
+.view,
+.edit {
+  height: 150px;
+  width: 400px;
+  font-family: sans-serif;
+  font-size: 14px;
+  display: block;
+}
+
+.view {
+  /* padding + border = 3px */
+  padding: 2px;
+  /* border: 1px solid black; */
+}
+
+.edit {
+  /* замена внутреннего отступа рамкой (по-прежнему 3px, и содержимое не смещается) */
+  /* border: 3px solid blue; */
+  padding: 0px;
+}
+
+.edit:focus {
+  /* удаление обводки фокуса в Safari */
+  outline: none;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <ul>
+        <li>Кликните на div ниже, чтобы отредактировать текст.</li>
+        <li>Нажатие на Enter или потеря фокуса с ввода сохранят содержимое.</li>
+      </ul>
+    
+      HTML-код разрешён.
+    
+      <div id="view" class="view">Текст</div>
+    
+      <script>
+        let area = null;
+        let view = document.getElementById('view');
+    
+        view.onclick = function() {
+          editStart();
+        }
+    
+        function editStart() {
+          area = document.createElement('textarea');
+          area.className = 'edit';
+          area.value = view.innerHTML;
+    
+          area.onkeydown = function(event) {
+            if (event.key == 'Enter') {
+              this.blur();
+            }
+          };
+    
+          area.onblur = function() {
+            editEnd();
+          };
+    
+          view.replaceWith(area);
+          area.focus();
+        }
+    
+        function editEnd() {
+          view.innerHTML = area.value;
+          area.replaceWith(view);
+        }
+      </script>
+
+    
+<script src="script.js"></script>
+<script src="/part1/common.js"></script>
+</body>
+</html>
