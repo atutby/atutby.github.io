@@ -7,15 +7,65 @@
 	<link rel="stylesheet" href="./video.css">
 	<link rel="stylesheet" href="./cat.css">
 	<style>
-		h2 {
-			max-width: 300px;
-		}
+		
 	</style>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 <body>
 <div class="wrapper" style="margin: auto; padding: 5px; width: 100%; font-size: 2em;">
+
+	<div id="DoYouKnow">
+		<h2>
+			<a href="https://www.youtube.com/watch?v=rxoVJnmFobE">
+				Do YOU know these English Idioms? | Take the QUIZ! 🤓
+			</a>
+		</h2>
+		<ol>
+			<li>
+				a piece of cake
+				<br>describe a situation that's really easy
+			</li>
+			<li>
+				wouldn't hurt a fly
+				<br> She looks a bit rough, but honestly, she wouldn't hurt a fly.
+			</li>
+			<li>
+				pain in the neck
+			</li>
+			<li>
+				(to) hit the road
+				<br> Let's hit the road before the traffic gets bad.
+				<br> I should hit the road, or I'm going to miss my train.
+			</li>
+			<li>
+				(to) jump ship
+				<br>Where's Sarah? Don't tell me she's jumped ship and left us?
+				<a href="https://youtu.be/rxoVJnmFobE?t=487">time 08:07:000</a>
+			</li>
+		</ol>
+		<style>
+			a[data-content*="time"] {
+				color: red;
+				background-color: lightblue;
+				font-size: 2em;
+		</style>
+
+		<script>
+			  $("a").each(function(){
+			    var $this = $(this);
+			    $this.attr("data-content", $this.text());
+			  });
+		</script>
+	</div>
+
+	<div>
+		<h2>Are you *Under the Weather*? [English Idiom Practice]</h2>
+		<ol>
+			<li>Under the Weather</li>
+			<li>I think I'm getting a cold.</li>
+		</ol>
+	</div>
 
 	<div>
 		<h2>

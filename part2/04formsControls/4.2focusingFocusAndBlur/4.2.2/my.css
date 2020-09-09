@@ -1,0 +1,24 @@
+.edit-td .edit-area {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+
+  /* отключаем изменение размера мышью в Firefox */
+  resize: none;
+
+  /* удаляем обводку при фокусировке в Chrome */
+  outline: none;
+
+  /* удаляем полосу прокрутки в IE */
+  overflow: auto;
+}
+
+.edit-controls {
+  position: absolute;
+}
+
+.edit-td {
+  position: relative;
+  padding: 0;
+}
