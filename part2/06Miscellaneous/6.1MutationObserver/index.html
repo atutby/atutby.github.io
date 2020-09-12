@@ -1,54 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+      <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <p id="highlight-demo" style="border: 1px solid #ddd">Демо-элемент с <code>id="highlight-demo"</code>, за которым следит код примера выше.</p>
-        
-        
         <title>stamp</title>
         <link rel="icon" href="/images/flower.ico">
-        <link rel="stylesheet" href="style.css">
-        <script src="https://myCDN.com/prism@v1.x/components/prism-core.min.js"></script>
-        <script src="https://myCDN.com/prism@v1.x/plugins/autoloader/prism-autoloader.min.js"></script>
-</head>
+        <link href="prism.css" rel="stylesheet" />
+        <script defer src="prism.js"></script>
+      </head>
 <body>  
 
     <p id="highlight-demo" style="border: 1px solid #ddd">Демо-элемент с <code>id="highlight-demo"</code>, за которым следит код примера выше.</p>
 
 <script>
-let observer = new MutationObserver(mutations => {
+// let observer = new MutationObserver(mutations => {
 
-for(let mutation of mutations) {
-  // проверим новые узлы, есть ли что-то, что надо подсветить?
+//   for(let mutation of mutations) {
+//     // проверим новые узлы, есть ли что-то, что надо подсветить?
 
-  for(let node of mutation.addedNodes) {
-    // отслеживаем только узлы-элементы, другие (текстовые) пропускаем
-    if (!(node instanceof HTMLElement)) continue;
+//     for(let node of mutation.addedNodes) {
+//       // отслеживаем только узлы-элементы, другие (текстовые) пропускаем
+//       if (!(node instanceof HTMLElement)) continue;
 
-    // проверить, не является ли вставленный элемент примером кода
-    if (node.matches('pre[class*="language-"]')) {
-      Prism.highlightElement(node);
-    }
+//       // проверить, не является ли вставленный элемент примером кода
+//       if (node.matches('pre[class*="language-"]')) {
+//         Prism.highlightElement(node);
+//       }
 
-    // или, может быть, пример кода есть в его поддереве?
-    for(let elem of node.querySelectorAll('pre[class*="language-"]')) {
-      Prism.highlightElement(elem);
-    }
-  }
-}
+//       // или, может быть, пример кода есть в его поддереве?
+//       for(let elem of node.querySelectorAll('pre[class*="language-"]')) {
+//         Prism.highlightElement(elem);
+//       }
+//     }
+//   }
 
-});
+// });
 
 let demoElem = document.getElementById('highlight-demo');
 
-observer.observe(demoElem, {childList: true, subtree: true});
+// observer.observe(demoElem, {childList: true, subtree: true});
 
-</script>
-
-<script>
-observer.observe(demoElem, {childList: true, subtree: true});
+// observer.observe(demoElem, {childList: true, subtree: true});
 
 // динамически вставить содержимое как фрагменты кода
 demoElem.innerHTML = `Фрагмент кода ниже:
@@ -59,6 +51,7 @@ demoElem.innerHTML = `Фрагмент кода ниже:
   </div>
 `;
 </script>
+
 
 <script src="/part1/common.js"></script>
 </body>
