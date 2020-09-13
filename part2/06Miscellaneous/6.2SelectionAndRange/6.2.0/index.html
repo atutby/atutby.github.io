@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <ul>
+        <li><a href="/" id="mainPage">root Main page</a></li>
+        <li></li>
+    </ul>
+
+    <p id="p">Example: <i>italic</i> and <b>bold</b></p>
+    
+    <script>
+        let range = new Range();
+      
+        range.setStart(p.firstChild, 2);
+        range.setEnd(p.querySelector('b').firstChild, 3);
+      
+        //alert(range);  ample: italic and bol
+      
+        // применим выделение к документу  (объясняется далее)
+        window.getSelection().addRange(range);
+        console.log(range);
+    </script>
+<script src="script.js"></script>
+<script src="/part1/common.js"></script>
+</body>
+</html>
