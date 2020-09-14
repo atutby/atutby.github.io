@@ -15,5 +15,9 @@ function count() {
 
     alert("Done in " + (Date.now() - start) + 'ms');
 }
-count();
+
+const button = document.querySelector('button');
+
+button.addEventListener('click', count);
+
 })();
