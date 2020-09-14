@@ -9,11 +9,19 @@ let i = 0;
 let start = Date.now();
 
 function count() {
-    for (let j = 0; j < 1e9; j++) {
-        i++;
+
+    if (i < 1e9 - 1e6) {
+        setTimeout(count);
     }
 
-    alert("Done in " + (Date.now() - start) + 'ms');
+    do {
+        i++;
+    } while (i % 1e6 != 0);
+
+    if (i == 1e9) {
+        alert("Done in " + (Date.now() - start) + 'ms');
+    }
+    
 }
 
 const button = document.querySelector('button');
