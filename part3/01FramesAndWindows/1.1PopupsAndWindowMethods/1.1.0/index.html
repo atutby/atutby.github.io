@@ -18,11 +18,23 @@
         <li></li>
     </ul>
 
+    <script>
+        // setTimeout(() => window.open('http://google.com'), 3000);
+
+        let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=non,width=290,height=300,left=0,top=500`;
+        let newWin = window.open('about:blank','test',params);
+        newWin.moveTo(0,505);
+        newWin.resizeTo(290,300);
+        newWin.document.write(
+            // "<script>window.opener.document.body.innerHTML = 'Тест'<\/script>"
+            `<script>window.opener.console.log('cat');
+                window.opener.console.log('cat2');
+                <\/script>`
+        );
+        // open('/', 'test', params);
+    </script>
     
-    <div id="progress"></div>
-    
-    
-    <script src="script.js"></script>
+<script src="script.js"></script>
 <script src="/part1/common.js"></script>
 </body>
 </html>
