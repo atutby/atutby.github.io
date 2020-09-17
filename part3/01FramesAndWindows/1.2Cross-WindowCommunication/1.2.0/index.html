@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li></li>
+    </ul>
+
+    <iframe src="https://example.com" id="iframe"></iframe>
+
+    <script>
+      iframe.onload = function () {
+        // можно получить ссылку на внутренний window
+        let iframeWindow = iframe.contentWindow; // OK
+        try {
+          // ...но не на document внутри него
+          let doc = iframe.contentDocument; // ОШИБКА
+        } catch (e) {
+          alert(e); // Security Error
+        }
+
+        try {
+          let href = iframe.contentWindow.location.href;
+        } catch (e) {
+          console.log(e);
+        }
+
+        iframe.contentWindow.location = "/";
+
+        iframe.onload = null;
+      };
+    </script>
+
+    <script src="script.js"></script>
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
