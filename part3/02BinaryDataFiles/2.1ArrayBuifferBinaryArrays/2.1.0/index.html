@@ -17,8 +17,23 @@
 
     <script>
 
+        let log = console.log.bind(console);
+
         let buffer = new ArrayBuffer(16);
-        console.log(buffer.byteLength); 
+
+        let view = new Uint32Array(buffer);
+
+        log(Uint32Array.BYTES_PER_ELEMENT);
+
+        log(view.length);
+        log(view.byteLength);
+
+        view[0] = 2e9;
+
+        for(let num of view) {
+            log(num);
+        }
+
     </script>
     
 <script src="script.js"></script>

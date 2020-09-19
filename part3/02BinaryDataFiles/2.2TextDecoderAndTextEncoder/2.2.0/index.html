@@ -18,23 +18,8 @@
         <li><a href="/" id="mainPage">root Main page</a></li>
         <li></li>
     </ul>
-
-    <script src="script.js"></script>
-    <script>
-        let uint8Array = new Uint8Array([72, 101, 108, 108, 111]);
-        log( new TextDecoder().decode(uint8Array) );
-
-        let uint8Array2 = new Uint8Array([228, 189, 160, 229, 165, 189]);
-        log( new TextDecoder().decode(uint8Array2) );
-
-        let uint8Array3 = new Uint8Array([0, 72, 101, 108, 108, 111, 0]);
-        let binaryString = uint8Array3.subarray(1, -1);
-        log( new TextDecoder().decode(binaryString) );
-
-        let encoder = new TextEncoder();
-        let uint8Array4 = encoder.encode("Hello!");
-        log(uint8Array4)
-    </script>
+    
+<script src="script.js"></script>
 <script src="/part1/common.js"></script>
 </body>
 </html>
