@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="canvasElem" width="100" height="80" style="border:1px solid"></canvas>
+
+    <input type="button" value="Отправить" onclick="submit()">
+
+    <script src="script.js"></script>
+
+    <script>
+        canvasElem.onmousemove = function(e) {
+          let ctx = canvasElem.getContext('2d');
+          ctx.lineTo(e.clientX, e.clientY);
+          ctx.stroke();
+        };
+    
+        async function submit() {
+          let blob = await new Promise(resolve => canvasElem.toBlob(resolve, 'image/png'));
+          let response = await fetch('/article/fetch/post/image', {
+            method: 'POST',
+            body: blob
+          });
+    
+          // сервер ответит подтверждением и размером изображения
+          let result = await response.json();
+          alert(result.message);
+        }
+    
+      </script>
+<script src="/part1/common.js"></script>
+</body>
+</html>
