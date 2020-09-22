@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li></li>
+    </ul>
+
+    <script src="script.js"></script>
+
+    <script>
+      (async () => {
+        // Шаг 1: начинаем загрузку fetch, получаем поток для чтения
+        let response = await fetch(
+          "https://api.github.com/repos/javascript-tutorial/en.javascript.info/commits?per_page=100"
+        );
+
+        const reader = response.body.getReader();
+
+        // Шаг 2: получаем длину содержимого ответа
+        const contentLength = +response.headers.get("Content-Length");
+
+        // Шаг 3: считываем данные:
+        let receivedLength = 0; // количество байт, полученных на данный момент
+        let chunks = []; // массив полученных двоичных фрагментов (составляющих тело ответа)
+        while (true) {
+          const { done, value } = await reader.read();
+
+          if (done) {
+            break;
+          }
+
+          chunks.push(value);
+          receivedLength += value.length;
+
+          console.log(`Получено ${receivedLength} из ${contentLength}`);
+        }
+
+        // Шаг 4: соединим фрагменты в общий типизированный массив Uint8Array
+        let chunksAll = new Uint8Array(receivedLength); // (4.1)
+        let position = 0;
+        for (let chunk of chunks) {
+          chunksAll.set(chunk, position); // (4.2)
+          position += chunk.length;
+        }
+
+        // Шаг 5: декодируем Uint8Array обратно в строку
+        let result = new TextDecoder("utf-8").decode(chunksAll);
+
+        // Готово!
+        let commits = JSON.parse(result);
+        alert(commits[0].author.login);
+      })();
+    </script>
+    <script src="/part1/common.js"></script>
+  </body>
+</html>

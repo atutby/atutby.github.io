@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Custom dropdown. CSS + JS</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+        <h1>Select. Выпадающий список</h1>
+
+        <div class="form-group-title">
+            Выберите категорию:
+        </div>
+
+        <div class="form-group">
+            <div class="select-wrapper">
+                <select name="select-category" id="" class="select">
+                    <option value="1">Заметки путешественника</option>
+                    <option value="2">Конспекты по учебе</option>
+                    <option value="3">Фотоальбом</option>
+                    <option value="4">Дневник спортсмена</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="select-wrapper">
+                <select name="select-category" id="" class="select">
+                    <option value="1">Заметки путешественника</option>
+                    <option value="2">Конспекты по учебе</option>
+                    <option value="3">Фотоальбом</option>
+                    <option value="4">Дневник спортсмена</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="dropdown">
+                <button class="dropdown__button">Заметки путешественника</button>
+                <ul class="dropdown__list">
+                    <li class="dropdown__list-item" data-value="travel">Заметки путешественника</li>
+                    <li class="dropdown__list-item" data-value="lessons">Конспекты по учебе</li>
+                    <li class="dropdown__list-item" data-value="photo">Фотоальбом</li>
+                    <li class="dropdown__list-item" data-value="sport">Дневник спортсмена</li>
+                </ul>
+                <input type="text" name="select-category" value="" class="dropdown__input-hidden" >
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="dropdown">
+                <button class="dropdown__button">Заметки путешественника</button>
+                <ul class="dropdown__list">
+                    <li class="dropdown__list-item" data-value="travel">Заметки путешественника</li>
+                    <li class="dropdown__list-item" data-value="lessons">Конспекты по учебе</li>
+                    <li class="dropdown__list-item" data-value="photo">Фотоальбом</li>
+                    <li class="dropdown__list-item" data-value="sport">Дневник спортсмена</li>
+                </ul>
+                <input type="text" name="select-category" value="" class="dropdown__input-hidden" >
+            </div>
+        </div>
+
+
+
+        <script src="main.js"></script>
+
+	</body>
+</html>

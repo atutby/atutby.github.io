@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <ul>
+        <li><a href="/" id="mainPage">root Main page</a></li>
+        <li></li>
+    </ul>
+
+    <form id="formElem">
+        <input type="text" name="name" value="John">
+        <input type="text" name="surname" value="Smith">
+        <input type="submit">
+    </form>
+
+    <script src="script.js"></script>
+    <script>
+      formElem.onsubmit = async (e) => {
+          e.preventDefault();
+
+          let response = await fetch('/article/formdata/post/user', {
+              method: 'POST',
+              body: new FormData(formElem)
+          });
+
+          let result = await response.json();
+
+          alert(reslut.message);
+      };
+    </script>
+<script src="/part1/common.js"></script>
+</body>
+</html>
