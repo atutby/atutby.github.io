@@ -29,8 +29,10 @@
 
         let br = document.createElement('br')
         let body = document.getElementsByTagName('body')
-        
+        document.body.append(br);
+
         doc(url.protocol);
+        
         log(url.host);
         log(url.pathname);
         log(url.port);
