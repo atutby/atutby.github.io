@@ -36,6 +36,26 @@ form.addEventListener('submit', function (event) {
     input.focus();
 })
 
+tasksList.addEventListener('click', function(event) {
+    // console.log(event.target);
+
+    if (event.target.getAttribute('data-action') === 'delete-task') {
+        // console.log('DELETE!');
+
+        event.target.closest('li.list-group-item').remove(); 
+
+        toggleEmptyListItem()
+    } else if (event.target.getAttribute('data-action') === 'ready') {
+
+       const parentElement = event.target.closest('li.list-group-item');
+
+       parentElement.querySelector('span.task-title').classList.add('task-title--done');
+
+       tasksList.insertAdjacentElement('beforeend', parentElement);
+    }
+
+})
+
 // Функция сокрытия или показа сообщения "список дел пуст"
 function toggleEmptyListItem() {
     if (tasksList.children.length > 1) {
@@ -44,3 +64,5 @@ function toggleEmptyListItem() {
         emptyListItem.style.display = 'block';
 	}
 }
+
+
