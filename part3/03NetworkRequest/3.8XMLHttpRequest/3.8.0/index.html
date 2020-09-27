@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <ul>
+        <li><a href="/" id="mainPage">root Main page</a></li>
+        <li></li>
+    </ul>
+
+
+    <script src="script.js"></script>
+
+    <script>
+        // 1. Создаём новый XMLHttpRequest-объект
+        let xhr = new XMLHttpRequest();
+
+        // 2. Настраиваем его: GET-запрос по URL /article/.../load
+        xhr.open('GET', '/article/xmlhttprequest/example/load');
+
+        // 3. Отсылаем запрос
+        xhr.send();
+
+        // 4. Этот код сработает после того, как мы получим ответ сервера
+        xhr.onload = function() {
+        if (xhr.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
+            alert(`Ошибка ${xhr.status}: ${xhr.statusText}`); // Например, 404: Not Found
+        } else { // если всё прошло гладко, выводим результат
+            alert(`Готово, получили ${xhr.response.length} байт`); // response -- это ответ сервера
+        }
+        };
+
+        xhr.onprogress = function(event) {
+        if (event.lengthComputable) {
+            alert(`Получено ${event.loaded} из ${event.total} байт`);
+        } else {
+            alert(`Получено ${event.loaded} байт`); // если в ответе нет заголовка Content-Length
+        }
+
+        };
+
+        xhr.onerror = function() {
+        alert("Запрос не удался");
+        };
+    </script>
+
+<script src="/part1/common.js"></script>
+</body>
+</html>
