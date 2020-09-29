@@ -1,60 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
 
     <title>stamp</title>
-    <link rel="icon" href="/images/flower.ico">
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>  
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <ul>
-        <li><a href="/" id="mainPage">root Main page</a></li>
-        <li></li>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://youtu.be/4K33w-0-p2c">
+          Sending JavaScript Http Requests with XMLHttpRequest
+        </a>
+      </li>
     </ul>
-
 
     <script src="script.js"></script>
 
     <script>
-        // 1. Создаём новый XMLHttpRequest-объект
-        let xhr = new XMLHttpRequest();
+      // 1. Создаём новый XMLHttpRequest-объект
+      let xhr = new XMLHttpRequest();
+      let ourURL = "/part3/03NetworkRequest/3.8XMLHttpRequest/3.8.0";
 
-        // 2. Настраиваем его: GET-запрос по URL /article/.../load
-        xhr.open('GET', '/article/xmlhttprequest/example/load');
+      // 2. Настраиваем его: GET-запрос по URL /article/.../load
+      // xhr.open('GET', '/article/xmlhttprequest/example/load');
+      xhr.open("GET", ourURL);
 
-        // 3. Отсылаем запрос
-        xhr.send();
+      //   xhr.responseType = "document";
+      xhr.responseType = "";
 
-        // 4. Этот код сработает после того, как мы получим ответ сервера
-        xhr.onload = function() {
-        if (xhr.status != 200) { // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
-            alert(`Ошибка ${xhr.status}: ${xhr.statusText}`); // Например, 404: Not Found
-        } else { // если всё прошло гладко, выводим результат
-            alert(`Готово, получили ${xhr.response.length} байт`); // response -- это ответ сервера
-        }
-        };
+      // 3. Отсылаем запрос
+      xhr.send();
 
-        xhr.onprogress = function(event) {
-        if (event.lengthComputable) {
-            alert(`Получено ${event.loaded} из ${event.total} байт`);
+      // 4. Этот код сработает после того, как мы получим ответ сервера
+      xhr.onload = function () {
+        if (xhr.status != 200) {
+          // анализируем HTTP-статус ответа, если статус не 200, то произошла ошибка
+          log(`Ошибка ${xhr.status}: ${xhr.statusText}`); // Например, 404: Not Found
         } else {
-            alert(`Получено ${event.loaded} байт`); // если в ответе нет заголовка Content-Length
+          // если всё прошло гладко, выводим результат
+          log(`Готово, получили ${xhr.response.length} байт`); // response -- это ответ сервера
+        //   log(xhr.response);
+          
         }
+      };
 
-        };
+    //   xhr.abort();
 
-        xhr.onerror = function() {
-        alert("Запрос не удался");
-        };
+      
+      xhr.onprogress = function (event) {
+        log(xhr.getAllResponseHeaders());
+        if (event.lengthComputable) {
+          log(`Получено ${event.loaded} из ${event.total} байт`);
+        } else {
+          log(`Получено ${event.loaded} байт`); // если в ответе нет заголовка Content-Length
+        }
+      };
+
+      xhr.onerror = function () {
+        log("Запрос не удался");
+      };
+
+      xhr.timeout = 10000; // таймаут указывается в миллисекундах, т.е. 10 секунд
     </script>
 
-<script src="/part1/common.js"></script>
-</body>
+
+<form name="person">
+    <input name="name" value="Петя">
+    <input name="surname" value="Васечкин">
+</form>
+<script>
+    let formData = new FormData(document.forms.person);
+
+    formData.append("middle", "Иванович");
+
+    let xhr3 = new XMLHttpRequest();
+    xhr3.open("POST", ourURL);
+    xhr3.send(formData);
+
+    xhr3.onload = () => log(xhr3.response);
+</script>
+
+<!-- <input type="file" onchange="upload(this.files[0])"> -->
+<input type="file" onchange="upload(this.files[0])">
+
+<script>
+function upload(file) {
+  let xhr5 = new XMLHttpRequest();
+
+  // отслеживаем процесс отправки
+  xhr5.upload.onprogress = function(event) {
+    console.log(`Отправлено ${event.loaded} из ${event.total}`);
+  };
+
+  // Ждём завершения: неважно, успешного или нет
+  xhr5.onloadend = function() {
+    if (xhr5.status == 200) {
+      console.log("Успех");
+    } else {
+      console.log("Ошибка " + this.status);
+    }
+  };
+
+  xhr5.open("POST", "https://learn.javascript.ru/article/xmlhttprequest/post/upload");
+  xhr5.send(file);
+}
+
+</script>
+    <script src="/part1/common.js"></script>
+  </body>
 </html>

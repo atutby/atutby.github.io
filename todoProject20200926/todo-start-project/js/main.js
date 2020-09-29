@@ -2,7 +2,10 @@
 const form = document.querySelector('#newTaskForm');
 const input = document.querySelector('#addNewTask');
 const tasksList = document.querySelector('#list-group');
-const emptyListItem = document.querySelector('#empty-list-item');
+const emptyListItem = document.getElementsByName('emptyLi')[0];
+
+// Загрузить данные
+loadData();
 
 // 1. ДОБАВЛЕНИЕ НОВОЙ ЗАДАЧИ
 // Отслеживаем отправку формы
@@ -33,27 +36,48 @@ form.addEventListener('submit', function (event) {
 	input.value = '';
 
     // Возвращаем фокус на поле ввода после добавления новой задачи
-    input.focus();
+	input.focus();
+	
+	// Сохранить данные
+	saveData();
 })
 
-tasksList.addEventListener('click', function(event) {
-    // console.log(event.target);
+// 2. КНОПКИ "ГОТОВО" и "УДАЛИТЬ"
+// Прослушиваем клик внутри всего списка с задачами
+tasksList.addEventListener('click', function(event){
+	console.log(event.target);
 
-    if (event.target.getAttribute('data-action') === 'delete-task') {
-        // console.log('DELETE!');
+	// Проверяем что клик произошел по кнопке "Удалить"
+	if (event.target.getAttribute('data-action') == 'delete-task') {
+		// Находим родительский тег <li> по классу .list-group-item и удаляем его
+		event.target.closest('li.list-group-item').remove();
 
-        event.target.closest('li.list-group-item').remove(); 
+		// Скрываем или Показываем запись о том что список дел пуст
+		toggleEmptyListItem();
 
-        toggleEmptyListItem()
-    } else if (event.target.getAttribute('data-action') === 'ready') {
+		// Сохранить данные
+		saveData();
+	}
+	// Проверяем что клик произошел по кнопке "Готово"
+	else if (event.target.getAttribute('data-action') == 'ready') {
+		// Находим родительский тег <li>
+		const parentElement = event.target.closest('li.list-group-item');
 
-       const parentElement = event.target.closest('li.list-group-item');
+		// Находим тег span и добавляем к нему дополнительный класс task-title--done
+		parentElement.querySelector('span.task-title').classList.add('task-title--done');
 
-       parentElement.querySelector('span.task-title').classList.add('task-title--done');
+		// Убираем у тега span атрибут contenteditable
+		parentElement.querySelector('span.task-title').setAttribute('contenteditable', 'false');
 
-       tasksList.insertAdjacentElement('beforeend', parentElement);
-    }
+		// Перемещаем запись в конец списка
+		tasksList.insertAdjacentElement('beforeend', parentElement);
 
+		// Удалить кнопку "Готово" и "Удалить"
+		parentElement.querySelector('button[data-action="ready"]').remove();
+
+		// Сохранить данные
+		saveData();
+	}
 })
 
 // Функция сокрытия или показа сообщения "список дел пуст"
@@ -65,4 +89,15 @@ function toggleEmptyListItem() {
 	}
 }
 
+function saveData() {
+	localStorage.setItem('todoList', tasksList.innerHTML)
+}
 
+function loadData() {
+	if (localStorage.getItem('todoList')) {
+		tasksList.innerHTML = localStorage.getItem('todoList');
+	}
+}
+
+// localStorage.setItem('name', 'Yurij');
+// localStorage.getItem('name')
