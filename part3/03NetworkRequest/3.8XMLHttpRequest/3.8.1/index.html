@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <!-- <link rel="stylesheet" href="/normalize.css" /> -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li></li>
+    </ul>
+
+    <!-- <script src="script.js"></script> -->
+
+    <button onclick="abort()">xhr.abort()</button>
+
+    <div id="log">Показ прогресса</div>
+
+    <script>
+      function log(html) {
+        document.getElementById("log").innerHTML += html;
+        console.log(html);
+      }
+
+      let xhr = new XMLHttpRequest();
+
+      xhr.open("GET", "/hello.txt");
+
+      xhr.responseType = "text";
+
+      xhr.send();
+
+      xhr.onload = function () {
+        if (xhr.status != 200) {
+          log(`Error28 ${xhr.status}: ${xhr.statusText}`);
+        } else {
+          log(`<br>Done, got ${xhr.response.length} bytes`);
+        }
+
+        log(
+          "\n<br>xhr.status = " +
+            xhr.status +
+            "\n<br>xhr.readyState = " +
+            xhr.readyState +
+            "\n<br>xhr.responseURL = " +
+            xhr.responseURL +
+            "\n<br>xhr.response = " +
+            xhr.response
+        );
+      };
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 0) {
+          log("<br>0 = initial state");
+        }
+        if (xhr.readyState == 1) {
+          log("<br>1 = open called");
+        }
+        if (xhr.readyState == 2) {
+          log("<br>2 = response headers received");
+        }
+        if (xhr.readyState == 3) {
+          log("<br>3 = loading"); // loading
+        }
+        if (xhr.readyState == 4) {
+          log("<br>4 = request finished"); // request finished
+        }
+      };
+
+      xhr.onprogress = function (event) {
+        if (event.lengthComputable) {
+          log(`<br>Received ${event.loaded} of ${event.total} bytes`);
+        } else {
+          log(`<br>Received ${event.loaded} bytes`);
+        }
+      };
+
+      xhr.onerror = function () {
+        log("Request failed");
+      };
+
+      xhr.timeout = 10000;
+
+      function abort() {
+        xhr.abort();
+      }
+    </script>
+
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
