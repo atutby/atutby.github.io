@@ -64,20 +64,34 @@
       };
 
       xhr.onreadystatechange = function () {
-        if (xhr.readyState == 0) {
-          log("<br>0 = initial state");
-        }
-        if (xhr.readyState == 1) {
-          log("<br>1 = open called");
-        }
-        if (xhr.readyState == 2) {
-          log("<br>2 = response headers received");
-        }
-        if (xhr.readyState == 3) {
-          log("<br>3 = loading"); // loading
-        }
-        if (xhr.readyState == 4) {
-          log("<br>4 = request finished"); // request finished
+        // if (xhr.readyState == 0) {
+        //   log("<br>0 = initial state");
+        // }
+        // if (xhr.readyState == 1) {
+        //   log("<br>1 = open called");
+        // }
+        // if (xhr.readyState == 2) {
+        //   log("<br>2 = response headers received");
+        // }
+        // if (xhr.readyState == 3) {
+        //   log("<br>3 = loading"); // loading
+        // }
+        // if (xhr.readyState == 4) {
+        //   log("<br>4 = request finished"); // request finished
+        // }
+
+        // операто switch использует "===" строгое равенство
+        switch (xhr.readyState) {
+          case 0: log("<br>0 = initial state");
+            break;
+          case 1: log("<br>1 = open called");
+            break;
+          case 2: log("<br>2 = response headers received");
+            break;
+          case 3: log("<br>3 = loading"); // loading
+            break;
+          case 4: log("<br>4 = request finished"); // request finished
+            break; 
         }
       };
 
