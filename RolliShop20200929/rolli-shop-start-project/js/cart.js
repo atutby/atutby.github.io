@@ -1,4 +1,4 @@
-rolli-shop-day-1-readyconsole.log("cart.js");
+console.log("cart.js");
 
 // div внутри корзины, в который мы добовляем товары
 const cartWrapper = document.querySelector('.cart-wrapper');
@@ -19,7 +19,15 @@ window.addEventListener("click", function (event) {
 
     console.log(productInfo);
 
-    const cartItmeHTML = `
+
+
+    let itemInCart = cartWrapper.querySelector(`[data-id="${productInfo.id}"]`);
+
+    if (itemInCart) {
+        const counterElement = itemInCart.querySelector('[data-counter]');
+        counterElement.innerText = parseInt(counterElement.innerText) + parseInt(productInfo.counter);
+    } else {
+        let cartItmeHTML = `
         <div class="cart-item" data-id="${productInfo.id}">
         <div class="cart-item__top">
             <div class="cart-item__img">
@@ -50,6 +58,11 @@ window.addEventListener("click", function (event) {
         </div>
         `;
 
-    cartWrapper.insertAdjacentHTML('beforeend', cartItmeHTML);
+        cartWrapper.insertAdjacentHTML('beforeend', cartItmeHTML);
+    }
+
+    // Сбрасываем счётчик кол-ва товара, который только что добавили в корзину
+    card.querySelector('[data-counter]').innerText = '1';
+
   }
 });
