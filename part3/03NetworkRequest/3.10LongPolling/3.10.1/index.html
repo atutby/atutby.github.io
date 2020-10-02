@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
 
     <title>stamp</title>
-    <link rel="icon" href="/images/flower.ico">
-    <link rel="stylesheet" href="/normalize.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>  
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <ul>
-        <li><a href="/" id="mainPage">root Main page</a></li>
-        <li></li>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li></li>
     </ul>
 
     <script src="script.js"></script>
@@ -26,17 +31,20 @@
     Все посетители этой страницы будут видеть сообщения друг друга.
 
     <form name="publish">
-        <input type="text" name="message">
-        <input type="submit" value="Send">
+      <input type="text" name="message" />
+      <input type="submit" value="Send" />
     </form>
 
     <div id="subscribe"></div>
 
     <script>
-        new PublishForm(document.forms.publish, 'pliou7654ublish');
+      new PublishForm(document.forms.publish, "pliou7654Publish");
 
-        new SubscribePane(document.getElementById('subscribe')3 'subscribe?random=' + Math.random());
+      new SubscribePane(
+        document.getElementById("subscribe"),
+        "subscribe?random=" + Math.random()
+      );
     </script>
-<script src="/part1/common.js"></script>
-</body>
+    <script src="/part1/common.js"></script>
+  </body>
 </html>

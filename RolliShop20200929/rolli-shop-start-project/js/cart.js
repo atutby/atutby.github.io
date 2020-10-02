@@ -1,6 +1,6 @@
 // div внутри корзины, в который мы добовляем товары
-const cartWrapper = document.querySelector('.cart-wrapper');
-const deliveryCost = document.querySelector('.delivery-cost');
+const cartWrapper = document.querySelector(".cart-wrapper");
+const deliveryCost = document.querySelector(".delivery-cost");
 
 window.addEventListener("click", function (event) {
   if (event.target.hasAttribute("data-cart")) {
@@ -19,10 +19,11 @@ window.addEventListener("click", function (event) {
     let itemInCart = cartWrapper.querySelector(`[data-id="${productInfo.id}"]`);
 
     if (itemInCart) {
-        const counterElement = itemInCart.querySelector('[data-counter]');
-        counterElement.innerText = parseInt(counterElement.innerText) + parseInt(productInfo.counter);
+      const counterElement = itemInCart.querySelector("[data-counter]");
+      counterElement.innerText =
+        parseInt(counterElement.innerText) + parseInt(productInfo.counter);
     } else {
-        let cartItmeHTML = `
+      let cartItmeHTML = `
         <div class="cart-item" data-id="${productInfo.id}">
         <div class="cart-item__top">
             <div class="cart-item__img">
@@ -53,53 +54,48 @@ window.addEventListener("click", function (event) {
         </div>
         `;
 
-        cartWrapper.insertAdjacentHTML('beforeend', cartItmeHTML);
+      cartWrapper.insertAdjacentHTML("beforeend", cartItmeHTML);
     }
     toggleCartStatus();
 
     // Сбрасываем счётчик кол-ва товара, который только что добавили в корзину
-    card.querySelector('[data-counter]').innerText = '1';
-
+    card.querySelector("[data-counter]").innerText = "1";
   }
-
-
 });
 
 // Функция показа.скрытия Корзина пуста, пересчета суммы заказа
 function toggleCartStatus() {
-    const cartEmpty = document.querySelector('[data-cart-empty]');
-    const cartTotal = document.querySelector('.cart-total');
-    const orderForm = document.querySelector('#order-form');
+  const cartEmpty = document.querySelector("[data-cart-empty]");
+  const cartTotal = document.querySelector(".cart-total");
+  const orderForm = document.querySelector("#order-form");
 
-    
-    if(cartWrapper.querySelector('.cart-item')) {
-        cartEmpty.classList.add('none');
-        cartTotal.classList.remove('none');
-        orderForm.classList.remove('none');
-    }
-    else {
-        cartEmpty.classList.remove('none');
-        cartTotal.classList.add('none');
-        orderForm.classList.add('none');
-    }
+  if (cartWrapper.querySelector(".cart-item")) {
+    cartEmpty.classList.add("none");
+    cartTotal.classList.remove("none");
+    orderForm.classList.remove("none");
+  } else {
+    cartEmpty.classList.remove("none");
+    cartTotal.classList.add("none");
+    orderForm.classList.add("none");
+  }
 
-    let totalPrice = 0;
+  let totalPrice = 0;
 
-    cartWrapper.querySelectorAll('.cart-item').forEach(function(item) {
-        const counter = item.querySelector('[data-counter]').innerText;
-        const priceOneItem = item.querySelector('.price__currency').innerText;
-        const price = parseInt(counter) * parseInt(priceOneItem);
+  cartWrapper.querySelectorAll(".cart-item").forEach(function (item) {
+    const counter = item.querySelector("[data-counter]").innerText;
+    const priceOneItem = item.querySelector(".price__currency").innerText;
+    const price = parseInt(counter) * parseInt(priceOneItem);
 
-        totalPrice += price;
-    });
+    totalPrice += price;
+  });
 
-    cartTotal.querySelector('.total-price').innerText = totalPrice;
+  cartTotal.querySelector(".total-price").innerText = totalPrice;
 
-    if (totalPrice < 1000) {
-        deliveryCost.innerHTML = `
+  if (totalPrice < 1000) {
+    deliveryCost.innerHTML = `
             <span>300</span> <span class="rouble">₽</span>
-        `
-    } else {
-        deliveryCost.innerText = 'Бесплатно'
-    }
+        `;
+  } else {
+    deliveryCost.innerText = "Бесплатно";
+  }
 }
