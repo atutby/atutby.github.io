@@ -64,10 +64,10 @@ window.addEventListener("click", function (event) {
 });
 
 // Функция показа.скрытия Корзина пуста, пересчета суммы заказа
+const cartEmpty = document.querySelector("[data-cart-empty]");
+const cartTotal = document.querySelector(".cart-total");
+const orderForm = document.querySelector("#order-form");
 function toggleCartStatus() {
-  const cartEmpty = document.querySelector("[data-cart-empty]");
-  const cartTotal = document.querySelector(".cart-total");
-  const orderForm = document.querySelector("#order-form");
 
   if (cartWrapper.querySelector(".cart-item")) {
     cartEmpty.classList.add("none");
@@ -75,6 +75,7 @@ function toggleCartStatus() {
     orderForm.classList.remove("none");
   } else {
     cartEmpty.classList.remove("none");
+    console.log(cartEmpty);
     cartTotal.classList.add("none");
     orderForm.classList.add("none");
   }
