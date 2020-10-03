@@ -2,6 +2,10 @@
 const cartWrapper = document.querySelector(".cart-wrapper");
 const deliveryCost = document.querySelector(".delivery-cost");
 
+let basket = document.getElementById('basket');
+let basketItems = basket.getElementsByClassName('cart-item');
+
+
 window.addEventListener("click", function (event) {
   if (event.target.hasAttribute("data-cart")) {
     const card = event.target.closest(".card");
@@ -61,6 +65,31 @@ window.addEventListener("click", function (event) {
     // Сбрасываем счётчик кол-ва товара, который только что добавили в корзину
     card.querySelector("[data-counter]").innerText = "1";
   }
+
+  if (event.target.hasAttribute('data-action')) {
+    const counterWrapper = event.target.closest('.counter-wrapper');
+    const counter = counterWrapper.querySelector('[data-counter]');
+
+    if (event.target.dataset.action === 'plus') {
+        counter.innerText = ++counter.innerText;
+    }
+    
+    if (event.target.dataset.action === 'minus') {
+        if (parseInt(counter.innerText) > 1) {
+            counter.innerText = --counter.innerText;
+        } else {
+            event.target.closest('.cart-item').remove();
+        }
+    }
+
+    if (event.target.closest('.cart-wrapper')) {
+        toggleCartStatus();
+    }
+  }
+
+  if(!(basketItems.length > 0)) {
+    toggleCartStatus()
+  }
 });
 
 // Функция показа.скрытия Корзина пуста, пересчета суммы заказа
@@ -75,7 +104,6 @@ function toggleCartStatus() {
     orderForm.classList.remove("none");
   } else {
     cartEmpty.classList.remove("none");
-    console.log(cartEmpty);
     cartTotal.classList.add("none");
     orderForm.classList.add("none");
   }
@@ -100,3 +128,4 @@ function toggleCartStatus() {
     deliveryCost.innerText = "Бесплатно";
   }
 }
+
