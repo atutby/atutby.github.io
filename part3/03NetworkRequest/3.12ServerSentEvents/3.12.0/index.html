@@ -21,6 +21,59 @@
 
     <script src="script.js"></script>
 
+    <h3>Server Send Events</h3>
+
+    <script>
+        let eventSource;
+
+        function start() {
+            if (!window.EventSource) {
+                alert("Ваш браузер не поддерживает EventSource.");
+                return;
+            }
+
+            eventSource = new EventSource('digits');
+
+            eventSource.onopen = function(e) {
+                log("Собитие: open");
+            };
+
+            eventSource.onerror = function(e) {
+                log("Собитие: error");
+                if (this.readyState == EventSource.CONNECTING) {
+                    log(`Переподключение (readyState=${this.readyState})...`);
+                } else {
+                    log("Произошла ошибка.");
+                }
+            };
+
+            eventSource.addEventListener('bye', function(e) {
+                log("Событие: bye, данные: " + e.data);
+            });
+
+            eventSource.onmessage = function(e) {
+                log("СобытиеЖ message, данные: " + e.data);
+            };
+        }
+
+        function stop() {
+            eventSource.close();
+            log("Соединение закрыто");
+        }
+
+        function log(msg) {
+            logElem.innerHTM += msg + "<br>";
+            document.documentElement.scrollTop = 10;
+        }        
+    </script>
+
+    <button onclick="start()">Старт</button> Нажмите кнопку "Старт" для начала
+    <div id="logElem" style="margin: 6px 0"></div>
+
+    <button onclick="stop()">Стоп</button> Чтобы закончить, нажмите "Стоп".
+
+
+
 <script src="/part1/common.js"></script>
 </body>
 </html>

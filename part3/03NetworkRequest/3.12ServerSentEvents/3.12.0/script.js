@@ -1,11 +1,10 @@
 "use strict";
-let log = console.log.bind(console);
+let log2 = console.log.bind(console);
 
 function rndNum(from, to) {
-    return Math.floor(Math.random() * (to - from + 1) + from);
+  return Math.floor(Math.random() * (to - from + 1) + from);
 }
 
-;(function() {
-//your code here...
-
+(function () {
+  //your code here...
 })();
