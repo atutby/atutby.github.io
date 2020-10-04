@@ -1,3 +1,30 @@
+<div class="col-md-6">
+    <div class="card mb-4" data-productid="${item.id}">
+        <img src="img/roll/${item.img}" alt="${item.title}" class="product-img">
+        <div class="card-body text-center">
+            <h4 class="item-title">${item.title}</h4>
+            <p><small class="text-muted">${item.itemsInBox} шт.</small></p>
+
+            <div class="details-wrapper">
+                <div class="items">
+                    <button class="items__control" data-click="minus">-</button>
+                    <div class="items__current" data-count>${item.counter}</div>
+                    <button class="items__control" data-click="plus">+</button>
+                </div>
+
+                <div class="price">
+                    <div class="price-weight">${item.weight}</div>
+                    <div class="price-currency">${item.price}</div>
+                </div>
+
+                <button type="button" class="btn btn-block btn-outline-warning">+ в корзину</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <header class="header">
     <div class="container text-center">
         <img src="img/logo/logo.svg" width="92" alt="Суши и пицца">
