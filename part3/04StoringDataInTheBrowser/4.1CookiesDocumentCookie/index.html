@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico">
+    <!-- <link rel="stylesheet" href="/normalize.css"> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <ul>
+        <li><a href="/" id="mainPage">root Main page</a></li>
+        <li><a href="https://learn.javascript.ru/cookie"></a></li>
+    </ul>
+    <div id="logInfo"></div>
+
+    <script src="script.js"></script>
+
+    <script>
+        let name = "my name";
+        let value = "John Smith";
+
+        document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);
+
+        log2(document.cookie);
+
+        function log2(msg) {
+            const logInfo = document.querySelector('#logInfo');
+            logInfo.innerHTML += msg + '<br>';
+            console.log(msg);
+        }
+    </script>
+
+<script>
+    // возвращает куки с указанным name,
+// или undefined, если ничего не найдено
+function getCookie(name) {
+  let matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+
+function setCookie(name, value, options = {}) {
+
+options = {
+  path: '/',
+  // при необходимости добавьте другие значения по умолчанию
+  ...options
+};
+
+if (options.expires instanceof Date) {
+  options.expires = options.expires.toUTCString();
+}
+
+let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+for (let optionKey in options) {
+  updatedCookie += "; " + optionKey;
+  let optionValue = options[optionKey];
+  if (optionValue !== true) {
+    updatedCookie += "=" + optionValue;
+  }
+}
+
+document.cookie = updatedCookie;
+}
+
+// Пример использования:
+setCookie('user', 'John', {secure: true, 'max-age': 3600});
+
+
+function setCookie(name, value, options = {}) {
+
+options = {
+  path: '/',
+  // при необходимости добавьте другие значения по умолчанию
+  ...options
+};
+
+if (options.expires instanceof Date) {
+  options.expires = options.expires.toUTCString();
+}
+
+let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+for (let optionKey in options) {
+  updatedCookie += "; " + optionKey;
+  let optionValue = options[optionKey];
+  if (optionValue !== true) {
+    updatedCookie += "=" + optionValue;
+  }
+}
+
+document.cookie = updatedCookie;
+}
+
+// Пример использования:
+setCookie('user', 'John', {secure: true, 'max-age': 3600});
+
+
+
+</script>
+
+<script src="/part1/common.js"></script>
+</body>
+</html>
