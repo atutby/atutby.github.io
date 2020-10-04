@@ -66,6 +66,7 @@ window.addEventListener("click", function (event) {
     card.querySelector("[data-counter]").innerText = "1";
   }
 
+
   if (event.target.hasAttribute('data-action')) {
     const counterWrapper = event.target.closest('.counter-wrapper');
     const counter = counterWrapper.querySelector('[data-counter]');
@@ -77,7 +78,7 @@ window.addEventListener("click", function (event) {
     if (event.target.dataset.action === 'minus') {
         if (parseInt(counter.innerText) > 1) {
             counter.innerText = --counter.innerText;
-        } else {
+        } else if(event.target.closest('#basket')) {
             event.target.closest('.cart-item').remove();
         }
     }
@@ -87,10 +88,12 @@ window.addEventListener("click", function (event) {
     }
   }
 
+
   if(!(basketItems.length > 0)) {
     toggleCartStatus()
   }
 });
+
 
 // Функция показа.скрытия Корзина пуста, пересчета суммы заказа
 const cartEmpty = document.querySelector("[data-cart-empty]");
