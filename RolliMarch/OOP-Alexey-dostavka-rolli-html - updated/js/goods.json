@@ -1,0 +1,29 @@
+[
+{
+	"name": "Филадельфия хит ролл",
+	"src": "img/roll/philadelphia.jpg",
+	"size": 6,
+	"weight": 180,
+	"price": 300
+},
+{
+	"name": "Калифорния темпура",
+	"src": "img/roll/california-tempura.jpg",
+	"size": 6,
+	"weight": 205,
+	"price": 250
+},
+{
+	"name": "Запеченый ролл «Калифорния»",
+	"src": "img/roll/zapech-california.jpg",
+	"size": 6,
+	"weight": 182,
+	"price": 230
+},
+{
+	"name": "Филадельфия",
+	"src": "img/roll/philadelphia.jpg",
+	"size": 6,
+	"weight": 230,
+	"price": 320
+}]

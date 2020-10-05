@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<title>Document</title>
+	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700&amp;subset=cyrillic-ext" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="container text-center">
+			<img src="img/logo/logo.svg" width="92" alt="Суши и пицца">
+			<div class="display-4">Доставка роллов</div>
+			<p class="lead">Оперативно и вкусно</p>
+		</div>
+	</header>
+
+	<div class="container mb-5">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="row" id="shopWindow"></div>
+			</div>
+			<div class="col-md-4">
+
+				<!-- Корзина Пустая -->
+				<div class="card mb-4" id='emptyBasket'>
+					<div class="card-body">
+						<h5 class="card-title">Ваш заказ</h5>
+						<div class="alert alert-secondary" role="alert">
+							Корзина пуста
+						</div>
+					</div>
+				</div>
+				<!-- // Корзина Пустая -->
+
+				<!-- Корзина Полная -->
+				<div class="card" id="fullBasket">
+					<div class="card-body">
+						<h5 class="card-title">Ваш заказ</h5>
+
+						<!-- cart-wrapper -->
+						<div class="cart-wrapper" id='basketWindow'>
+							<div class="cart-total">
+								<p><span class="h5">Доставка:</span> <span class="delivery-cost free">бесплатно</span> </p>
+								<p><span class="h5">Итого:</span> <span class="total-price" id="commonPrice"></span> <span class="rouble">₽</span></p>
+							</div>
+						</div>
+						<!-- // cart-wrapper -->
+
+					</div>
+
+					<div class="card-body border-top">
+						<h5 class="card-title">Оформить заказ</h5>
+
+						<form>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Ваш номер телефона">
+							</div>
+							<button type="submit" class="btn btn-primary">Заказать</button>
+						</form>
+
+					</div>
+				</div>
+				<!-- // Корзина Полная -->
+
+			</div>
+		</div>
+	</div>
+
+	<script src="js/Shop.js"></script>
+	<script src="js/Basket.js"></script>
+	<script src="js/Good.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

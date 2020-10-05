@@ -2,38 +2,38 @@ const items = [
   {
     id: 1,
     title: "Калифорния хит",
+    counter: 1,
     price: 300,
     weight: 180,
     itemsInBox: 6,
     img: "california-hit.jpg",
-    counter: 1,
   },
   {
     id: 2,
     title: "Калифорния темпура",
+    counter: 1,
     price: 250,
     weight: 205,
     itemsInBox: 6,
     img: "california-tempura.jpg",
-    counter: 1,
   },
   {
     id: 3,
     title: 'Запечённый ролл "Калифорния"',
+    counter: 1,
     price: 230,
     weight: 182,
     itemsInBox: 6,
     img: "zapech-california.jpg",
-    counter: 1,
   },
   {
     id: 4,
     title: "Филадельфия",
+    counter: 1,
     price: 320,
     weight: 230,
     itemsInBox: 6,
     img: "philadelphia.jpg",
-    counter: 1,
   },
 ];
 
@@ -72,7 +72,54 @@ const renderItem = function (item) {
   </div>  
   `;
 
-  productsContainer.insertAdjacentHTML("beforeend", markup);
+  productsContainer.insertAdjacentHTML("afterbegin", markup);
 };
 
 state.items.forEach(renderItem);
+
+const itemUpdateCounter = function (id, type) {
+  const itemIndex = itemIndex2(id);
+
+  let count = state.items[itemIndex].counter;
+
+  if (type === "minus") {
+    if (count - 1 > 0) {
+      count--;
+      state.items[itemIndex].counter = count;
+    }
+  }
+
+  if (type === "plus") {
+    count++;
+    state.items[itemIndex].counter = count;
+  }
+};
+
+function itemIndex2(id) {
+  return state.items.findIndex(function (element) {
+    if (element.id == id) {
+      return true;
+    }
+  });
+}
+
+const itemUpdateViewCounter = function (id) {
+  const itemIndex = itemIndex2(id);
+
+  productsContainer
+    .querySelector(`[data-productid="${id}"]`)
+    .querySelector("[data-count]").innerText = state.items[itemIndex].counter;
+};
+
+productsContainer.addEventListener("click", function (e) {
+  const id = e.target.closest("[data-productid]").dataset.productid;
+
+  // if (e.target.matches("[data-click='minus']")) {
+  if (e.target.dataset.click === "minus") {
+    itemUpdateCounter(id, "minus");
+    itemUpdateViewCounter(id);
+  } else if (e.target.matches('[data-click="plus"]')) {
+    itemUpdateCounter(id, "plus");
+    itemUpdateViewCounter(id);
+  }
+});
