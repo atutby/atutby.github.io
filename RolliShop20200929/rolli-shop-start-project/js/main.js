@@ -1,5 +1,10 @@
-const itemsUrl =
-  "http://127.0.0.1:5500/RolliShop20200929/rolli-shop-start-project/js/db.json";
+// const itemsUrl =
+//   "http://127.0.0.1:5500/RolliShop20200929/rolli-shop-start-project/js/db.json";
+
+const url = window.location.href.split('/')
+url.pop()
+const itemsUrl = url.join('/') + '/js/db.json'; 
+
 
 function getItems(url) {
   return fetch(url).then((answer) => answer.json());
@@ -9,6 +14,8 @@ main()
 
 async function main() {
   const items = await getItems(itemsUrl);
+
+
 
   const state = {
     items: items,
