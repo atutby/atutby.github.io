@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<title>Document</title>
+	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700&amp;subset=cyrillic-ext" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<header class="header">
+		<div class="container text-center">
+			<img src="img/logo/logo.svg" width="92" alt="Суши и пицца">
+			<div class="display-4">Доставка роллов</div>
+			<p class="lead">Оперативно и вкусно</p>
+		</div>
+	</header>
+
+	<div class="container mb-5">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="row" id="productsMainContainer">
+
+				</div>
+			</div>
+			<div class="col-md-4">
+
+				<!-- Корзина Пустая -->
+				<div id="cart" class="card mb-4">
+					<div class="card-body">
+						<h5 class="card-title">Ваш заказ</h5>
+
+						<div id="cartEmpty" class="alert alert-secondary" role="alert">
+							Корзина пуста
+						</div>
+
+						<!-- cart-wrapper -->
+						<div class="cart-wrapper">
+
+							<div id="cartItemsHolder"></div>
+
+							<div id="cartTotal" class="cart-total none">
+								<p>
+									<span class="h5">Доставка:</span>
+									<span id="deliveryPriceContainer" class="delivery-cost"></span>
+								</p>
+								<p>
+									<span class="h5">Итого:</span> 
+									<span id="cartTotalPrice" class="total-price"></span> 
+									<span class="rouble">₽</span>
+								</p>
+							</div>
+
+						</div>
+						<!-- // cart-wrapper -->
+
+
+					</div>
+
+					<div id="makeOrder" class="card-body border-top none">
+						<h5 class="card-title">Оформить заказ</h5>
+						<form>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Ваш номер телефона">
+							</div>
+							<button type="submit" class="btn btn-primary">Заказать</button>
+						</form>
+					</div>
+
+				</div>
+				<!-- // Корзина Пустая -->
+
+
+			</div>
+		</div>
+	</div>
+
+	<script src="js/main.js"></script>
+</body>
+
+</html>
