@@ -1,0 +1,38 @@
+[
+	{
+		"id": 1,
+		"title": "Калифорния хит",
+		"price": 300,
+		"weight": 180,
+		"itemsInBox": 6,
+		"img": "california-hit.jpg",
+		"counter": 1
+	},
+	{
+		"id": 2,
+		"title": "Калифорния темпура",
+		"price": 250,
+		"weight": 205,
+		"itemsInBox": 6,
+		"img": "california-tempura.jpg",
+		"counter": 1
+	},
+	{
+		"id": 3,
+		"title": "Запеченый ролл «Калифорния»",
+		"price": 230,
+		"weight": 182,
+		"itemsInBox": 6,
+		"img": "zapech-california.jpg",
+		"counter": 1
+	},
+	{
+		"id": 4,
+		"title": "Филадельфия",
+		"price": 320,
+		"weight": 230,
+		"itemsInBox": 6,
+		"img": "philadelphia.jpg",
+		"counter": 1
+	}
+]
