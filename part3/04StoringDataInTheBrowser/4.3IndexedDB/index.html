@@ -33,6 +33,26 @@
         let openRequest = indexedDB.open(name, version);
     </script>
 
+    <script>
+        // удалить книгу с id='js'
+        books.delete('js')
+
+        // удалить основываясь на цене, сначало нужно найти ключ в индексе
+        let request = priceIndex.getKey(5);
+
+        request.onsuccess = function() {
+            let id = request.result;
+            let deleteRequest = books.delete(id);
+        };
+    </script>
+
+    <h2>Курсоры</h2>
+    <script>
+        let request = store.openCursor(query, [direction])
+
+        store.openKeyCursor
+    </script>
+
 <script src="/part1/common.js"></script>
 </body>
 </html>
