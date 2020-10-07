@@ -1,16 +1,20 @@
+let reverseOrder = false;
+
 let db;
-let dbReq = indexedDB.open("myDB", 1);
+let dbReq = indexedDB.open("myDB", 2);
 dbReq.onupgradeneeded = (event) => {
-  // Зададим переменной db ссылку на базу данных
   db = event.target.result;
-  // Создадим хранилище объектов с именем notes.
-  let notes = db.createObjectStore("notes", { autoIncrement: true });
-};
-dbReq.onsuccess = (event) => {
-  db = event.target.result;
-};
-dbReq.onerror = (event) => {
-  alert("error opening database " + event.target.errorCode);
+  // Создадим хранилище объектов notes или получим его, если оно уже существует.
+  let notes;
+  if (!db.objectStoreNames.contains("notes")) {
+    notes = db.createObjectStore("notes", { autoIncrement: true });
+  } else {
+    notes = dbReq.transaction.objectStore("notes");
+  }
+  // Если в notes еще нет индекса timestamp создадим его
+  if (!notes.indexNames.contains("timestamp")) {
+    notes.createIndex("timestamp", "timestamp");
+  }
 };
 
 const addStickyNote = (db, message) => {
@@ -46,8 +50,10 @@ const getAndDisplayNotes = (db) => {
   let tx = db.transaction(["notes"], "readonly");
   let store = tx.objectStore("notes");
 
+  let index = store.index("timestamp");
+
   // Создать запрос курсора
-  let req = store.openCursor();
+  let req = index.openCursor(null, reverseOrder ? "prev" : "next");
   let allNotes = [];
 
   req.onsuccess = (event) => {
@@ -71,12 +77,20 @@ const getAndDisplayNotes = (db) => {
   };
 };
 
+flipNoteOrder = (notes) => {
+  reverseOrder = !reverseOrder;
+  getAndDisplayNotes(db);
+};
+
 const displayNotes = (notes) => {
   let listHTML = "<ul>";
   for (let i = 0; i < notes.length; i++) {
     let note = notes[i];
     listHTML +=
-      "<li>" + note.text + " " + new Date(note.timestamp).toString() + "</li>";
+      '<li><button onclick="deleteNote(event)" data-id="' +
+      note.timestamp +
+      '">X</button>';
+    listHTML += note.text + " " + new Date(note.timestamp).toString() + "</li>";
   }
   document.getElementById("notes").innerHTML = listHTML;
 };
