@@ -94,3 +94,36 @@ const displayNotes = (notes) => {
   }
   document.getElementById("notes").innerHTML = listHTML;
 };
+
+//Далее добавим функцию удаления deleteNote
+const deleteNote = (event) => {
+  // получаем признак выбранной записи
+  const valueTimestamp = parseInt(event.target.getAttribute("data-id"));
+
+  // открываем транзакцию чтения/записи БД, готовую к удалению данных
+  const tx = db.transaction(["notes"], "readwrite");
+  // описываем обработчики на завершение транзакции
+  tx.oncomplete = (event) => {
+    console.log("Transaction completed.");
+    getAndDisplayNotes(db);
+  };
+  tx.onerror = function (event) {
+    alert("error in cursor request " + event.target.errorCode);
+  };
+
+  // создаем хранилище объектов по транзакции
+  const store = tx.objectStore("notes");
+  const index = store.index("timestamp");
+
+  // получаем ключ записи
+  const req = index.getKey(valueTimestamp);
+  req.onsuccess = (event) => {
+    const key = req.result;
+    // выполняем запрос на удаление указанной записи из хранилища объектов
+    let deleteRequest = store.delete(key);
+    deleteRequest.onsuccess = (event) => {
+      // обрабатываем успех нашего запроса на удаление
+      console.log("Delete request successful");
+    };
+  };
+};
