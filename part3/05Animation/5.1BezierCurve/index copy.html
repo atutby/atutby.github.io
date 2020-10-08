@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Inconsolata");
+      #drawing {
+        width: 100%;
+        height: 300px;
+      }
+      tspan {
+        fill: #e5e5e5;
+        stroke: #f06;
+        stroke-width: 0.85;
+        font-family: "Inconsolata";
+      }
+      input[type="text"] {
+        width: 100%;
+        font-family: "Inconsolata";
+        font-size: 14px;
+        outline: none;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      type="text"
+      value="Dragon----- - - - ->"
+      placeholder="Type text here..."
+    />
+    <div id="drawing"></div>
+
+    <script>
+      var input = document.querySelector("input[type=text]");
+      var draw = SVG().addTo("#drawing").viewbox(0, 0, 300, 140);
+      var text = draw.text(function (add) {
+        add.tspan(input.value);
+      });
+
+      textPath = text.path("M10 80 C 40 10, 65 10, 95 80 S 150 150, 180 80");
+
+      textPath
+        .animate(1000)
+        .ease("<>")
+        .plot("M10 80 C 40 150, 65 150, 95 80 S 150 10, 180 80")
+        .loop(true, true);
+
+      input.addEventListener("keyup", updateText(textPath));
+
+      function updateText(textPath) {
+        return function () {
+          textPath.tspan(this.value);
+        };
+      }
+    </script>
+  </body>
+</html>
