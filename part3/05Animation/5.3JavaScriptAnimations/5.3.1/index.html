@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://js.cx/libs/animate.js"></script>
+
+    <title>js-animation#tasks</title>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li></li>
+    </ul>
+
+    <div id="field">
+      <img
+        src="https://js.cx/clipart/ball.svg"
+        width="40"
+        height="40"
+        id="ball"
+      />
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+      function makeEaseOut(timing) {
+        return function (timeFraction) {
+          return 1 - timing(1 - timeFraction);
+        };
+      }
+
+      function bounce(timeFraction) {
+        for (let a = 0, b = 1, result; 1; a += b, b /= 2) {
+          if (timeFraction >= (7 - 4 * a) / 11) {
+            return (
+              -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) +
+              Math.pow(b, 2)
+            );
+          }
+        }
+      }
+
+      function quad(timeFraction) {
+        return Math.pow(timeFraction, 2);
+      }
+
+      ball.onclick = function () {
+        let height = field.clientHeight - ball.clientHeight;
+        let width = 100;
+
+        animate({
+          duration: 2000,
+          timing: makeEaseOut(bounce),
+          draw: function (progress) {
+            ball.style.top = height * progress + "px";
+          },
+        });
+
+        animate({
+          duration: 2000,
+          timing: makeEaseOut(quad),
+          draw: function (progress) {
+            ball.style.left = width * progress + "px";
+          },
+        });
+      };
+    </script>
+
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
