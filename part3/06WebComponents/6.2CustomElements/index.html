@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico">
+    <!-- <link rel="stylesheet" href="/normalize.css"> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <ul>
+        <li><a href="/" id="mainPage">root Main page</a></li>
+        <li></li>
+    </ul>
+
+    <script src="script.js"></script>
+
+    <script src="time-formatted.js"></script>
+    <script src="live-timer.js"></script>
+
+    <live-timer id="elem"></live-timer>
+
+    <script>
+        // elem.addEventListener('tick', event => log(event.detail));
+    </script>
+
+    <pre style="font-size: 2em;">
+        /................................/
+        /..................P............./
+        /...........P..................../
+        /.......................||......./
+        &#9755;        &#9818;  &#9818; 
+    </pre>
+
+<pre>
+<code>
+    class LiveTimer extends HTMLElement {
+
+        render() {
+          this.innerHTML = `
+          <time-formatted hour="numeric" minute="numeric" second="numeric">
+          </time-formatted>
+          `;
+      
+          this.timerElem = this.firstElementChild;
+        }
+      
+        connectedCallback() { // (2)
+          if (!this.rendered) {
+            this.render();
+            this.rendered = true;
+          }
+          this.timer = setInterval(() => this.update(), 1000);
+        }
+      
+        update() {
+          this.date = new Date();
+          this.timerElem.setAttribute('datetime', this.date);
+          this.dispatchEvent(new CustomEvent('tick', { detail: this.date }));
+        }
+      
+        disconnectedCallback() {
+          clearInterval(this.timer); // важно, чтобы элемент мог быть собранным сборщиком мусора
+        }
+      
+      }
+      
+      customElements.define("live-timer", LiveTimer);
+</code>
+</pre>
+<script src="/part1/common.js"></script>
+</body>
+</html>
