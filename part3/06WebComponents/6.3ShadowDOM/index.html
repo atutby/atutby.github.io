@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li><a href="https://learn.javascript.ru/shadow-dom"></a></li>
+    </ul>
+
+    <script src="script.js"></script>
+
+    <style>
+      input::-webkit-slider-runnable-track {
+        background: red;
+      }
+    </style>
+
+    <input type="range" />
+
+    <script>
+      customElements.define(
+        "show-hello",
+        class extends HTMLElement {
+          connectedCallback() {
+            const shadow = this.attachShadow({ mode: "open" });
+            shadow.innerHTML = `<p>
+              Hello, ${this.getAttribute("name")}
+            </p>`;
+          }
+        }
+      );
+    </script>
+
+    <show-hello name="John"></show-hello>
+
+    <a href="https://prnt.sc/ux09mn"></a>
+
+    <script>
+        log(window.location.href)
+    </script>
+
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
