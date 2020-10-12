@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li></li>
+    </ul>
+    <script src="script.js"></script>
+
+    <template id="tmpl">
+      <script>
+        log("Hello");
+      </script>
+      <div class="message">Привет, Вася!</div>
+    </template>
+
+    <script>
+      let elem = document.createElement("div");
+      elem.append(tmpl.content.cloneNode(true));
+      document.body.append(elem);
+
+      let elem2 = document.createElement("div");
+      elem2.append(tmpl.content.cloneNode(true));
+      document.body.append(elem2);
+
+      let elem3 = document.createElement("div");
+      elem3.append(tmpl.content);
+      document.body.append(elem3);
+    </script>
+
+    <template id="tmpl2">
+        <style> p { font-weight: bold; } </style>
+        <p id="message"></p>
+    </template>
+
+    <br>
+    <div id="elem5">Clik me</div>
+
+    <script>
+        elem5.onclick = function() {
+            elem5.attachShadow({mode: 'open'});
+
+            elem5.shadowRoot.append(tmpl2.content.cloneNode(true));
+
+            elem5.shadowRoot.getElementById('message').innerHTML = "Hello from the shadows!";
+        }
+    </script>
+
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
