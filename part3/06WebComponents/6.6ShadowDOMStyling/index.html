@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li><a href="https://learn.javascript.ru/shadow-dom-style"></a></li>
+      <li>
+        <a href="https://habr.com/ru/post/210058/">
+          Web Components — будущее Web 23 января 2014
+        </a>
+      </li>
+    </ul>
+
+    <style>
+      user-card {
+        --user-card-field-color: green;
+      }
+    </style>
+
+    <template id="tmpl">
+      <style>
+        .field {
+          color: var(--user-card-field-color, black);
+        }
+      </style>
+      <div class="field">Имя: <slot name="username"></slot></div>
+      <div class="field">Дата рождения: <slot name="birthday"></slot></div>
+    </template>
+
+    <script src="6.6ShadowDOMStyling.js"></script>
+
+    <user-card>
+      <span slot="username">John Smith</span>
+      <span slot="birthday">01.01.2001</span>
+      <br>
+      <span slot="birthday">connectedCallback</span>
+    </user-card>
+
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
