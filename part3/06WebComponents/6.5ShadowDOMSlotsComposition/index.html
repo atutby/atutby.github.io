@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li></li>
+    </ul>
+
+    <custom-menu>
+      <title>Candy menu</title>
+      <item>Lollipop</item>
+      <item>Fruit Toast</item>
+      <item>Cup Cake</item>
+    </custom-menu>
+    <br />
+
+    <script src="./slots-composition.js"></script>
+
+    <user-card>
+      <span slot="username">John Smith</span>
+      <span slot="birthday">01.01.2001</span>
+    </user-card>
+
+    <br />
+    <user-card>
+      #shadow-root
+      <div>
+        Name:
+        <slot name="username"></slot>
+      </div>
+      <div>
+        Birthday:
+        <slot name="birthday"></slot>
+      </div>
+      <span slot="username">John Smith</span>
+      <span slot="birthday">01.01.2001</span>
+    </user-card>
+
+    <user-card>
+      <div>Я люблю плавать.</div>
+      <div>Я люблю плавать.</div>
+      <div>Я люблю плавать.</div>
+      <div>Я люблю плавать.</div>
+      <span slot="username">Иван Иванов</span>
+      <span slot="birthday">01.01.2001</span>
+      <div>...И играть в волейбол!</div>
+      <div>...И играть в волейбол!</div>
+      <div>...И играть в волейбол!</div>
+      <div>...И играть в волейбол!</div>
+    </user-card>
+
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
