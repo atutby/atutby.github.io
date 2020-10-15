@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>  
+    <ul>
+        <li><a href="/" id="mainPage">root Main page</a></li>
+        <li><a href="https://learn.javascript.ru/shadow-dom-events"></a></li>
+    </ul>
+
+
+    <user-card></user-card>
+
+    <script>
+        customElements.define('user-card', class extends HTMLElement {
+            connectedCallback() {
+                this.attachShadow({mode: 'open'});
+                this.shadowRoot.innerHTML = `<p>
+                    <button>Нажми меня</button>
+                </p>`;
+                this.shadowRoot.firstElementChild.onclick = 
+                    e => alert("Inner target: " + e.target.tagName);
+            }
+        });
+
+        document.onclick = 
+            e => log("Outer target: " + e.target.tagName);
+    </script>
+
+
+<script src="/part1/common.js"></script>
+</body>
+</html>

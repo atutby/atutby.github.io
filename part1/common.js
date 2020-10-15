@@ -14,3 +14,5 @@ links.forEach(
     elem.target = '_blank';
   }
 )
+
+console.log(window.location.href)
