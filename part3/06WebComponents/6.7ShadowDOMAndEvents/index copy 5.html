@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <my-div></my-div>
+
+    <script>
+      class Rock extends HTMLElement {
+        constructor() {
+          super();
+          this.attachShadow({ mode: "open" });
+          const root = this.shadowRoot;
+        //   this.test = this.test.bind(this);
+
+          root.innerHTML = `<h3>Shadow Root Element</h3>`;
+
+
+        }
+      }
+
+      customElements.define('my-div', Rock)
+    </script>
+  </body>
+</html>
