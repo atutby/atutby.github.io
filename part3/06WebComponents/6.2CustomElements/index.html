@@ -19,63 +19,37 @@
         <li></li>
     </ul>
 
-    <script src="script.js"></script>
-
-    <script src="time-formatted.js"></script>
-    <script src="live-timer.js"></script>
-
-    <live-timer id="elem"></live-timer>
-
     <script>
-        // elem.addEventListener('tick', event => log(event.detail));
+      class TimeFormatted extends HTMLElement {
+
+        connectedCallback() {
+          let date = new Date(this.getAttribute('datetime') || Date.now());
+
+          this.innerHTML = new Intl.DateTimeFormat("default", {
+            year: this.getAttribute('year') || undefined,
+            month: this.getAttribute('month') || undefined,
+            day: this.getAttribute('day') || undefined,
+            hour: this.getAttribute('hour') || undefined,
+            minute: this.getAttribute('minute') || undefined,
+            second: this.getAttribute('second') || undefined,
+            timeZoneName: this.getAttribute('time-zone-name') || undefined,
+          }).format(date);
+        }
+
+      }
+
+      customElements.define("time-formatted", TimeFormatted);
     </script>
 
-    <pre style="font-size: 2em;">
-        ▓ Alt 178
-        █ Alt 987
-        /................................/
-        /..................P.......▓....../
-        /...........P..............▓....../
-        /.......................||......./
-        &#9755;        &#9818;  &#9818; 
-    </pre>
-
-<pre>
-<code>
-    class LiveTimer extends HTMLElement {
-
-        render() {
-          this.innerHTML = `
-          <time-formatted hour="numeric" minute="numeric" second="numeric">
-          </time-formatted>
-          `;
-      
-          this.timerElem = this.firstElementChild;
-        }
-      
-        connectedCallback() { // (2)
-          if (!this.rendered) {
-            this.render();
-            this.rendered = true;
-          }
-          this.timer = setInterval(() => this.update(), 1000);
-        }
-      
-        update() {
-          this.date = new Date();
-          this.timerElem.setAttribute('datetime', this.date);
-          this.dispatchEvent(new CustomEvent('tick', { detail: this.date }));
-        }
-      
-        disconnectedCallback() {
-          clearInterval(this.timer); // важно, чтобы элемент мог быть собранным сборщиком мусора
-        }
-      
-      }
-      
-      customElements.define("live-timer", LiveTimer);
-</code>
-</pre>
+    <time-formatted
+      year="numeric"
+      month="long"
+      day="numeric"
+      hour="numeric"
+      minute="numeric"
+      second="numeric"
+      time-zone-name="short"
+    ></time-formatted>
 <script src="/part1/common.js"></script>
 </body>
 </html>
