@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>  
+    <ul>
+        <li><a href="/" id="mainPage">root Main page</a></li>
+        <li><a href="https://learn.javascript.ru/regexp-introduction"></a></li>
+        <li><a href="https://regexr.com"></a></li>
+        <li><a href="https://regexpr.ru">Сайт на автомобильную тематику</a></li>
+    </ul>
+
+    <div id="pip" style="font-size: 2em; margin: 5%;">
+        <span>problem</span>
+        Если ты говоришь о том, что хочешь найти совпадения с учётом обновления фреймов в лайв-режиме, типо комментариев(кто-то только что написал комментарий), то можно использовать этот код. Он будет каждую секунду проверять страницу на наличие совпадения, а если не найдёт, то не найдёт, что уж там.
+        <br>problem
+        <input type="text">
+        problem <br>problem2
+        problem <br>problem2
+
+    </div>
+    <script>
+        const pip = document.getElementById('pip')
+        log(pip)
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(function problemMatches() {
+                let matches = pip.innerHTML.match(/Problem/igm) || [];
+                if(matches.length > 0) {
+                    console.log(`Detected ${matches.length} matches: ${matches}`);
+                }
+                setTimeout(problemMatches, 1000)
+            }, 1000)
+        });
+    </script>
+
+    <p>
+        problem
+    </p>
+
+
+<script src="/part1/common.js"></script>
+</body>
+</html>
