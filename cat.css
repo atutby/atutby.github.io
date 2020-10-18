@@ -1,0 +1,17 @@
+.item > div{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.item > div > img {
+    width: 49%;
+}
+
+.item > div > ol {
+    font-size: 2em;
+    width: 45%;
+}
