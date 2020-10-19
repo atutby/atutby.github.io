@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/regexp-character-classes"
+          >Символьные классы</a
+        >
+      </li>
+      <li><a href="http://xregexp.com"></a></li>
+      <li><a href="regexp.pdf">regexp.pdf</a></li>
+      <li>
+        <a href="https://www.exlab.net/tools/sheets/regexp.html"
+          >https://www.exlab.net/</a
+        >
+      </li>
+    </ul>
+
+    <script>
+      let str = "+7(903)-123-45-67";
+      let regexp = /\d/g;
+      log(str.match(regexp));
+      log(str.match(regexp).join(""));
+
+      let str2 = "+7(903)-123-45-68";
+      log(str2.replace(/\D/g, ""));
+      log(str2);
+
+      log("CS4".match(/CS.4/)); // null, нет совпадений потому что нет символа для точки
+
+      log("A\nB A\nB".match(/A.B/gs));
+      log("A\nB");
+    </script>
+
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
