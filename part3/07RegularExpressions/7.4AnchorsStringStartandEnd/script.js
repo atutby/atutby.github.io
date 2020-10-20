@@ -12,4 +12,10 @@ function rndNum(from, to) {
 
   let str2 = "It's fleece was white as snow";
   log(/snow$/.test(str2));
+
+  let goodInput = "12:34";
+  let badInput = "123:35";
+  let regexp = /^\d\d:\d\d$/;
+  log(regexp.test(goodInput));
+  log(regexp.test(badInput));
 })();
