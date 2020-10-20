@@ -34,6 +34,17 @@
         let descriptor2 = Object.getOwnPropertyDescriptor(user, 'name');
         log( JSON.stringify(descriptor2, null, 2) )
         log( descriptor2 )
+
+
+        Object.defineProperties(user, {
+            name: { value: "John", writable: false},
+            surname: { value: "Smith", writable: false, enumerable: false}
+        })
+
+        log(user);
+
+        let descriptor3 = Object.getOwnPropertyDescriptors(user);
+        log(descriptor3)
     </script>
 
 
