@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>https://learn.javascript.ru/regexp-multiline-mode</li>
+      <li>
+        <a href="https://habr.com/ru/post/414009/">Топ 8 лучших ресурсов для практики программирования в 2018</a>
+      </li>
+    </ul>
+
+    <script>
+      let str = `1st place: Winnie
+2nd place: Piglet
+3rd place: Eeyore`;
+
+      log(str.match(/^\d/gm)); // 1, 2, 3
+    </script>
+
+    <script>
+      let str2 = `Winnie: 1
+Piglet: 2
+Eeyore: 3`
+      log(str2.match(/\d$/gm))
+    </script>
+
+    <script>
+      let str3 = `Winnie: 1
+Piglet: 2
+Eeyore: 3`
+      log(str3.match(/\d\n/gm));
+    </script>
+
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
