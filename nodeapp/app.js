@@ -13,3 +13,20 @@ http
 // http://127.0.0.1:3000
 
 // https://metanit.com/web/nodejs/
+
+//======== Урок --Модули--
+const os = require("os");
+// получим имя текущего пользователя
+let userName = os.userInfo().username;
+
+console.log(userName);
+
+const greeting = require("./greeting");
+
+console.log(`Дата запроса: ${greeting.date}`);
+console.log(greeting.getMessage(userName));
+
+const User = require("./user.js");
+
+let eugene = new User("Eugene", 32);
+eugene.sayHi();
