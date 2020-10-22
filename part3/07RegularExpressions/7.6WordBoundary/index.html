@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/regexp-boundary"
+          >regexp-boundary</a
+        >
+      </li>
+    </ul>
+
+    <script>
+      log("Hello, Java!".match(/\bJava\b/g));
+      log("Hello, JavaScritpt!".match(/\bJava\b/g));
+      log("1 23 456 78".match(/\b\d\d\b/g));
+      log("Завтрак cat в 09:00 в комнате 123:456 cat".match(/\bcat\b/g));
+    </script>
+
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
