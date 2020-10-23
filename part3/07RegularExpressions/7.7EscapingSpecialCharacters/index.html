@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <!-- <link rel="stylesheet" href="/normalize.css" /> -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/regexp-escaping">
+          Экранирование, специальные символы
+        </a>
+      </li>
+      <li><a href="https://javascript.info/regexp-escaping">
+        Escaping, special charactershttp://fast-torrent.ru/film/ischeznuvshij-malchik.html
+    </a></li>
+    </ul>
+
+    <script>
+      document.write("<h2>[ \ ^ $ . | ? * + ( )</h2>");
+
+      log("Chapter 5.1".match(/\d\.\d/g));
+      log("Chapter 511".match(/\d\.\d/));
+
+      log("function g()".match(/g\(\)/g));
+
+      log("1\\2".match(/\\/g));
+      log("1\\2".match(/\\/));
+
+      log("/".match(/\//g));
+      log("/".match(/\//));
+
+      log("/".match(new RegExp("/")));
+
+      (function () {
+        let regexp = new RegExp("\d\.\d");
+        log("Chapter 5.1".match(regexp));
+
+        log("\d\.\d \u1414");
+      })();
+
+      (function () {
+        //your code here...
+        let regStr = "\\d\\.\\d";
+        log(regStr);
+        let regexp = new RegExp(regStr);
+        log("Chapter 5.1".match(regexp));
+      })();
+
+      let regexp = new RegExp(String.raw`\d\.\d`);
+      log("Chapter 8.5".match(regexp));
+    </script>
+
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
