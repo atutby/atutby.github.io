@@ -23,8 +23,10 @@ console.log(userName);
 
 const greeting = require("./greeting");
 
-console.log(`Дата запроса: ${greeting.date}`);
-console.log(greeting.getMessage(userName));
+global.name = "SashaGlobalName"
+
+global.console.log(`Дата запроса: ${date}`);
+console.log(greeting.getMessage());
 
 const User = require("./user.js");
 
