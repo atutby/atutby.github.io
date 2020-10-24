@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/regexp-character-sets-and-ranges">
+          regexp-character-sets-and-ranges
+        </a>
+      </li>
+    </ul>
+
+    <div style="background-color: aquamarine; padding: 10px">
+      <script>
+        // [eao] "искать любой символ из заданных"
+        document.write('<h2>[eao] "искать любой символ из заданных"</h2>');
+
+        log("Топ хоп".match(/[тхтхтх]оп/gi));
+
+        document.write('<h2>[a-z] "искать один символ в диапазоне"</h2>');
+        document.write('<h2>[1-10] "искать один символ в диапазоне"</h2>');
+
+        document.write(
+          '<h3>log("Exception 0xAF".match(/x[0-9A-F][0-9A-F]/g))</h3>'
+        );
+        document.write(
+          '<h2>let regexp = /[\p{Alpha}\p{M}\p{Nd}\p{Pc}\p{Join_C}]/gu;</h2>',
+          '<p style="font-size: 2em; color: blue">универсальный шаблон, который ищет символы, используемые в словах, для любого языка</p>'
+        );
+
+        let regexp = /[\p{Alpha}\p{M}\p{Nd}\p{Pc}\p{Join_C}]/gu;
+        let str = `Hi 你好 12`;
+        log(str.match(regexp));
+      </script>
+    </div>
+
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
