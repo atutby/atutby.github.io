@@ -23,7 +23,7 @@ console.log(userName);
 
 const greeting = require("./greeting");
 
-global.name = "SashaGlobalName"
+global.name = "SashaGlobalName";
 
 global.console.log(`Дата запроса: ${date}`);
 console.log(greeting.getMessage());
@@ -48,3 +48,27 @@ const welcome = require("./welcome");
 
 welcome.getMorningMessage();
 welcome.getEveningMessage();
+console.log();
+
+let nodePath = process.argv[0];
+let appPath = process.argv[1];
+let name = process.argv[2];
+let age = process.argv[3];
+console.log("nodePath: " + nodePath);
+console.log("appPath: " + appPath);
+console.log("name: " + name);
+console.log("age: " + age);
+console.log();
+
+// Организуем диалог с пользователем
+const readline = require("readline");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+rl.question("What is you name? ", (name) => {
+  console.log(`Hello, ${name}`);
+  rl.close();
+});
+// --end-- Организуем диалог с пользователем
