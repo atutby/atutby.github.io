@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/shades-of-purple.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <ul class="main">
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/regexp-quantifiers">
+          <h1 class="main__header-title">Квантификаторы +, *, ? и {n}</h1>
+        </a>
+      </li>
+      <li><a href="https://regex101.com">regex101.com</a></li>
+      <li><a href="https://regex101.com"></a></li>
+    </ul>
+
+    <script>
+      log("Мне 12345 лет 089876834567890".match(/\d{5}/g));
+      log("Мне 12345 лет 089876834567890 09876".match(/\b\d{5}\b/g));
+      log("Мне не 12, а 1234 года".match(/\b\d{3,5}\b/g));
+
+      let str = "+7(903)-123-45-67";
+      log(str.match(/\d+/g));
+
+      log("Следует писать color или colour?".match(/colou?r/g));
+
+      log("100 10 1".match(/\d0*/g));
+
+      log("0 1 12.345 7890 12,123".match(/\d+[\.\,]\d+/g));
+
+      log("<div> ... </div>".match(/<[a-z]+>/gi));
+      log("<h1>Привет!</h1>".match(/<[a-z][a-z0-9]*>/gi));
+
+      log("<h1>Привет!</h1>".match(/<\/?[a-z][a-z0-9]*>/gi));
+
+      (function () {
+        let regexp = /\.{3,}/g;
+        log("Привет!... Как дела?.....".match(regexp));
+      })();
+
+      (function() {
+        let regexp = /#[0-9a-f]{6}\b/gi;
+        let str = "color:#121212; background-color:#AA00ef bad-colors:f#fddee #fd2 #12345678"
+        log(str.match(regexp))
+      })()
+    </script>
+
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
