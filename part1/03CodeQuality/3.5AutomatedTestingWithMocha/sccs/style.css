@@ -1,0 +1,21 @@
+header {
+  color: blue;
+}
+
+body {
+  font-size: 20px;
+}
+
+body div {
+  font-size: 10px;
+}
+
+.red {
+  color: red;
+}
+
+@media (max-width: 767px) {
+  .red {
+    border: 20;
+  }
+}

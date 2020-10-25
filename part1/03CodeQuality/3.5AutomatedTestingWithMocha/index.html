@@ -1,82 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- добавим стили mocha для отображения результатов -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css"
-    />
-    <!-- добавляем сам фреймворк mocha -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
-    <script>
-      // включаем режим тестирования в стиле BDD
-      mocha.setup("bdd");
-    </script>
-    <!-- добавим chai -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
-    <script>
-      // chai предоставляет большое количество функций. Объявим assert глобально
-      let assert = chai.assert;
-    </script>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
-    <title>stamp</title>
-  </head>
-  <body>
-    <ul id="ul">
-      <li><a href="/" id="mainPage">root Main page</a></li>
-      <li>
-        <a href="https://learn.javascript.ru/testing-mocha">testing-mocha</a>
-      </li>
-    </ul>
+	<!-- добавим стили mocha для отображения результатов -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css" />
+	<!-- добавляем сам фреймворк mocha -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+	<script>
+		// включаем режим тестирования в стиле BDD
+		mocha.setup("bdd");
+	</script>
+	<!-- добавим chai -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+	<script>
+		// chai предоставляет большое количество функций. Объявим assert глобально
+		let assert = chai.assert;
+	</script>
 
-    <div class="formatted">
-      <p>
-        <strong>
-          Автоматическое тестирование означает, что тесты пишутся отдельно, в
-          дополнение к коду. Они по-разному запускают наши функции и сравнивают
-          результат с ожидаемым.
-        </strong>
-      </p>
-    </div>
+	<link rel="stylesheet" href="style.css" />
+	<script src="script.js"></script>
+	<title>stamp</title>
+</head>
 
-    <script>
-      let ul = document.getElementById("ul");
-      let li = document.createElement("li");
-      li.innerHTML = `<a href="${window.location.href}">${window.location.href}</a>`;
-      ul.append(li);
-    </script>
+<body>
+	<h1>Hello Sasha</h1>
+	<ul id="ul">
+		<li><a href="/" id="mainPage">root Main page</a></li>
+		<li>
+			<a href="https://learn.javascript.ru/testing-mocha">testing-mocha</a>
+		</li>
+	</ul>
 
-    <script>
-      function pow(x, n) {
-        if (n < 0) return NaN;
-        if (Math.round(n) != n) return NaN;
+	<div class="formatted">
+		<p>
+			<strong>
+				Автоматическое тестирование означает, что тесты пишутся отдельно, в
+				дополнение к коду. Они по-разному запускают наши функции и сравнивают
+				результат с ожидаемым.
+			</strong>
+		</p>
+	</div>
 
-        let result = 1;
+	<div>
+		<h3>здравствуйте</h3>
+		<h3>Hello</h3>
+	</div>
 
-        for (let i = 0; i < n; i++) {
-          result *= x;
-        }
+	<div class="formatted__item">
+		<div class="formatted__item-cat">
+			<div class="formatted__cat__look">
+				<div class="formatted__"></div>
+				
+			</div>
+			<div class="formatted__cat red"></div>
+			
+		</div>
+		
+	</div>
+	
 
-        return result;
-      }
-    </script>
+	<script>
+		let ul = document.getElementById("ul");
+		let li = document.createElement("li");
+		li.innerHTML = `<a href="${window.location.href}">${window.location.href}</a>`;
+		ul.append(li);
+	</script>
 
-    <!-- скрипт со спецификацией (describe, it...) -->
-    <script src="test.js"></script>
+	<script>
+		function pow(x, n) {
+			if (n < 0) return NaN;
+			if (Math.round(n) != n) return NaN;
 
-    <!-- элемент с id="mocha" будет содержать результаты тестов -->
-    <div id="mocha"></div>
+			let result = 1;
 
-    <!-- запускаем тесты! -->
-    <script>
-      mocha.run();
-    </script>
+			for (let i = 0; i < n; i++) {
+				result *= x;
+			}
 
-    <script src="/part1/common.js"></script>
-  </body>
+			return result;
+		}
+	</script>
+
+	<!-- скрипт со спецификацией (describe, it...) -->
+	<script src="test.js"></script>
+
+	<!-- элемент с id="mocha" будет содержать результаты тестов -->
+	<div id="mocha"></div>
+
+	<!-- запускаем тесты! -->
+	<script>
+		mocha.run();
+	</script>
+
+	<script src="/part1/common.js"></script>
+</body>
+
 </html>
