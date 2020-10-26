@@ -1,0 +1,35 @@
+body {
+  background-color: sandybrown;
+}
+
+.link, .link-2 {
+  border-bottom: 5px dashed red;
+}
+
+.block {
+  width: 31.25%;
+  padding: 30px;
+}
+
+.block > p {
+  color: red;
+}
+
+.block span {
+  color: green;
+  font-size: 2em;
+}
+
+.link:hover {
+  color: green;
+}
+
+.block .link {
+  font-size: 3em;
+}
+
+.link-2 {
+  font-size: 100px;
+  color: green;
+  border-bottom: 5px dashed #000;
+}

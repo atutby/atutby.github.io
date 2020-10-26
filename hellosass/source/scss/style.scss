@@ -1,0 +1,46 @@
+// 3 я суперсила
+@import "_nullstyle.scss";
+
+// 4 я суперсила ШАБЛОНЫ
+%tplborder{
+	border-bottom: 5px dashed red;
+}
+
+// 5 МИКСИНЫ
+@mixin fontz($f, $c){
+	font-size: $f;
+	color: $c;
+}
+
+$fz: 2em;
+$color_1: green;
+$color_2: #fff;
+
+.block{
+	width: 300px / 960px *100%;
+	padding: 30px;
+	>p{
+		color: red;
+	}
+	span{
+		color: green;
+		font-size: $fz;
+	}
+
+}
+
+.link{
+	&:hover{
+		color:$color_1;
+	};
+
+	@extend %tplborder;
+	.block & {
+		font-size: 3em;
+	}
+}
+.link-2{
+	@include fontz(100px, green);
+	@extend %tplborder;
+	border-bottom: 5px dashed #000;
+}
