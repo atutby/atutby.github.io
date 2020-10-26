@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>stamp</title>
+	<link rel="icon" href="/images/flower.ico" />
+	<link rel="stylesheet" href="/normalize.css" />
+	<link rel="stylesheet" href="style.css" />
+	<script src="script.js"></script>
+</head>
+
+<body>
+	<ul>
+		<li><a href="/" id="mainPage">root Main page</a></li>
+		<li><a href="https://learn.javascript.ru/regexp-greedy-and-lazy">
+				regexp-greedy-and-lazy
+			</a></li>
+
+	</ul>
+
+	<script>
+		let regexp = /".+?"/g;
+		let str = 'a "witch" and her "broom" is one';
+		document.write(str);
+		log(str.match(regexp));
+
+		log(" 123 456".match(/ \d+ \d+?/));
+
+		let regexp2 = /"[^""]+"/g;
+		log(str.match(regexp2))
+
+		let str1 = '...<a href="link1" class="wrong">... <p style="" class="doc">...';
+		let str2 = '...<a href="link1" class="doc">... <a href="link2" class="doc">'
+		let regexp3 = /<a href="[^"]*" class="doc">/g;
+
+		log(str1.match(regexp3))
+		log(str2.match(regexp3))
+
+		log("123 456".match(/\d+? \d+?/g))
+
+
+		let regexp4 = /<!--.*?-->/gs;
+		let str4 = `... <!-- My -- comment
+				test --> .. <!----> ..
+				`;
+		log(str4.match(regexp4)); //'<!-- My -- comment \n test -->', '<!---->'
+
+		let regexp5 = /<[^<>]+>/g;
+		let str5 = '<> <a href="/"> <input type="radio" checked> <b>';
+		log( str5.match(regexp5) );
+	</script>
+
+	<script src="/part1/common.js"></script>
+</body>
+
+</html>
