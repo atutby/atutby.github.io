@@ -1,24 +1,28 @@
-const mysql = require("mysql2");
-  
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  database: "usersdb",
-  password: "oo4Ax4YX3AVa"
-});
-// тестирование подключения
- connection.connect(function(err){
-    if (err) {
-      return console.error("Ошибка: " + err.message);
-    }
-    else{
-      console.log("Подключение к серверу MySQL успешно установлено");
-    }
- });
- // закрытие подключения
- connection.end(function(err) {
-  if (err) {
-    return console.log("Ошибка: " + err.message);
-  }
-  console.log("Подключение закрыто");
+const fs = require('fs')
+
+fs.readFile("hello.txt", "utf8", 
+function(error, data){
+	console.log(`Асинхронное чтение файла`);
+	if(error) throw error;
+	console.log(data);	
+})
+
+console.log(`Синхронное чтение файла`);
+let fileContent = fs.readFileSync("hello.txt", "utf8")
+console.log(fileContent);
+
+// fs.writeFile("hello2.txt", "Hello World!",
+// function(error){
+
+// 	if(error) throw error;
+
+// 	console.log(`Запись файла завершина. Содержимое файла:`);
+// 	let data = fs.readFileSync("hello2.txt", 'utf8')
+// 	console.log(data);
+	
+// })
+
+fs.unlink('hello2.txt', (err) => {
+	if(err) console.log(err);
+	else console.log(`Hello2.txt was deleted`);
 });
