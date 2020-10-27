@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>stamp</title>
-    <link rel="icon" href="/images/flower.ico" />
-    <link rel="stylesheet" href="/normalize.css" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <ul>
-      <li><a href="/" id="mainPage">root Main page</a></li>
-      <li></li>
-    </ul>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="/part1/common.js"></script>
-  </body>
+	<title>stamp</title>
+	<link rel="icon" href="/images/flower.ico" />
+	<link rel="stylesheet" href="/normalize.css" />
+	<link rel="stylesheet" href="style.css" />
+	<script src="script.js"></script>
+</head>
+
+<body>
+	<ul>
+		<li><a href="/" id="mainPage">root Main page</a></li>
+		<li><a href="https://learn.javascript.ru/debugging-chrome">
+				debugging-chrome
+			</a></li>
+	</ul>
+
+	<script>
+		function hello(name) {
+			let phrase = `Привет, ${name}!`;
+
+			debugger;
+
+			say(phrase);
+		}
+
+		function say(phrase) {
+			log(`*** ${phrase} ***`)
+		}
+
+		hello('Sasha')
+	</script>
+	<script src="/part1/common.js"></script>
+</body>
+
 </html>
