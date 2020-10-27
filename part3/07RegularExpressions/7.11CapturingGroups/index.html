@@ -15,11 +15,18 @@
 <body>
 	<ul>
 		<li><a href="/" id="mainPage">root Main page</a></li>
-		<li></li>
+		<li><a href="https://learn.javascript.ru/regexp-groups">
+				regexp-groups
+			</a></li>
 	</ul>
 
 	<script>
+		console.log(`Gogogo gogo now!`.match(/(go)+/gi));
 
+		(function () {
+			let regexp = /([\w-]+\.)+\w+/ig;
+			console.log(`site.com my.site.com my-site.com`.match(regexp));
+		})()
 	</script>
 	<script src="/part1/common.js"></script>
 </body>
