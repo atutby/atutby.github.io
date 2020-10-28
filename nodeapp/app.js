@@ -37,19 +37,11 @@
 
 // ============================================================
 
-const EventEmitter = require("events")
 
-let eventName = "greet"
+//===============================================================
+const one = require("./one")
 
-class User extends EventEmitter {
-	sayHi(data) {
-		this.emit(eventName, data);
-	}
-}
+const one1 = require("./one1")
 
-let user = new User();
-user.on(eventName, function(data){
-	console.log(data);
-})
 
-user.sayHi('Мне нужна твоя одежда2...')
+console.log(one.cat);
