@@ -1,11 +1,11 @@
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  min-width: 1170px;
+  min-width: 1200px;
 }
 
 .wrapper {
   margin: 0 auto;
-  width: 1170px;
+  width: 1200px;
   min-height: 100%;
   overflow: hidden;
   -webkit-box-orient: vertical;
@@ -15,8 +15,9 @@ body {
 }
 
 .container {
-  width: 1170px;
+  width: 1200px;
   margin: 0px auto;
+  padding: 0px 15px;
 }
 
 .item {
