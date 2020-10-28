@@ -1,5 +1,6 @@
 .item {
 	margin-bottom: 10%;
+	word-wrap:break-word;
 }
 
 .item > div{
@@ -15,7 +16,7 @@
     width: 49%;
 }
 
-.item > div > ol {
+.item > div > ol, .item > div > ul {
     font-size: 2em;
     width: 45%;
 }
