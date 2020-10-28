@@ -1,28 +1,55 @@
-const fs = require('fs')
+// // EventEmitter
 
-fs.readFile("hello.txt", "utf8", 
-function(error, data){
-	console.log(`Асинхронное чтение файла`);
-	if(error) throw error;
-	console.log(data);	
-})
+// // eventEmitter.on()
 
-console.log(`Синхронное чтение файла`);
-let fileContent = fs.readFileSync("hello.txt", "utf8")
-console.log(fileContent);
-
-// fs.writeFile("hello2.txt", "Hello World!",
-// function(error){
-
-// 	if(error) throw error;
-
-// 	console.log(`Запись файла завершина. Содержимое файла:`);
-// 	let data = fs.readFileSync("hello2.txt", 'utf8')
+// const Emitter = require("events");
+// let emitter = new Emitter();
+// let eventName = "greet";
+// emitter.on(eventName, function(data){
 // 	console.log(data);
-	
+// });
+
+// emitter.on(eventName, function(){
+// 	console.log(`Привет2`);
 // })
 
-fs.unlink('hello2.txt', (err) => {
-	if(err) console.log(err);
-	else console.log(`Hello2.txt was deleted`);
-});
+// emitter.emit(eventName, "Hello Sasha");
+
+// ==================================================
+
+// const util = require("util")
+// const EventEmitter = require("events")
+
+// function User() {}
+
+// util.inherits(User, EventEmitter);
+
+// let eventName = "greet"
+// User.prototype.sayHi = function (data) {
+// 	this.emit(eventName, data);
+// }
+// let user = new User();
+// user.on(eventName, function (data) {
+// 	console.log(data);
+// })
+
+// user.sayHi("Мне нужна твоя одежда...")
+
+// ============================================================
+
+const EventEmitter = require("events")
+
+let eventName = "greet"
+
+class User extends EventEmitter {
+	sayHi(data) {
+		this.emit(eventName, data);
+	}
+}
+
+let user = new User();
+user.on(eventName, function(data){
+	console.log(data);
+})
+
+user.sayHi('Мне нужна твоя одежда2...')
