@@ -34,10 +34,20 @@ body {
 // 	}
 // }
 
+a[target="_blank"] {
+	background-color: #FFFF99;
+
+	&:after {
+		content: url(/images/target3.png);
+		width: 40px;
+	}
+}
+
 .item {
 	img {
 		max-width: 100%;
 	}
+
 	font-size: 1.5rem;
 }
 
