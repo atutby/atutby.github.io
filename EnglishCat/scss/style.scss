@@ -1,6 +1,6 @@
 body {
-	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-	word-wrap: break-word;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  word-wrap: break-word;
 }
 
 // .wrapper {
@@ -36,46 +36,44 @@ body {
 // }
 
 a[target="_blank"] {
-	background-color: #FFFF99;
+  background-color: #ffff99;
 
-	&:after {
-		content: url(/images/target3.png);
-		width: 40px;
-	}
+  &:after {
+    content: url(/images/target3.png);
+    width: 40px;
+  }
 }
 
 .item {
-	img {
-		max-width: 100%;
-	}
+  img {
+    max-width: 100%;
+  }
 
-	font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
-@media (min-width:767px) {
-	.item>div {
-		display: flex;
-		flex-direction: row-reverse;
-		justify-content: space-around;
-		flex-wrap: wrap;
-		align-items: flex-start;
+@media (min-width: 767px) {
+  .item > div {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: flex-start;
 
-		ol,
-		ul {
-			font-size: 2rem;
-			width: 45%;
-		}
+    ol,
+    ul {
+      font-size: 2rem;
+      width: 45%;
+    }
 
-		>img {
-			width: 45%;
-		}
-		.bob {
-			width: 45%;
-		}
-	}
+    > img {
+      width: 45%;
+    }
+    .bob {
+      width: 45%;
+    }
+  }
 }
-
-
 
 // .item {
 // 	>h2 {
