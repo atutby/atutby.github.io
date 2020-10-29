@@ -1,47 +1,30 @@
-// // EventEmitter
+const mysql = require("mysql2")
 
-// // eventEmitter.on()
+const connection = mysql.createConnection({
+	host: "localhost",
+	user: "root",
+	database: "usersdb2",
+	password: "oo4Ax4YX3AVa"
+})
 
-// const Emitter = require("events");
-// let emitter = new Emitter();
-// let eventName = "greet";
-// emitter.on(eventName, function(data){
-// 	console.log(data);
-// });
+const users = [
+	["Bob", 22],
+	["Alice", 25],
+	["Kate", 28]
+]
+const sql2 = `INSERT INTO users(name, age) VALUES ?`;
+const sql3 = `SELECT * FROM users`;
+const sql4 = `SELECT * FROM users WHERE name=? AND age=?`
+const filter = ["Sam", 31];
 
-// emitter.on(eventName, function(){
-// 	console.log(`Привет2`);
-// })
+const sql5 = `UPDATE users SET age=? WHERE name=?`;
+const data = [34, "Sam"]
 
-// emitter.emit(eventName, "Hello Sasha");
+const sql6 = `DELETE FROM users WHERE name=?`
+const data2 = ["Sam"]
 
-// ==================================================
-
-// const util = require("util")
-// const EventEmitter = require("events")
-
-// function User() {}
-
-// util.inherits(User, EventEmitter);
-
-// let eventName = "greet"
-// User.prototype.sayHi = function (data) {
-// 	this.emit(eventName, data);
-// }
-// let user = new User();
-// user.on(eventName, function (data) {
-// 	console.log(data);
-// })
-
-// user.sayHi("Мне нужна твоя одежда...")
-
-// ============================================================
-
-
-//===============================================================
-const one = require("./one")
-
-const one1 = require("./one1")
-
-
-console.log(one.cat);
+connection.query(sql6, data2, function(err, results) {
+	if(err) console.log(err);
+	console.log(results);
+})
+connection.end()
