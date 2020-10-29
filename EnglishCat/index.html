@@ -24,6 +24,76 @@
 <body>
 	<div class="wrapper">
 		<div class="container">
+			<div>
+
+
+				<style>
+					#video12 {
+						position: relative;
+						padding-bottom: 75%;
+					}
+
+					#video12 iframe {
+						position: absolute;
+						width: calc(100% - 120px);
+						height: calc(100% - 120px*3/4);
+					}
+
+					#video12 div {
+						position: absolute;
+						top: 0;
+						right: 0;
+						width: 110px;
+						height: 100%;
+						padding: 5px;
+						overflow-y: auto;
+					}
+
+					#video12 img {
+						width: calc(100% - (5px + 1px)*2);
+						padding: 5px;
+						border: 1px solid #555;
+						border-radius: 5px;
+						opacity: .7;
+					}
+
+					#video12 img:hover {
+						opacity: 1;
+						cursor: pointer;
+					}
+
+					#video12 img:focus {
+						opacity: .2;
+					}
+				</style>
+
+				<div id="video12">
+					<iframe src="http://www.youtube.com/embed/xFa2_PVMeDQ?rel=0" allowfullscreen="" frameborder="0"></iframe>
+					<div>
+						<img src="http://img.youtube.com/vi/xFa2_PVMeDQ/1.jpg" tabindex="2" data-start="32" data-end="60" />
+						<img src="http://img.youtube.com/vi/hSrOpTYKNMw/1.jpg" tabindex="2" />
+						<img src="http://img.youtube.com/vi/WFhzzJjRncI/1.jpg" tabindex="2" />
+						<img src="http://img.youtube.com/vi/p-TtU1WHgBg/1.jpg" tabindex="2" />
+
+					</div>
+				</div>
+
+				<script>
+					var IMG = document.querySelectorAll('#video12 img'),
+						IFRAME = document.querySelector('#video12 iframe');
+					for (var i = 0; i < IMG.length; i++) {
+						IMG[i].onclick = function () {
+							var idIMG = this.src.replace(/http...img.youtube.com.vi.([\s\S]*?).1.jpg/g, '$1');
+							IFRAME.src = 'http://www.youtube.com/embed/' + idIMG + '?rel=0&autoplay=1';
+							if (this.dataset.end) IFRAME.src = IFRAME.src.replace(/([\s\S]*)/g, '$1&end=' + this.dataset.end);
+							if (this.dataset.start) IFRAME.src = IFRAME.src.replace(/([\s\S]*)/g, '$1&start=' + this.dataset.start);
+							this.style.backgroundColor = '#555';
+						}
+					}
+				</script>
+				<a href="http://shpargalkablog.ru/2011/01/youtube.html#raz000" target="_blank" rel="noopener noreferrer">Как добавить видео YouTube на сайт
+				</a>
+			</div>
 
 			<div class="item">
 				<h2>
@@ -34,9 +104,10 @@
 				</h2>
 				<div>
 					<img src="/images/Screenshot_11.png" alt="Screenshot_11.png">
-					
-						<iframe width="480" height="360" src="https://www.youtube.com/embed/p-TtU1WHgBg" frameborder="0" allowfullscreen></iframe>
-					
+
+					<iframe width="480" height="360" src="https://www.youtube.com/embed/p-TtU1WHgBg" frameborder="0"
+						allowfullscreen></iframe>
+
 					<ol>
 						<li>Many expressions in American English have to do with animals, like this one.</li>
 						<li>Hey Jonathan, did you get a chance to go to that new restaurant by your apartment?</li>
