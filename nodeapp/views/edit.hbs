@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Редактирование пользователя</title>
+	<meta charset="utf-8" />
+	<style>
+		.field {
+			width: 180px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Редактирование пользователя</h1>
+	<form action="/edit" method="POST">
+		<input type="hidden" name="id" value="{{user.id}}" />
+		<label>Имя</label><br>
+		<input name="name" value="{{user.name}}" class="field" /><br><br>
+		<label>Возраст</label><br>
+		<input name="age" type="number" min="1" max="110" value="{{user.age}}" class="field" /><br><br>
+		<input type="submit" value="Отправить" />
+	</form>
+	<a href="/">К списку пользователей</a>
+	</bo
