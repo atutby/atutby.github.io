@@ -1,5 +1,6 @@
 body {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  word-wrap: break-word;
 }
 
 a[target="_blank"] {
@@ -42,6 +43,9 @@ a[target="_blank"]:after {
     width: 45%;
   }
   .item > div > img {
+    width: 45%;
+  }
+  .item > div .bob {
     width: 45%;
   }
 }
