@@ -69,36 +69,3 @@
 .video12 img:focus {
   opacity: 0.2;
 }
-
-#video13 {
-  position: relative;
-  padding-bottom: 75%;
-}
-#video13 iframe {
-  position: absolute;
-  width: calc(100% - 120px);
-  height: calc(100% - 120px * 3 / 4);
-}
-#video13 div {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 110px;
-  height: 100%;
-  padding: 5px;
-  overflow-y: auto;
-}
-#video13 img {
-  width: calc(100% - (5px + 1px) * 2);
-  padding: 5px;
-  border: 1px solid #555;
-  border-radius: 5px;
-  opacity: 0.7;
-}
-#video13 img:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-#video13 img:focus {
-  opacity: 0.2;
-}
