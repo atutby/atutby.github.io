@@ -3,6 +3,8 @@ body {
   word-wrap: break-word;
 }
 
+@import "_video";
+
 // .wrapper {
 // 	margin: 0 auto;
 // 	width: 100%;
@@ -12,13 +14,11 @@ body {
 // 	overflow: hidden;
 // 	flex-direction: column;
 // }
-
 // .container{
 // 	max-width: 1200px;
 // 	margin: 0px auto;
 // 	padding: 0px 15px;
 // }
-
 // @media (max-width:1200px){
 // 	.container{
 // 		min-width: 970px;
@@ -34,7 +34,6 @@ body {
 // 		min-width: none;
 // 	}
 // }
-
 a[target="_blank"] {
   background-color: #ffff99;
 
@@ -66,7 +65,7 @@ a[target="_blank"] {
       width: 45%;
     }
 
-    > .img {
+    .img {
       width: 45%;
     }
   }
