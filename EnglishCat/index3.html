@@ -22,31 +22,53 @@
       </div>
     </div>
 
-    <!-- 
-          <div id="video13">
-            <iframe
-              src="https://www.youtube.com/embed/p-TtU1WHgBg"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-            <div>
-              <img
-                src="http://img.youtube.com/vi/p-TtU1WHgBg/1.jpg"
-                tabindex="2"
-              />
-              <img
-                src="http://img.youtube.com/vi/xFa2_PVMeDQ/1.jpg"
-                tabindex="2"
-              />
-              <img
-                src="http://img.youtube.com/vi/hSrOpTYKNMw/1.jpg"
-                tabindex="2"
-              />
-            </div>
-          </div> -->
-
     <script src="./js/video12.js"></script>
-    <script src="/part1/common.js"></script>
+    <!-- <script src="/part1/common.js"></script> -->
+
+    <div>
+      <div id="video13">
+        <iframe
+          src="http://www.youtube.com/embed/xFa2_PVMeDQ?rel=0"
+          allowfullscreen=""
+          frameborder="0"
+        ></iframe>
+        <div>
+          <img
+            src="http://img.youtube.com/vi/xFa2_PVMeDQ/1.jpg"
+            tabindex="2"
+            data-start="32"
+            data-end="60"
+          />
+          <img src="http://img.youtube.com/vi/hSrOpTYKNMw/1.jpg" tabindex="2" />
+          <img src="http://img.youtube.com/vi/WFhzzJjRncI/1.jpg" tabindex="2" />
+        </div>
+      </div>
+
+      <script>
+        var IMG2 = document.querySelectorAll("#video13 img"),
+          IFRAME2 = document.querySelector("#video13 iframe");
+        for (var i = 0; i < IMG2.length; i++) {
+          IMG2[i].onclick = function () {
+            var idIMG = this.src.replace(
+              /http...img.youtube.com.vi.([\s\S]*?).1.jpg/g,
+              "$1"
+            );
+            IFRAME2.src =
+              "http://www.youtube.com/embed/" + idIMG + "?rel=0&autoplay=1";
+            if (this.dataset.end)
+              IFRAME2.src = IFRAME2.src.replace(
+                /([\s\S]*)/g,
+                "$1&end=" + this.dataset.end
+              );
+            if (this.dataset.start)
+              IFRAME2.src = IFRAME2.src.replace(
+                /([\s\S]*)/g,
+                "$1&start=" + this.dataset.start
+              );
+            this.style.backgroundColor = "#555";
+          };
+        }
+      </script>
+    </div>
   </body>
 </html>
