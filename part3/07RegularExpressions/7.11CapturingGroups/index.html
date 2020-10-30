@@ -1,72 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- <script src="script.js"></script> -->
+  </head>
 
-	<title>stamp</title>
-	<link rel="icon" href="/images/flower.ico" />
-	<link rel="stylesheet" href="/normalize.css" />
-	<link rel="stylesheet" href="style.css" />
-	<script src="script.js"></script>
-</head>
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/regexp-groups">
+          regexp-groups
+        </a>
+      </li>
+    </ul>
 
-<body>
-	<ul>
-		<li><a href="/" id="mainPage">root Main page</a></li>
-		<li><a href="https://learn.javascript.ru/regexp-groups">
-				regexp-groups
-			</a></li>
-	</ul>
+    <script>
+      let str = "-2.0 -1.5 0 2 -123.4.";
+      let regexp = /-?\d+(\.\d+)?/g;
+      console.log(str.match(regexp));
+    </script>
 
-	<script>
-		console.log(`Gogogo gogo now!`.match(/(go)+/gi));
-
-		(function () {
-			let regexp = /([\w-]+\.)+\w+/ig;
-			console.log(`site.com my.site.com my-site.com`.match(regexp));
-		})()
-
-		;(function () {
-			let regexp = /[-.\w]+@([\w-]+\.)+[\w-]+/g;
-			console.log(`my@mail.ru @ his@site.com.uk`.match(regexp));
-		})()
-
-		;(function() {
-			let str = '<h1>Hello, wrold!</h1>'
-			let tag = str.match(/<(.*?)>/)
-			log(tag[0])
-			log(tag[1])
-		})()
-
-		;(function(){
-			let str = '<span class="my">'
-			let regexp = /<(([a-z]+)\s*([^>]*))>/;
-
-			let result = str.match(regexp);
-			log(result[0]);
-			log(result[1]);
-			log(result[2]);
-			log(result[3]);
-		})()
-
-		;(function() {
-			let regexp = /df/g;
-
-			let str = "color: #3f3; background-color: #AA00ef; and: #abcd";
-			log( str.match(regexp) ); // #3f3 #AA00ef
-		})
-	</script>
-
-	<ul>
-		<li>
-
-		</li>
-	</ul>
-
-
-	<script src="/part1/common.js"></script>
-</body>
-
+    <script src="/part1/common.js"></script>
+  </body>
 </html>
