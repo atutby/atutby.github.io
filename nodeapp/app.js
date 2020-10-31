@@ -1,20 +1,19 @@
 const express = require("express");
+const hbs = require("hbs");
 const app = express();
+
 app.set("view engine", "hbs");
-app.set("views", "templates");
+hbs.registerPartials(__dirname + "/views/partials");
 
 app.use("/contact", function (request, response) {
-  response.render("contact.hbs", {
+  response.render("contact", {
     title: "Мои контакты",
-    emailsVisible: true,
-    emails: ["gavgav@mail.ru", "miaow@mail.ru"],
-    phone: "+123412342134",
+    email: "gavgav@mycorp.com",
+    phone: "+1234567890",
   });
 });
+
 app.use("/", function (request, response) {
-  response.end("Главная станица Main page");
+  response.render("home.hbs");
 });
-
 app.listen(3000);
-
-console.log("http://localhost:3000");
