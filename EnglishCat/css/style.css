@@ -64,6 +64,6 @@ a[target="_blank"]:after {
   cursor: pointer;
 }
 
-.img {
+iframe {
   display: none;
 }
