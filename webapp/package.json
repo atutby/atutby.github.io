@@ -1,0 +1,17 @@
+{
+ "name": "webapp",
+ "version": "1.0.0",
+ "description": "",
+ "main": "index.js",
+ "scripts": {
+  "start": "node app.js",
+  "dev": "node app.js Tom 26"
+ },
+ "keywords": [],
+ "author": "",
+ "license": "ISC",
+ "dependencies": {
+  "body-parser": "^1.16.0",
+  "express": "^4.14.0"
+ }
+}

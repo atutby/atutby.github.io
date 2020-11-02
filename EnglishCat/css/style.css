@@ -63,7 +63,3 @@ a[target="_blank"]:after {
   margin-top: 15px;
   cursor: pointer;
 }
-
-iframe + div {
-  display: none;
-}
