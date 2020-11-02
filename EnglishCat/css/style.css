@@ -63,3 +63,7 @@ a[target="_blank"]:after {
   margin-top: 15px;
   cursor: pointer;
 }
+
+.img {
+  display: none;
+}
