@@ -46,3 +46,20 @@ a[target="_blank"]:after {
     width: 45%;
   }
 }
+
+.crossing ul li:nth-child(n + 5),
+.crossing ol li:nth-child(n + 5) {
+  display: none;
+}
+
+.crossing.expand ul li:nth-child(n + 5),
+.crossing.expand ol li:nth-child(n + 5) {
+  display: list-item;
+}
+
+.crossing ul li.control,
+.crossing ol li.control {
+  display: list-item;
+  margin-top: 15px;
+  cursor: pointer;
+}
