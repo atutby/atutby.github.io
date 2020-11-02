@@ -124,7 +124,6 @@ a[target="_blank"] {
   cursor: pointer;
 }
 
-// image
-iframe {
-  display: none;
+iframe+div{
+	display: none;
 }
