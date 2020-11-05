@@ -3,38 +3,6 @@ body {
   word-wrap: break-word;
 }
 
-// .wrapper {
-// 	margin: 0 auto;
-// 	width: 100%;
-// 	word-wrap: break-word;
-// 	display: flex;
-// 	min-height: 100%;
-// 	overflow: hidden;
-// 	flex-direction: column;
-// }
-
-// .container{
-// 	max-width: 1200px;
-// 	margin: 0px auto;
-// 	padding: 0px 15px;
-// }
-
-// @media (max-width:1200px){
-// 	.container{
-// 		min-width: 970px;
-// 	}
-// }
-// @media (max-width:992px){
-// 	.container{
-// 		min-width: 750px;
-// 	}
-// }
-// @media (max-width:767px){
-// 	.container{
-// 		min-width: none;
-// 	}
-// }
-
 a[target="_blank"] {
   background-color: #ffff99;
 
@@ -72,54 +40,23 @@ a[target="_blank"] {
   }
 }
 
-// .item {
-// 	>h2 {
-
-// 		>a {
-// 			width: 100%;
-// 			text-align: center;
-// 			display: block;
-// 			margin: 0px auto;
-// 		}
-// 	}
-// 	margin-bottom: 10%;
-// 	word-wrap: break-word;
-
-// >div {
-// 	display: flex;
-// 	flex-direction: row-reverse;
-// 	justify-content: space-around;
-// 	flex-wrap: wrap;
-// 	align-items: flex-start;
-
-// 	ol,
-// 	ul {
-// 		font-size: 2em;
-// 		width: 45%;
-// 	}
-
-// 	>img {
-// 		width: 45%;
-// 	}
-// }
-// }
 
 // Развернуть/Свернуть список ссылок на js?
 // https://jsfiddle.net/sasaha2015/me8y97u0/5/
 // https://qna.habr.com/q/590846
-.crossing ul li:nth-child(n + 5),
-.crossing ol li:nth-child(n + 5) {
+.crossing li:nth-child(n + 5),
+.crossing li:nth-child(n + 5) {
   display: none;
 }
 
-.crossing.expand ul li:nth-child(n + 5),
-.crossing.expand ol li:nth-child(n + 5) {
+.crossing.expand li:nth-child(n + 5),
+.crossing.expand li:nth-child(n + 5) {
   display: list-item;
 }
 
-.crossing ul li.control,
-.crossing ol li.control {
+.crossing li.control,
+.crossing li.control {
+	color: aqua;
   display: list-item;
-  margin-top: 15px;
-  cursor: pointer;
+	cursor: pointer;
 }

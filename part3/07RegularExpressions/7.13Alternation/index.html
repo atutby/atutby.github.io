@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/regexp-alternation"
+          >Альтернация (или) |</a
+        >
+      </li>
+    </ul>
+
+    <script>
+      (function () {
+        let regexp = /([01]\d|2[0-3]):([0-5]\d)/g;
+        console.log("00:00 10:10 23:59 25:99 1:2".match(regexp));
+      })();
+
+      (function () {
+        let regexp = /Java(Script)?|C(\+\+)?|PHP/g;
+        let str = "Java, JavaScript, PHP, C, C++";
+        console.log(str.match(regexp));
+      })();
+
+      (function () {
+        let regexp = /\[(b|url|quote)\].*?\[\/\1\]/gs;
+        let str = `
+				[b]Привет![/b]
+				[quote]
+					[url]http://ya.ru[/url]
+				[/quote]
+				`;
+        console.log(str.match(regexp));
+			})();
+			
+			(function() {
+				let regexp = /<style(>|\s.*?>)/g;
+				console.log('<style> <styler> <style test="...">'.match(regexp) );
+			})();
+
+    </script>
+    <script src="/part1/common.js"></script>
+  </body>
+</html>

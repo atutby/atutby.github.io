@@ -14,11 +14,18 @@
   <body>
     <ul>
       <li><a href="/" id="mainPage">root Main page</a></li>
-      <li><a href="https://learn.javascript.ru/regexp-backreferences">regexp-backreferences</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/regexp-backreferences"
+          >regexp-backreferences</a
+        >
+      </li>
     </ul>
 
-
-    <script></script>
+    <script>
+      let str = `He said: "She's the one!". 'maybe'`;
+      let regexp = /(?<quote>['"])(.*?)\k<quote>/g;
+      console.log(str.match(regexp));
+    </script>
     <script src="/part1/common.js"></script>
   </body>
 </html>

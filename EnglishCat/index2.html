@@ -10,6 +10,27 @@
   <body>
     <!-- .item>(h2+div>(.img>(.video12))+ol) -->
 
+    <div id="iframeP" class="item iframeP">
+      <h2>
+        <a href="https://youtu.be/RzqC2CtsKE0"
+          >HOW AMERICANS LIVE AND WHAT WE SHOULD LEARN FROM THEM</a
+        >
+      </h2>
+      <div>
+        <div class="img">
+          <div class="video12">
+            <iframe
+              src="https://www.youtube.com/embed/RzqC2CtsKE0"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+        <ol></ol>
+      </div>
+    </div>
+
     <div class="item">
       <h2>
         <a target="_blank" href="https://youtu.be/WQ4MaTlbg4o"
@@ -17,7 +38,7 @@
           AS A BEGINNER</a
         >
       </h2>
-      <div class="crossing">
+      <div>
         <div class="img">
           <div class="video12 video12_pb-50">
             <iframe
@@ -34,8 +55,8 @@
             </div>
           </div>
         </div>
-        <ul>
-          <li class="control"><h3>Развернуть/Свернуть</h3></li>
+        <ul class="crossing">
+          <li class="control">Развернуть/Свернуть</li>
           <li>Hello</li>
           <li>My name is Sasha. What is your name?</li>
           <li>I'm sorry, I don't remember your name. You are...?</li>
@@ -92,26 +113,32 @@
           <li>SHOPPING</li>
           <li>I'm just looking around.</li>
           <li>Thank you! I don't need any help, I'm just browsing.</li>
-					<li>Yes, please. I'm looking for a red dress for party.</li>
-					<li>Is this on sale?</li>
-					<li>three for two</li>
-					<li>Can I try this one?</li>
-					<li>Can you do me a deal?</li>
-					<li>Great! I'll take it!</li>
-					<li>Can you please gift-wrap it for me?</li>
-					<li>How would you like to pay?</li>
-					<li>I would like to pay by cash/card</li>
-					<li>Can I redeem this?</li>
-					<li><h3>BEING LATE</h3></li>
-					<li>I'm sorry for being late.</li>
-					<li>I'll be there in ten minutes.</li>
-					<li>Would it be possible to reschedule our appointment for next week / tomorrow / late afternoon?</li>
-					<li>When you finally arrive you can say... Thank you for waiting.</li>
-					<li><h3>ENDING A CONVERSATION</h3></li>
-					<li>I gotta go. Thank you so much for staying here with me today.</li>
-					<li>It was really nice chatting with you! Looking forward to seeing you soon!</li>
-					<li>I'd better be going my baby's waiting for me at home.</li>
-					<li>Catch you later.</li>
+          <li>Yes, please. I'm looking for a red dress for party.</li>
+          <li>Is this on sale?</li>
+          <li>three for two</li>
+          <li>Can I try this one?</li>
+          <li>Can you do me a deal?</li>
+          <li>Great! I'll take it!</li>
+          <li>Can you please gift-wrap it for me?</li>
+          <li>How would you like to pay?</li>
+          <li>I would like to pay by cash/card</li>
+          <li>Can I redeem this?</li>
+          <li><h3>BEING LATE</h3></li>
+          <li>I'm sorry for being late.</li>
+          <li>I'll be there in ten minutes.</li>
+          <li>
+            Would it be possible to reschedule our appointment for next week /
+            tomorrow / late afternoon?
+          </li>
+          <li>When you finally arrive you can say... Thank you for waiting.</li>
+          <li><h3>ENDING A CONVERSATION</h3></li>
+          <li>I gotta go. Thank you so much for staying here with me today.</li>
+          <li>
+            It was really nice chatting with you! Looking forward to seeing you
+            soon!
+          </li>
+          <li>I'd better be going my baby's waiting for me at home.</li>
+          <li>Catch you later.</li>
         </ul>
       </div>
     </div>
@@ -276,6 +303,10 @@
       </div>
     </div>
 
+    // Скрипт берет ссылку на youtube и выщемлят id
+    <script src="./js/iframe-patern.js"></script>
+
+    <script src="/part1/common.js"></script>
     <script src="./js/video12.js"></script>
     <!-- Expand / collapse the list of js links? -->
     <script src="./js/expand-collapse_li.js"></script>

@@ -3,6 +3,5 @@
 // https://qna.habr.com/q/590846
 
 document.getElementsByClassName("control")[0].onclick = function () {
-  console.log("hren");
   document.getElementsByClassName("crossing")[0].classList.toggle("expand");
 };
