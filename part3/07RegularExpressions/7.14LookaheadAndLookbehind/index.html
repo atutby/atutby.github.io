@@ -27,6 +27,21 @@
         let str = "1 индейка стоит 30€";
         console.log(str.match(/\d+(?=(€))/));
       })();
+
+      (function () {
+        let str = "2 индейки стоят 60€";
+        console.log(str.match(/\d+(?!€)/));
+      })();
+
+      (function () {
+        let str = "1 индейка стоит $30";
+        console.log(str.match(/(?<=\$)\d+/));
+      })();
+
+      (function () {
+        let str = "2 индейки стоят $60";
+        console.log(str.match(/(?<!\$)\d+/));
+      })();
     </script>
     <script src="/part1/common.js"></script>
   </body>
