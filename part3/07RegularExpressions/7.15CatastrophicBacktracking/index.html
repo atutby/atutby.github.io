@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/regexp-catastrophic-backtracking"
+          >Катастрофический возврат</a
+        >
+      </li>
+    </ul>
+
+		<div>
+			<h2>Как исправить?</h2>
+			<p>Первый - уменьшить количество возможных комбинаций.</p>
+		</div>
+
+    <script>
+      (function () {
+        let regexp = /^((?=(\w+))\2\s?)*$/;
+        console.log(regexp.test("A good string"));
+
+        let str =
+          "An input string that takes a long time or even makes this regex to hang!";
+
+        console.log(regexp.test(str));
+      })();
+
+      (function () {
+				let regexp = /^((?=(?<word>\w+))\k<word>\s?)*$/;
+				let str = "An input string that takes a long time or even makes this regex to hang!";
+				console.log(regexp.test(str));
+				console.log(regexp.test("A correct string"));
+			})();
+			
+			(function () {
+				let regexp = /^(\w+\s)*\w*$/;
+				let str = "An input string that takes a long time or even makes this regex to hang!";
+				console.log(regexp.test(str));
+      })();
+    </script>
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
