@@ -22,14 +22,14 @@
     </ul>
 
     <script>
-			let str = 'let varName = "value"';
-			let regexp = /\w+/y;
+			let str = 'let varName';
+			let regexp = /\w+/g;
 
-			regexp.lastIndex = 3;
-			console.log( regexp.exec(str));
-
-			regexp.lastIndex = 4;
-			console.log( regexp.exec(str) );
+			let result;
+			console.log(str);
+			while (result = regexp.exec(str)) {
+				console.log(`Найдено ${result[0]} на позиции ${result.index}`);
+			}
     </script>
     <script src="/part1/common.js"></script>
   </body>
