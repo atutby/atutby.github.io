@@ -14,10 +14,52 @@
   <body>
     <ul>
       <li><a href="/" id="mainPage">root Main page</a></li>
-      <li></li>
+      <li>
+        <a href="https://learn.javascript.ru/regexp-methods"
+          >Методы RegExp и String</a
+        >
+			</li>
+			<li><a href="https://www.w3resource.com/javascript-exercises/javascript-regexp-exercises.php">JavaScript Validation with regular expression - Exercises, Practice, Solution</a></li>
     </ul>
 
-    <script></script>
+    <script>
+
+			(function(){
+				let str = '<h1>Hello, World!</h1>';
+				let regexp = /<(.*?)>/g;
+				let matchAll = str.matchAll(regexp);
+				console.log(matchAll);
+				console.log(matchAll);
+				matchAll = Array.from(matchAll);
+				console.log(matchAll);
+			})();
+
+      (function () {
+        let str = "John Smith";
+        let result = str.replace(/(?<name>\w+) (?<surname>\w+)/, (...match) => {
+          let groups = match.pop();
+
+          return `${groups.surname} ${groups.name}`;
+        });
+        console.log(result);
+      })();
+
+      (function () {
+        let str0 = "0",
+          str1 = "01",
+					str2 = "012";
+					
+				let regexp = /\d/g;
+				console.log(regexp.test("00"));
+				console.log(regexp.lastIndex);
+				console.log(regexp.test("00"));
+				console.log(regexp.lastIndex);
+				console.log(regexp.test("000"));
+				console.log(regexp.lastIndex);
+
+				console.log(regexp);
+      })();
+    </script>
     <script src="/part1/common.js"></script>
   </body>
 </html>

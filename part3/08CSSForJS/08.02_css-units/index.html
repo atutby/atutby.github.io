@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      html {
+        font-size: 14px;
+      }
+      li {
+        font-size: 0.8rem;
+      }
+    </style>
+
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li></li>
+    </ul>
+
+    <div><button id="up">Кликните, чтобы увеличить размер шрифта</button></div>
+
+    <img src="https://js.cx/clipart/angry_dog.png" alt="angry_dog.png" />
+
+    <ul id="ul">
+      <li id="li">
+        Собака
+        <ul>
+          <li>
+            бывает
+            <ul>
+              <li>
+                кусачей
+                <ul>
+                  <li>
+                    только
+                    <ul>
+                      <li>
+                        от жизни
+                        <ul>
+                          <li>собачей</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <script>
+      let html = document.documentElement;
+      let up = document.getElementById("up");
+			let ul = document.getElementById("ul");
+			let li = document.getElementById("li");
+
+      up.onclick = function () {
+        // при помощи JS увеличить размер шрифта html на 2px
+        html.style.fontSize =
+          parseInt(getComputedStyle(html, "").fontSize) + 2 + "px";
+      };
+    </script>
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
