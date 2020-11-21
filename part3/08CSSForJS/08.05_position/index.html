@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>stamp</title>
+    <link rel="icon" href="/images/flower.ico" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/position">Свойство position</a>
+			</li>
+			<li><a href="http://www.barelyfitz.com/screencast/html-training/css/positioning/">Learn CSS Positioning in Ten Steps</a></li>
+    </ul>
+
+    <style>
+      h2 {
+        position: absolute;
+        right: 0;
+				bottom: 0;
+				top: 0;
+				margin: 0;
+      }
+    </style>
+
+    <div style="background: #fee; width: 500px; position: relative;">
+      Без позиционирования ("position: static").
+
+      <h2 style="background: #aef;">Заголовок</h2>
+
+      <div>
+        А тут - всякий разный текст... <br />
+        ... В две строки!
+      </div>
+    </div>
+
+    <script></script>
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
