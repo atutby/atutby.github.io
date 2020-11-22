@@ -32,7 +32,7 @@
       /* ...ваш стиль... */
       display: none;
       background: #aef;
-      opacity: 0.7;
+      /* opacity: 0.7; */
     }
 
     p,
@@ -45,7 +45,7 @@
 <body>
 
 
-  <div id="box" class="mystyle">
+  <div id="box">
     <div class="xButton"  onclick="(() => box.classList.toggle('mystyle'))()">X</div>
     <ul>
       <li>some text</li>
@@ -60,18 +60,27 @@
   <p>Текст Текст Текст</p>
   <button onclick="alert('Эта кнопка не должна работать')">Эта кнопка не работает</button>
   <p>Текст Текст Текст</p>
-  <button onclick="alert('Эта кнопка не должна работать')">Эта кнопка не работает</button>
-  <p>Текст Текст Текст</p>
-  <button onclick="alert('Эта кнопка не должна работать')">Эта кнопка не работает</button>
-  <p>Текст Текст Текст</p>
-  <button onclick="alert('Эта кнопка не должна работать')">Эта кнопка не работает</button>
-  <p>Текст Текст Текст</p>
-  <button onclick="alert('Эта кнопка не должна работать')">Эта кнопка не работает</button>
-  <p>Текст Текст Текст</p>
-  <button onclick="alert('Эта кнопка не должна работать')">Эта кнопка не работает</button>
 
 
-
+	<!-- Модальное окно на чистом CSS -->
+	<link rel="stylesheet" href="./pureCSSModal-master/css/modal.css">
+	<div class="modal" id="demo">
+    <div class="modal-container">
+			<h2>Modal Title</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, nihil suscipit accusantium numquam illo fuga laboriosam porro neque eum aperiam quo. Totam corporis quod nam nemo reprehenderit repudiandae placeat illo!</p>
+				<a href="#modal-close">Close</a>
+				<img src="/images/happy-beaver.jpg" alt="/images/happy-beaver.jpg">
+			</div>
+	</div>
+	<a href="#demo"> --DEMO-- </a> <br><br>
+	<a href="https://www.cssscript.com/pretty-simple-modal-window-pure-css/">pretty-simple-modal-window-pure-css</a>
+	
+	
+	
+		<a href="http://drublic.github.io/css-modal/">http://drublic.github.io/css-modal/</a>
+	
+	<!-- THE END Модальное окно на чистом CSS -->
+	
 </body>
 
 </html>

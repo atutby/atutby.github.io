@@ -1,0 +1,65 @@
+p {
+  margin-top: 0;
+}
+
+.modal-container {
+  position: fixed;
+  /* нужно установить top чтобы не отображалось содержимое */
+  /* top: -100%; */
+  background-color: #fff;
+  width: 70%;
+  max-width: 400px;
+  left: 50%;
+	padding: 20px;
+	border: gray 5px solid;
+  border-radius: 5px;
+
+  /* -webkit-transform: translate(-50%, -200%);
+  -ms-transform: translate(-50%, -200%); */
+  transform: translate(-50%, -300%);
+
+  -webkit-transition: -webkit-transform 500s ease-out;
+  transition: transform 1000ms ease-out;
+}
+
+/* Свойства которые отвечают за затемнение фона */
+/* .modal:before {
+  content: "";
+  position: fixed;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.modal:target:before {
+  display: block;
+} */
+
+.modal:target .modal-container {
+  /* top: 20%; */
+
+  /* -webkit-transform: translate(-50%, 0%);
+  -ms-transform: translate(-50%, 0%); */
+  transform: translate(-50%, -50%);
+}
+
+
+/* Дополнительные свойства относятся к урашательству кнопки и картинки */
+a[href='#modal-close'],
+a[href='#demo'] {
+  padding: 10px;
+  font-size: 1.5em;
+  background-color: aqua;
+  color: azure;
+  border-radius: 10px;
+}
+
+a[href='#modal-close'] + img {
+	width: 70px;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
