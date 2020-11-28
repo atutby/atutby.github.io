@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>stamp</title>
-    <link rel="icon" href="/images/flower.ico" />
-    <!-- <link rel="stylesheet" href="/normalize.css" /> -->
+		<title>stamp</title>
+		
+		<link rel="icon" href="/images/favicon.ico" />
+		<link rel="stylesheet" href="/images/bootstrap.min.css">
     <link rel="stylesheet" href="./style.css" />
     <script src="./script.js"></script>
   </head>
@@ -14,33 +15,35 @@
   <body>
     <ul>
       <li><a href="/" id="mainPage">root Main page</a></li>
-      <li><a href="https://learn.javascript.ru/box-sizing">Свойство box-sizing</a></li>
-		</ul>
-		
-		<style>
-			form {
-				/* box-sizing: border-box; */
-				width: 200px;
-				border: 2px solid green;
-			}
+      <li>
+        <a href="https://learn.javascript.ru/box-sizing">Свойство box-sizing</a>
+      </li>
+    </ul>
 
-			form input,
-			form select {
-				box-sizing: border-box;
-				display: block;
-				width: 100%;
-				padding-left: 15px;
-			}
-		</style>
+    <style>
+      form {
+        /* box-sizing: border-box; */
+        width: 200px;
+        border: 2px solid green;
+      }
 
-		<form action="">
-			<input type="text">
-			<input type="text">
-			<select name="" id="">
-				<option value="">опции</option>
-			</select>
-			<button type="submit">Отравить</button>
-		</form>
+      form input,
+      form select {
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        padding-left: 5px;
+      }
+    </style>
+
+    <form action="">
+      <input type="text" />
+      <input type="text" />
+      <select name="" id="">
+        <option value="">опции</option>
+      </select>
+      <button type="submit">Отравить</button>
+    </form>
 
     <script></script>
     <script src="/part1/common.js"></script>
