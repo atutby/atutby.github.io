@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>stamp</title>
+
+    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/images/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="/normalize.css" /> -->
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/dom-navigation"
+          >Навигация по DOM-элементам</a
+        >
+      </li>
+    </ul>
+
+    <div id="elem">Пользователи:</div>
+    <ul>
+      <li>Джон</li>
+      <li>Пит</li>
+    </ul>
+    <script>
+      let Pit =
+        document.body.lastElementChild.previousElementSibling.lastElementChild
+          .innerHTML;
+			console.log(Pit);
+			
+			let elem = document.getElementById('elem');
+
+      console.log(elem.lastChild.nextSibling);
+      console.log(elem.childNodes[0]);
+    </script>
+
+    <script src="/part1/common.js"></script>
+  </body>
+</html>

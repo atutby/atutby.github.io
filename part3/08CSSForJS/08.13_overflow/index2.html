@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>overflow</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>overflow</h1>
+
+    <style>
+      .no-overflow {
+        /* overflow не задан */
+        width: 200px;
+        height: 80px;
+        border: 1px solid black;
+      }
+    </style>
+
+    <div id="no-overflow"></div>
+
+    <div class="no-overflow">
+      visible ЭтотТекстВылезаетСправаЭтотТекстВылезаетСправа Этот текст вылезает
+      снизу Этот текст вылезает снизу Этот текст вылезает снизу Этот текст
+      вылезает снизу
+    </div>
+
+    <p>&nbsp;</p>
+
+    <style>
+      .overflow-hidden {
+        overflow: hidden;
+        width: 200px;
+        height: 80px;
+        border: 1px solid black;
+      }
+    </style>
+
+    <div id="overflow-hidden"></div>
+
+    <div class="overflow-hidden">
+      hidden ЭтотТекстОбрезанСправаЭтотТекстОбрезанСправа Этот текст будет
+      обрезан снизу Этот текст будет обрезан снизу Этот текст будет обрезан
+      снизу Этот текст будет обрезан снизу
+    </div>
+
+    <p>&nbsp;</p>
+
+    <style>
+      .overflow-auto {
+        overflow: auto;
+        width: 200px;
+        height: 80px;
+        border: 1px solid black;
+      }
+    </style>
+
+    <div id="overflow-auto"></div>
+
+    <div class="overflow-auto">
+      auto ЭтотТекстДастПрокруткуСправаЭтотТекстДастПрокруткуСправа Этот текст
+      даст прокрутку снизу Этот текст даст прокрутку снизу Этот текст даст
+      прокрутку снизу
+    </div>
+
+    <p>&nbsp;</p>
+
+    <style>
+      .overflow-scroll {
+        overflow: scroll;
+        width: 200px;
+        height: 80px;
+        border: 1px solid black;
+      }
+    </style>
+
+    <div id="overflow-scroll"></div>
+
+    <div class="overflow-scroll">
+      scroll Переполнения нет.
+    </div>
+
+    <p>&nbsp;</p>
+
+    <style>
+      .overflow-xy {
+        overflow-x: auto;
+        overflow-y: hidden;
+        width: 200px;
+        height: 80px;
+        border: 1px solid black;
+      }
+    </style>
+
+    <div id="overflow-xy"></div>
+
+    <div class="overflow-xy">
+      ПоШиринеПолосаПрокруткиAutoПоШиринеПолосаПрокруткиAuto Этот текст вылезает
+      снизу Этот текст вылезает снизу Этот текст вылезает снизу Этот текст
+      вылезает снизу
+    </div>
+
+    <p>&nbsp;</p>
+
+    <style>
+      .overflow-yx {
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 200px;
+        height: 80px;
+        border: 1px solid black;
+      }
+    </style>
+
+    <div id="overflow-yx"></div>
+
+    <div class="overflow-yx">
+      ПоВысотеПолосаПрокрутки Этот текст вылезает снизу Этот текст вылезает
+      снизу Этот текст вылезает снизу Этот текст вылезает снизу Этот текст
+      вылезает снизу Этот текст вылезает снизу Этот текст вылезает снизу Этот
+      текст вылезает снизу Этот текст вылезает снизу Этот текст вылезает снизу
+      Этот текст вылезает снизу Этот текст вылезает снизу
+    </div>
+
+    <p>&nbsp;</p>
+
+    <script>
+      function computedStyle(element) {
+        return element.currentStyle || window.getComputedStyle(element, null);
+      }
+
+      function dd(str) {
+        var d = document.getElementsByClassName(str)[0];
+
+        document.getElementById(str).innerHTML =
+          computedStyle(d)["width"] +
+          " " +
+          computedStyle(d)["height"] +
+          " -- " +
+          d.clientWidth +
+          " " +
+          d.clientHeight;
+      }
+      dd("no-overflow");
+      dd("overflow-hidden");
+      dd("overflow-auto");
+      dd("overflow-scroll");
+      dd("overflow-xy");
+      dd("overflow-yx");
+    </script>
+  </body>
+</html>
