@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>stamp</title>
+
+	<link rel="icon" href="/images/favicon.ico" />
+	<link rel="stylesheet" href="/images/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="/normalize.css" /> -->
+	<link rel="stylesheet" href="./style.css" />
+	<script src="./script.js"></script>
+	<style>
+		.icon {
+			width: 16px;
+			height: 16px;
+			float: left;
+			background: url(./icons.gif) no-repeat;
+		}
+
+		.open .icon {
+			cursor: pointer;
+			/* background: url(https://js.cx/sprite-tree/minus.gif); */
+			background-position: 0 -16px;
+		}
+
+		.closed .icon {
+			cursor: pointer;
+			background-position: 0 0px;
+		}
+
+		.leaf .icon {
+			cursor: text;
+			background-position: 0 -32px;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		.text {
+			margin: 6px 0 6px 16px;
+		}
+	</style>
+</head>
+
+<body>
+	<ul>
+		<li><a href="/" id="mainPage">root Main page</a></li>
+		<li><a href="https://learn.javascript.ru/css-sprite">CSS-спрайты</a></li>
+	</ul>
+
+	<ul>
+		<li class="open">
+			<div class="icon"></div>
+			<div class="text">Раздел 1
+				<br>В две строки</div>
+			<ul>
+				<li class="closed">
+					<div class="icon"></div>
+					<div class="text">Раздел 1.1 в одну строку</div>
+				</li>
+				<li class="leaf">
+					<div class="icon"></div>
+					<div class="text">Страница 1.2
+						<br> в две строки</div>
+				</li>
+			</ul>
+		</li>
+		<li class="closed">
+			<div class="icon"></div>
+			<div class="text">Раздел 2
+				<br>В две строки</div>
+		</li>
+	</ul>
+
+
+	<script>
+
+	</script>
+
+	<script src="/part1/common.js"></script>
+</body>
+
+</html>
