@@ -12,7 +12,7 @@ links.forEach(
     }
     // console.log(elem);
     elem.target = '_blank';
-  }
+  }	
 )
 
 console.log(window.location.href)

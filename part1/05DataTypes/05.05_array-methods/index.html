@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>stamp</title>
+
+	<link rel="icon" href="/images/favicon.ico" />
+	<link rel="stylesheet" href="/images/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="/normalize.css" /> -->
+	<link rel="stylesheet" href="./style.css" />
+	<script src="./script.js"></script>
+</head>
+
+<body>
+	<h1>Методы массивов</h1>
+	<ul>
+		<li><a href="/" id="mainPage">root Main page</a></li>
+		<li><a href="https://learn.javascript.ru/array-methods">Методы массивов</a></li>
+	</ul>
+
+	<script>
+		//==============Добавление/удаление элементов=====================
+		// arr.splice(index[, deleteCount, elem1, ..., elemN])
+
+		/*
+
+		let arr1 = ["Я", "изучаю", "JavaScript"];
+		arr1.splice(1, 1);
+		console.log(arr1);
+
+		 
+		let arr2 = ["Я", "изучаю", "JavaScript", "прямо", "сейчас"];
+		arr2.splice(0, 3, "Давай", "танцевать");
+		console.log(arr2);
+
+
+		let arr3 = ["Я", "изучаю", "JavaScript", "прямо", "сейчас"];
+		let removed = arr3.splice(0, 2);
+		console.log( removed );
+
+
+		let arr5 = ["Я", "изучаю", "JavaScript"];
+		arr5.splice(2, 0, "сложный", "язык");
+		console.log(arr5);
+
+
+		let arr6 = [1, 2, 5];
+		arr6.splice(-1, 0, 3, 4);
+		console.log(arr6);
+
+		*/
+
+
+		//===============Метод arr.slice намного проще=========
+
+		/*
+
+			let arr = ["t", "e", "s", "t"];
+
+			console.log(arr.slice(1,3)); // ["e", "s"]
+
+			console.log(arr.slice(-2));
+
+		*/
+
+		//=============Метод arr.concat создаёт новый массив======
+		/*
+
+			let arr = [1,2];
+
+			console.log(arr.concat([3,4]));
+
+			console.log(arr.concat([3,4], [5,6]));
+
+			console.log([3,4],5,6);
+
+			let arrayLike = {
+				0: "что-то",
+				1: "ещё",
+
+				// для добавления объкта как массива
+				[Symbol.isConcatSpreadable]: true,
+				length: 2
+			};
+
+			console.log(arr.concat(arrayLike));
+
+		*/
+
+		//==============Перебор: forEach===================
+		/*
+		arr = ["Bilbo", "Gandalf", "Naxgul"];
+
+		arr.forEach(console.log);
+
+		arr.forEach((item, index, array) => 
+		console.log(`${item} имеет позицию ${index} в ${array}`));
+		*/
+
+		//========indexOf/lastIndexOf и includes========
+		/*
+			let arr = [1, 0, false, ,'cat'];
+
+			console.log(arr.indexOf(0)); // 1
+			console.log(arr.indexOf(false)); // 2
+			console.log(arr.indexOf(null)); // -1
+
+			console.log("arr.includes(1) this is    " + arr.includes(1));
+
+			const arr2 = [NaN];
+			console.log(arr2.indexOf(NaN)); // -1 (работает ===, а NaN не равен самому себе)
+			console.log(arr2.includes(NaN)); // true (верно)
+
+		*/
+
+		//===========find и findIndex==========================
+		/*
+		let users = [
+			{id: 1, name: "Вася"},
+			{id: 2, name: "Петя"},
+			{id: 5, name: "Маша"},
+		]
+
+		let user = users.find( item => item.id === 5)
+		console.log(user.name);
+
+		let userIndex = users.findIndex( item => item.id === 5);
+		console.log(userIndex);
+		*/
+
+		//=============== filter =========================
+		/*
+		let users = [
+			{id: 1, name: "Вася"},
+			{id: 2, name: "Петя"},
+			{id: 3, name: "Маша"},
+		]
+
+		let someUsers = users.filter(item => item.id < 3);
+		console.log(someUsers.length);
+		*/
+
+		//================== sort(fn) ================
+		/*
+		let arr1 = [1, 2, 15];
+		function compareNumeric(a, b) {
+			if (a > b) return 1;
+			if (a == b) return 0;
+			if (a < b) return -1;
+		}
+		arr1.sort(compareNumeric);
+		log(arr1);
+
+		let arr2 = ['a', 'c', 'b'];
+		arr2.sort();
+		console.log(arr2);
+
+		let arr3 = [1, -2, 15, 2, 0, 8];
+		console.log(arr3);
+		arr3.sort(function (a, b) {
+			console.log(a + " <> " + b);
+		});
+		arr3.sort( (a,b) => b - a );
+		console.log(arr3);
+		*/
+
+
+		//==================== reverse =========================
+		/*
+		let arr = [1, 2, 3, 4, 5];
+		arr.reverse();
+		console.log(arr);
+		*/
+
+		//================ split и join ==========================
+		/*
+		let names = 'Вася, Петя, Маша';
+		let arr1 = names.split(', ');
+		console.log(names);
+		for (let name of arr1) {
+			console.log( `Сообщение получат: ${name}.` ); // Сообщение получат: Вася (и другие имена)
+		}
+
+		let arr2 = 'Вася, Петя, Маша, Саша'.split(', ', 2);
+		console.log(arr2);
+
+		let str1 = "тест";
+		console.log(str1.split(''));
+
+		let arr3 = ['Вася', "Петя", "Маша"];
+		let str2 = arr3.join(', ');
+		console.log(str2);
+		*/
+
+		//=================== reduce/reduceRight =====================
+		/*
+		
+		// let value = arr.reduce(function(previousValue, item, index, array) {
+		// 	// ...
+		// }, [initial]);
+
+		let arr1 = [1, 2, 3, 4, 5];
+		let result = arr1.reduce((sum, current) => sum + current, 0);
+		console.log(result);
+
+		let arr2 = [];
+		let result2 = arr2.reduce((sum, current) => sum + current, 5);
+		console.log(result2);
+		*/
+		
+		
+		//================ Array.isArray =====================
+		/*
+		console.log(typeof {}); // object
+		console.log(typeof []); // тоже object
+
+		console.log(Array.isArray({})); // false
+		console.log(Array.isArray([])); // true
+		*/
+
+
+		//================== thisArg ========================
+		/*
+		let army = {
+			minAge: 18,
+			maxAge: 27,
+			canJoin(user) {
+				return user.age >= this.minAge && user.age < this.maxAge;
+			}
+		};
+
+		let users = [
+			{age: 16, name: 'cat'},
+			{age: 20, name: 'dog'},
+			{age: 23, name: 'bird'},	
+			{age: 30, name: 'Elephant'}
+		];
+
+		let soldiers = users.filter(army.canJoin, army);
+		for (let solder of soldiers){
+			console.log(solder);
+		}
+		*/
+	</script>
+</body>
+
+</html>
