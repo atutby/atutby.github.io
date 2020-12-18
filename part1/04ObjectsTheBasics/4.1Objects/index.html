@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>stamp</title>
+
+	<link rel="icon" href="/images/favicon.ico" />
+	<link rel="stylesheet" href="/images/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="/normalize.css" /> -->
+	<link rel="stylesheet" href="./style.css" />
+	<script src="./script.js"></script>
+</head>
+
+<body>
+	<ul>
+		<li><a href="/" id="mainPage">root Main page</a></li>
+		<li><a href="https://learn.javascript.ru/object">Объекты</a></li>
+	</ul>
+
+	<script>
+		/*
+				let user = new Object();
+				let user = {};
+			*/
+
+		/*
+		let user = {
+			name: 'John',
+			age: 28,
+			'like birds': true,
+		}
+
+		console.log(user);
+		alert(user);
+		*/
+
+		/*
+		let fruit = prompt("Какой фрукт купить?", "apple");
+		let bag = {
+			[fruit]: 5, // имя свойства будет взято из переменной fruit
+		};
+		alert(`bag.${fruit} = ` + bag[fruit]);
+		*/
+
+		/*
+		function makeUser(name, age) {
+			return {
+				name: name,
+				age,
+			}
+		}
+		console.log(makeUser('John', 30));
+		*/
+
+		/*
+		let user = {};
+		console.log(user.noSuchProperty === undefined);
+
+		let user2 = {name: "John", 'age plus': 30};
+		console.log("age" in user2);
+		console.log("blabla" in user2);
+		console.log('age plus' in user2);
+		*/
+
+		/*
+		let user = {
+			name: "John",
+			age: 30,
+			isAdmin: true,
+		}
+
+		for (let key in user){
+			console.log(key); // name, age, isAdmin
+			console.log(user[key]); // John, 30, true
+		}
+		*/
+
+		/*
+		let codes = {
+			"+49": "Germany",
+			"+41": "Switzerland",
+			"+44": "Great Britain",
+			"+1": "USA",
+		};
+
+		for(let code in codes){
+			console.log(code);
+		}
+
+		console.log(String(Math.trunc(Number("+49"))) );
+		console.log(Number("+50"));
+		*/
+
+		/* Task 1
+		let user = new Object();
+		user['name'] = 'John';
+		user.surname = 'Smith';
+		user.name = 'Pete';
+		user['name name'] = 'name name';
+		delete user['name name'];
+		console.log(user);
+
+		for(let code in user){
+			console.log(code);
+		}
+		*/
+
+		/* Task 2
+					let schedule = {};
+					console.log(isEmpty(schedule)); // true
+					schedule["8:30"] = "get up";
+					console.log(isEmpty(schedule)); // false
+
+					function isEmpty(obj) {
+						for (let key in obj) {
+							// если тело цикла начнет выполняться - значит в объекте есть свойства
+							return false;
+						}
+						return true;
+					}
+		*/
+
+/*
+		let salaries = {
+			John: 100,
+			Ann: 160,
+			Pete: 130
+		}
+
+		let sum = 0;
+		for(let key in salaries){
+			sum += salaries[key];
+		}
+
+		console.log(sum);
+		*/
+
+		let menu = {
+			width: 200,
+			height: 300,
+			title: "My menu"
+		};
+
+		multiplyNumeric(menu);
+
+		function multiplyNumeric(obj){
+			for (let prop in obj){
+				if(typeof obj[prop] === 'number'){
+					obj[prop] *= 2;
+				}
+			}
+		}
+
+		console.log(menu);
+	</script>
+
+	<script src="/part1/common.js"></script>
+</body>
+
+</html>
