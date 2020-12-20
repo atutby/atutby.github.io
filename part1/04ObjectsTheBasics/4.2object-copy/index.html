@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>stamp</title>
+
+	<link rel="icon" href="/images/favicon.ico" />
+	<link rel="stylesheet" href="/images/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="/normalize.css" /> -->
+	<link rel="stylesheet" href="./style.css" />
+	<script src="./script.js"></script>
+	<script src="./lodash.js"></script>
+</head>
+
+<body>
+	<ul>
+		<li><a href="/" id="mainPage">root Main page</a></li>
+		<li><a href="https://learn.javascript.ru/object-copy">Копирование объектов и ссылки</a></li>
+	</ul>
+
+	<script>
+		// ;(function(){})();
+		/*
+			let a = new Object();
+			let b = a;
+
+			console.log(a === b); // true
+		*/
+
+		//================ Object.assign ==========
+		/*
+		let user = {
+			name: "Иван",
+			age: 30
+		};
+
+		let clone = {};
+
+		for (let key in user) {
+			clone[key] = user[key];
+		}
+
+		console.log(user);
+		console.log(clone);
+
+		clone.name = "Пётр";
+
+		console.log(user);
+		console.log(clone);
+		*/
+
+		// Object.assign(dest, [src1, src2, src3...])
+
+		/*
+		let user = { name: "Иван" };
+		let permessions1 = { canView: true };
+		let permessions2 = { canEdit: true, name: "Petya" };
+
+		Object.assign(user, permessions1, permessions2);
+
+		console.log(user);
+		*/
+
+
+		/*
+		let user = {
+			name: "Иван",
+			age: 30,
+		};
+
+		let clone = Object.assign({}, user);
+
+		console.log(user);
+		console.log(clone);
+		*/
+
+		//====================== Вложенное клонирование ==========
+		/*
+		let user = {
+			name: "Иван",
+			sizes: {
+				height: 182,
+				width: 50,
+			}
+		};
+
+		let clone = Object.assign({}, user);
+
+		console.log(user.sizes === clone.sizes);
+		console.log(user.name === clone.name);
+
+		user.sizes.width++;
+
+		console.log(user);
+		console.log(clone);
+		*/
+
+		// with lodash https://lodash.com/docs/4.17.15#cloneDeep
+		/*
+		let user = {
+			name: "Иван",
+			sizes: {
+				height: 182,
+				width: 50,
+			}
+		};
+
+		let clone = _.cloneDeep(user);
+
+		console.log(user.sizes === clone.sizes);
+		console.log(user.name === clone.name);
+
+		user.sizes.width++;
+
+		console.log(user);
+		console.log(clone);
+		*/
+
+	</script>
+
+	<script src="/part1/common.js"></script>
+</body>
+
+</html>
