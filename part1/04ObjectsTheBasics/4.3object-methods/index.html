@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>stamp</title>
+
+	<link rel="icon" href="/images/favicon.ico" />
+	<link rel="stylesheet" href="/images/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="/normalize.css" /> -->
+	<link rel="stylesheet" href="./style.css" />
+	<script src="./script.js"></script>
+</head>
+
+<body>
+	<ul>
+		<li><a href="/" id="mainPage">root Main page</a></li>
+		<li><a href="https://learn.javascript.ru/object-methods">Методы объекта, "this"</a></li>
+	</ul>
+
+
+
+	<script>
+		/*
+		let user = {
+			name: "John",
+			age: 30,
+		}
+
+		user.sayHi = function() {
+			alert("Привет!");
+		}
+
+		user.sayHi();
+		*/
+
+
+		/*
+				let user = {
+					name: "John",
+					age: 30,
+				}
+
+				function sayHi(){
+					alert('Hi!');
+				}
+
+				user.sayHi = sayHi;
+
+				user.sayHi();
+		*/
+
+		/*
+
+		
+		user = {
+			sayHi: function () {
+				console.log('Hi_1');
+			}
+		}
+
+		user2 = {
+			sayHi() {
+				console.log('Hi_2');
+			}
+		}
+
+		user.sayHi();
+		user2.sayHi();
+
+		*/
+
+		/*
+				let user = {
+					name: "John",
+					sayHi() {
+						console.log(this.name);
+					}
+				}
+				user.sayHi(); // John
+
+				let admin = user;
+
+				user = null;
+
+				admin.sayHi(); // John
+		*/
+
+		/*
+				let user = {name: "John"};
+				let admin = {name: "Admin"};
+
+				function sayHi(){
+					console.log(this.name);
+				}
+
+				user.f = sayHi;
+				admin.f = sayHi;
+
+				user.f();
+				admin.f();
+
+				admin['f']();
+		*/
+
+		/*
+		'use strict';
+
+		function sayHi() {
+			console.log(this);
+		}
+
+		sayHi(); // в строгом режиме вызовет ошибку
+		*/
+
+
+		/*
+				'use strict';
+
+				let user = {
+					name: "Джон",
+					hi() {
+						console.log(this.name);
+					},
+					bye() {
+						console.log("Пока");
+					}
+				};
+
+				user.hi(); // Джон (простой вызов метода работает хорошо)
+
+				// теперь давайте попробуем вызывать user.hi или user.bye
+				// в зависимости от имени пользователя user.name
+				// (user.name === "Джон" ? user.hi : user.bye)(); // Ошибка!
+				user.name === "Джон" ? user.hi() : user.bye(); // а так стработает правильно :)s
+		*/
+
+		'use strict';
+
+		let user = {
+			firstName: "Iliay",
+			sayHi(){
+				let arrow = () => console.log(this.firstName);
+				arrow();
+			}
+		};
+		user['sayHi']();
+	</script>
+
+	<script src="/part1/common.js"></script>
+</body>
+
+</html>
