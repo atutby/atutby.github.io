@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>stamp</title>
+
+	<link rel="icon" href="/images/favicon.ico" />
+	<link rel="stylesheet" href="/images/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="/normalize.css" /> -->
+	<link rel="stylesheet" href="./style.css" />
+	<script src="./script.js"></script>
+</head>
+
+<body>
+	<ul>
+		<li><a href="/" id="mainPage">root Main page</a></li>
+		<li><a href="https://learn.javascript.ru/constructor-new">Конструкторы, создание объектов через "new"</a></li>
+	</ul>
+
+	<script>
+		/*
+			function User(name) {
+				this.name = name;
+				this.isAdmin = false;
+			}
+
+			let user = new User("Вася");
+
+			console.log(user.name);
+			console.log(user.isAdmin);
+*/
+
+		/*
+		let user = new function() {
+			this.name = 'John';
+			this.isAdmin = false;
+		}
+
+		console.log(user);
+		*/
+
+/*
+function User() {
+	console.log(new.target);
+}
+
+User(); // undefined
+
+new User(); // function User { ... }
+*/
+
+/*
+function User(name) {
+	if (!new.target) {
+		return new User(name);
+	}
+
+	this.name = name;
+}
+
+let vasya = User("John");
+console.log(vasya.name);
+*/
+
+/*
+function BigUser() {
+	this.name = "Вася";
+	return {name: "Godzilla"};
+}
+console.log(new BigUser().name); // Godzilla
+
+function SmallUser() {
+	this.name = "Вася";
+	return;
+}
+console.log(new SmallUser().name); // Вася
+*/
+
+/*
+let user1 = new User; // эквивалентны
+let user2 = new User();
+*/
+
+/*
+let obj = {};
+
+function A() { return obj; }
+function B() { return obj; }
+console.log( new A() === new B()); // true
+*/
+
+/*
+function User(name) {
+	this.name = name;
+	this.sayHi = function() {
+		console.log( "My name is: " + this.name);
+	};
+}
+
+let vasya = new User("Вася");
+vasya.sayHi();
+console.log(vasya);
+*/
+
+/*
+function Calculator() {
+	this.read = function() {
+		this.a = +prompt('a?', 0);
+		this.b = +prompt('b?', 0);
+	};
+	this.sum = function() {
+		return this.a + this.b;
+	};
+	this.mul = function() {
+		return this.a * this.b;
+	}
+}
+let calculator = new Calculator();
+calculator.read();
+
+console.log("Sum=" + calculator.sum());
+console.log("Mul=" + calculator.mul());
+*/
+
+function Accumulator(a){
+	const startingValue = +a;
+	this.value = startingValue;
+	this.read = function(){
+		this.value += +prompt('Add new number: ', '0');
+	}
+}
+
+let accumulator = new Accumulator(1);
+accumulator.read();
+accumulator.read();
+alert(accumulator.value);
+
+
+
+	</script>
+
+	<!-- <script src="/part1/common.js"></script> -->
+</body>
+
+</html>

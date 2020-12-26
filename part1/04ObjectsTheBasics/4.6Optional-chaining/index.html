@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>stamp</title>
+
+	<link rel="icon" href="/images/favicon.ico" />
+	<link rel="stylesheet" href="/images/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="/normalize.css" /> -->
+	<link rel="stylesheet" href="./style.css" />
+	<script src="./script.js"></script>
+</head>
+
+<body>
+	<ul>
+		<li><a href="/" id="mainPage">root Main page</a></li>
+		<li><a href="https://learn.javascript.ru/optional-chaining">Опциональная цепочка '?.'</a></li>
+		<li><a href="https://javascript.info/optional-chaining">Optional chaining '?.'</a></li>
+	</ul>
+
+	<script>
+		/*
+		let user = {};
+		// console.log(user.address);
+			
+		// let html = document.querySelector('.my-element').innerHTML;
+
+		console.log( user && user.address && user.address.stret );
+
+		let user2 = null
+		console.log(user2?.address);
+		console.log(user2?.address.steet);
+*/
+
+		/*
+		let user1 = {
+			admin() {
+				console.log("I am admin");
+			}
+		}
+		let user2 = {
+			admin: 'cat'
+		};
+
+		user1.admin?.();
+		// user2.admin?.(); // index.html:47 Uncaught TypeError: user2.admin is not a function
+		*/
+
+		/*
+		let user1 = {
+			firstName: "Иван"
+		};
+
+		let user2 = null;
+
+		let key = 'firstName';
+
+		console.log(user1?.[key]);
+		console.log(user2?.[key]);
+
+		console.log(user1?.[key]?.something?.not?.existing); // undefined
+		*/
+
+		let user = {};
+
+		delete user?.name;
+	</script>
+
+	<script src="/part1/common.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>stamp</title>
+
+	<link rel="icon" href="/images/favicon.ico" />
+	<link rel="stylesheet" href="/images/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="/normalize.css" /> -->
+	<link rel="stylesheet" href="./style.css" />
+	<script src="./script.js"></script>
+</head>
+
+<body>
+	<ul>
+		<li><a href="/" id="mainPage">root Main page</a></li>
+		<li><a href="https://learn.javascript.ru/object-methods">Методы объекта, "this"</a></li>
+	</ul>
+
+
+
+	<script>
+		/*
+		let user = {
+			name: "John",
+			age: 30,
+		}
+
+		user.sayHi = function() {
+			alert("Привет!");
+		}
+
+		user.sayHi();
+		*/
+
+
+		/*
+				let user = {
+					name: "John",
+					age: 30,
+				}
+
+				function sayHi(){
+					alert('Hi!');
+				}
+
+				user.sayHi = sayHi;
+
+				user.sayHi();
+		*/
+
+		/*
+
+		
+		user = {
+			sayHi: function () {
+				console.log('Hi_1');
+			}
+		}
+
+		user2 = {
+			sayHi() {
+				console.log('Hi_2');
+			}
+		}
+
+		user.sayHi();
+		user2.sayHi();
+
+		*/
+
+		/*
+				let user = {
+					name: "John",
+					sayHi() {
+						console.log(this.name);
+					}
+				}
+				user.sayHi(); // John
+
+				let admin = user;
+
+				user = null;
+
+				admin.sayHi(); // John
+		*/
+
+		/*
+				let user = {name: "John"};
+				let admin = {name: "Admin"};
+
+				function sayHi(){
+					console.log(this.name);
+				}
+
+				user.f = sayHi;
+				admin.f = sayHi;
+
+				user.f();
+				admin.f();
+
+				admin['f']();
+		*/
+
+		/*
+		'use strict';
+
+		function sayHi() {
+			console.log(this);
+		}
+
+		sayHi(); // в строгом режиме вызовет ошибку
+		*/
+
+
+		/*
+				'use strict';
+
+				let user = {
+					name: "Джон",
+					hi() {
+						console.log(this.name);
+					},
+					bye() {
+						console.log("Пока");
+					}
+				};
+
+				user.hi(); // Джон (простой вызов метода работает хорошо)
+
+				// теперь давайте попробуем вызывать user.hi или user.bye
+				// в зависимости от имени пользователя user.name
+				// (user.name === "Джон" ? user.hi : user.bye)(); // Ошибка!
+				user.name === "Джон" ? user.hi() : user.bye(); // а так стработает правильно :)s
+		*/
+
+		/*
+		'use strict';
+
+		let user = {
+			firstName: "Iliay",
+			sayHi(){
+				let arrow = () => console.log(this.firstName);
+				arrow();
+			}
+		};
+		user['sayHi']();
+		*/
+
+		/*
+				'use strict';
+				let user = {
+					name: "John",
+					go: function() { alert(this.name) },
+				};		
+				user.go();
+		*/
+
+		/*
+				'use strict';
+
+				let obj, method;
+
+				obj = {
+					go: function() { console.log(this) }
+				};
+
+				obj.go(); // (1) [object Object]
+
+				(obj.go)(); // (2) [object Object]
+
+				(method = obj.go)(); // (3) undefined
+
+				(obj.go || obj.stop)(); // (4) undefined
+		*/
+
+		/*
+				'use strict';
+				function makeUser() {
+					return {
+						name: "John",
+						ref: this
+					};
+				};
+
+				let user = makeUser();
+
+				console.log(user.ref.name); // Error: Cannot read property 'name' of undefined
+		*/
+
+		/*
+				'use strict';
+				
+				let user = {name: "John2", ref: this};
+
+				console.log(user.ref); // Window
+		*/
+
+		/*
+				'use strict';
+				function makeUser(){
+					return {
+						name: "John",
+						ref() {
+							return this;
+						},
+					};
+				};
+
+				let user = makeUser();
+
+				console.log(user.ref().name);
+		*/
+
+		/*
+				'use strict';
+				let calculator = {
+					sum() {
+						return this.a + this.b;
+					},
+
+					mul() {
+						return this.a * this.b;
+					},
+
+					read() {
+						this.a = +prompt('a?', 0);
+						this.b = +prompt('b?', 0);
+					}
+				};
+
+				// calculator.read();
+				console.log(calculator.sum());
+				console.log(calculator.mul());
+		*/
+
+		// --BEGIN ==================== JavaScript #12: методы объектов, ключевое слово this
+		// https://www.youtube.com/watch?v=FRH0e2Is9_M
+
+		/*
+				"use strict";
+
+				let car1 = {model: "toyota"};
+				let car2 = {model: "Matiz"};
+
+				car1.getModel = getModel;
+				car2.getModel = getModel;
+
+				console.log(car1.getModel() );
+				console.log(car2.getModel() );
+
+				// getModel(); // index.html:254 Uncaught TypeError: Cannot read property 'model' of undefined
+
+				function getModel(){
+					return this.model;
+				}
+		*/
+
+		/*
+				"use strict";
+
+				let car = {
+					model: "toyota",
+					getModel() {
+						return this.model;
+					}
+				};
+
+				let get = car.getModel; // Здесь мы делаем операцию обратную в предыдущем примере, когда была сразу объявлена функция, а потом она присвоилась методу.
+
+				console.log(car.getModel());
+				// console.log(get()); // index.html:264 Uncaught TypeError: Cannot read property 'model' of undefined
+														// at getModel (index.html:264)
+														// at index.html:271
+		*/
+
+		// --END JavaScript #12: методы объектов, ключевое слово this
+
+
+		/*
+				// --BEGIN ==============Урок 2. JavaScript. Что такое контекст this. Как работает call, bind, apply
+				// https://www.youtube.com/watch?v=UGapN-hrekw
+				"use strict";
+				function hello(){
+					console.log('Hello', this); // Hello undefined
+				}
+				// console.group()
+				// console.groupEnd()
+				// --END
+		*/
+
+		/*
+				// =========== ООП JavaScript ============ WebDev с нуля. Канал Алекса Лущенко
+				// https://www.youtube.com/playlist?list=PLM7wFzahDYnHyRpmcSGOptXan08CNb9nh
+		*/
+
+		/*
+				let ladder = {
+					step: 0,
+					up() {
+						this.step++;
+						return this;
+					},
+					down() {
+						this.step--;
+						return this;
+					},
+					showStep() { // показывает текущую ступеньку
+						console.log(this.step);
+					}
+				};
+
+				ladder.up();
+				ladder.up();
+				ladder.up();
+				ladder.down();
+				ladder.showStep();
+
+				ladder.up().up().down().showStep();
+		*/
+	</script>
+
+	<script src="/part1/common.js"></script>
+</body>
+
+</html>
