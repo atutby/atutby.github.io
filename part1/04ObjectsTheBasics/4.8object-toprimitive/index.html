@@ -3,41 +3,91 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
-		<title>stamp</title>
-		
+
+    <title>stamp</title>
+
     <link rel="icon" href="/images/favicon.ico" />
-		<link rel="stylesheet" href="/images/bootstrap.min.css">
+    <link rel="stylesheet" href="/images/bootstrap.min.css" />
     <!-- <link rel="stylesheet" href="/normalize.css" /> -->
     <link rel="stylesheet" href="./style.css" />
     <script src="./script.js"></script>
+    <style>
+      .other {
+        white-space: pre-line;
+      }
+    </style>
   </head>
 
   <body>
     <ul>
       <li><a href="/" id="mainPage">root Main page</a></li>
-			<li><a href="https://learn.javascript.ru/object-toprimitive">Преобразование объектов в примитивы</a></li>
-			<li><a href="https://javascript.info/object-toprimitive">Object to primitive conversion</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/object-toprimitive"
+          >Преобразование объектов в примитивы</a
+        >
+      </li>
+      <li>
+        <a href="https://javascript.info/object-toprimitive"
+          >Object to primitive conversion</a
+        >
+      </li>
+      <li><a href="http://htmlbook.ru/css/white-space">white-space</a></li>
     </ul>
 
-		<script>
-		let user = {
-			name: 'John',
-			money: 1000,
-
-			[Symbol.toPrimitive](hint) {
-				console.log(`hint: ${hint}`);
-				return hint == "string" ? `{name: '${this.name}'}` : this.money;
-			}
-		}
-
-		console.log(user);
-		alert(user); // hint: string -> {name: 'John'}
-		console.log(+user);
-		console.log(user + 500);
-			
-		</script>
+    <div class="other">
+      <script>
+        /*
+				let user = {
+					name: 'John',
+					money: 1000,
 		
+					[Symbol.toPrimitive](hint) {
+						console.log(`hint: ${hint}`);
+						return hint == "string" ? `{name: '${this.name}'}` : this.money;
+					}
+				}
+		
+				console.log(user);
+				// alert(user); // hint: string -> {name: 'John'}
+				console.log(+user);
+				console.log(user + 500);
+		*/
+
+        /*
+		let user = {
+			name: "John",
+			money: 1000,
+		
+			// для хинта равного "string"
+			toString() {
+				return `{name: "${this.name}"}`;
+			},
+		
+			// для хинта равного "number" или "default"
+			valueOf() {
+				return this.money;
+			}
+		
+		};
+		
+		document.writeln(user);
+		document.writeln(+user);
+		document.writeln(user + 500);
+		*/
+
+        let user = {
+          name: "John",
+
+          toString() {
+            return this.name;
+          },
+        };
+        document.writeln(user);
+        document.writeln(+user);
+        document.writeln(user + 500);
+      </script>
+    </div>
+
     <script src="/part1/common.js"></script>
   </body>
 </html>
