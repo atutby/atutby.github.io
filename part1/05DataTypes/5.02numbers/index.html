@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<title>stamp</title>
+		
+    <link rel="icon" href="/images/favicon.ico" />
+		<link rel="stylesheet" href="/images/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="/normalize.css" /> -->
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body>
+		<header>
+			<nav>
+				<span><a href="/" id="mainPage">root Main page</a></span>
+				<span><a href="https://learn.javascript.ru/number">Числа</a></span>
+				<span><a href="https://javascript.info/number">Numbers</a></span>
+			</nav>
+		</header>
+
+		<p></p>
+
+		<main><script>
+			// 'use strict';
+			document.writeln('<a href="https://learn.javascript.ru/number#netochnye-vychisleniya">Неточные вычисления continue...</a>')
+// ...
+			document.writeln();
+
+			let billion = 1e9;			
+			document.writeln(billion);			
+			let ms = 1e-6;
+			document.writeln(ms);
+
+			let a = 0b11111111;
+			let b = 0o377 + 1 + a; // 511
+			document.writeln(b); // 511
+			let c = 0xff;
+			let d = 123456; 
+			let e =	123456..toString(36); // 36-ричная система
+			document.writeln(e); // 2n9c
+
+			document.writeln();
+			document.writeln('Округление');
+			let num = 1.23456;
+			document.writeln(Math.floor(num * 100) / 100); // 1.23
+			document.writeln(num.toFixed(3) ); // '1.235'
+			document.writeln(Math.ceil(num)); // 2
+			document.writeln(Math.round(num)); // 1
+
+
+		</script>
+
+		
+		</main>
+
+		
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
