@@ -3,61 +3,169 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
-		<title>stamp</title>
-		
+
+    <title>stamp</title>
+
     <link rel="icon" href="/images/favicon.ico" />
-		<link rel="stylesheet" href="/images/bootstrap.min.css">
+    <link rel="stylesheet" href="/images/bootstrap.min.css" />
     <!-- <link rel="stylesheet" href="/normalize.css" /> -->
     <link rel="stylesheet" href="./style.css" />
     <script src="./script.js"></script>
   </head>
 
   <body>
-		<header>
-			<nav>
-				<span><a href="/" id="mainPage">root Main page</a></span>
-				<span><a href="https://learn.javascript.ru/number">Числа</a></span>
-				<span><a href="https://javascript.info/number">Numbers</a></span>
-			</nav>
-		</header>
+    <header>
+      <nav>
+        <span><a href="/" id="mainPage">root Main page</a></span>
+        <span><a href="https://learn.javascript.ru/number">Числа</a></span>
+        <span><a href="https://javascript.info/number">Numbers</a></span>
+      </nav>
+    </header>
 
-		<p></p>
+    <p></p>
 
-		<main><script>
-			// 'use strict';
-			document.writeln('<a href="https://learn.javascript.ru/number#netochnye-vychisleniya">Неточные вычисления continue...</a>')
-// ...
-			document.writeln();
+    <main>
+      <!-- <script>
+        // 'use strict';
+        document.writeln(
+          '<a href="https://learn.javascript.ru/number#netochnye-vychisleniya">Неточные вычисления continue...</a>'
+        );
+        document.writeln(1e500);
+        document.writeln(0.1 + 0.2);
+        document.writeln(0.1 + 0.3 == 0.3); // false
+        document.writeln((0.1).toFixed(20));
+        let sum = 0.1 + 0.2;
+        document.writeln(+sum.toFixed(2));
+        document.write("Выведем число 9999999999999999: ");
+        document.writeln(9999999999999999);
+      </script>
+      <p>формат IEEE 754, включая PHP, Java, C, Perl, Ruby</p>
+      <script>
+        document.writeln(
+          '<a href="https://learn.javascript.ru/number#proverka-isfinite-i-isnan">Проверка: isFinite и isNaN continue...</a>'
+        );
+        document.writeln(+0 === -0);
+        document.writeln("isNaN(NaN): " + isNaN(NaN));
+        document.writeln('isNaN("str"): ' + isNaN("str"));
+        document.writeln(NaN == NaN);
+        document.writeln(isFinite("15"));
+        document.writeln(isFinite("str"));
+        document.writeln(isFinite(Infinity));
+        // let num1 = +prompt("Enter a number", '');
+        let num1 = "";
+        document.writeln(
+          "Prompt возвращает true из пустой строки: " + isFinite(num1)
+        );
+        document.writeln(Object.is(NaN, NaN));
+        document.writeln(Object.is(0, -0));
+        document.writeln();
 
-			let billion = 1e9;			
-			document.writeln(billion);			
-			let ms = 1e-6;
-			document.writeln(ms);
+        document.writeln(
+          '<a href="https://learn.javascript.ru/number#parseint-i-parsefloat">parseInt и parseFloat continue...</a>'
+        );
+        document.writeln(parseInt("100px"));
+        document.writeln(parseFloat("12.5em"));
+        document.writeln(parseInt("a123"));
+        document.writeln(parseInt("2n9c", 36));
+				document.writeln(Math.random());
+				let numbers = '3, 5, -10, 0, 1'
+				document.writeln(Math.max(3, 5, -10, 0, 1)); // 5
+				document.writeln(Math.min(3, 5, -10, 0, 1)); // -10
+				document.writeln(Math.pow(2, 10)); // 1024
+      </script>
 
-			let a = 0b11111111;
-			let b = 0o377 + 1 + a; // 511
-			document.writeln(b); // 511
-			let c = 0xff;
-			let d = 123456; 
-			let e =	123456..toString(36); // 36-ричная система
-			document.writeln(e); // 2n9c
+      <script>
+        //
+        let billion = 1e9;
+        document.writeln(billion);
+        let ms = 1e-6;
+        document.writeln(ms);
 
-			document.writeln();
-			document.writeln('Округление');
-			let num = 1.23456;
-			document.writeln(Math.floor(num * 100) / 100); // 1.23
-			document.writeln(num.toFixed(3) ); // '1.235'
-			document.writeln(Math.ceil(num)); // 2
-			document.writeln(Math.round(num)); // 1
+        let a = 0b11111111;
+        let b = 0o377 + 1 + a; // 511
+        document.writeln(b); // 511
+        let c = 0xff;
+        let d = 123456;
+        let e = (123456).toString(36); // 36-ричная система
+        document.writeln(e); // 2n9c
 
+        document.writeln();
+        document.writeln("Округление");
+        let num = 1.23456;
+        document.writeln(Math.floor(num * 100) / 100); // 1.23
+        document.writeln(num.toFixed(3)); // '1.235'
+        document.writeln(Math.ceil(num)); // 2
+        document.writeln(Math.round(num)); // 1
+			</script> -->
 
-		</script>
+      <script>
+        /*
+				let n1 = +prompt('n1: ', '');
+				let n2 = +prompt('n2: ', '');
+				alert(n1 + n2)
+*/
 
-		
-		</main>
+        /*
+document.writeln(1.35.toFixed(1));
 
-		
-    <script src="/part1/common.js"></script>
+let num2 = 6.35;
+function myRound(num, n){
+	return Math.round(num * 10*n) / (10*n);
+}
+document.writeln(myRound(num2, 1));
+*/
+
+        /*
+function readNumber() {
+	let n;
+	do {
+		n = +prompt('Your number? ', '');
+	} while ( !isFinite(n))
+
+	return n;
+}
+// readNumber();
+*/
+      </script>
+
+      <h2>
+        <a
+          href="https://learn.javascript.ru/number#sluchaynoe-chislo-ot-min-do-max"
+          >task Случайное число от min до max</a
+        >
+      </h2>
+      <p>
+        Функция формирует случайное число от min включительно, до max не включая
+      </p>
+      <script>
+        function random(min, max) {
+          return min + (max - min) * Math.random();
+        }
+        document.writeln(random(5, 5 + 1e-14));
+      </script>
+
+      <h2>
+        <a
+          href="https://learn.javascript.ru/number#sluchaynoe-tseloe-chislo-ot-min-do-max"
+          >task Случайное целое число от min до max</a
+        >
+      </h2>
+      <script>
+        function random2(min, max) {
+          return Math.floor(min + Math.random() * (max + 1 - min));
+        }
+        document.writeln(random2(5, 7));
+
+        function randomInteger(min, max) {
+          // получить случайное число от (min-0.5) до (max+0.5)
+          let rand = min - 0.5 + Math.random() * (max - min + 1);
+          return Math.round(rand);
+				}
+				document.writeln(randomInteger(1, 3))
+				// 3, 1, 1, 3, 1, 3, 3, 2, 2, 1, 2, 3, 1, 3, 1, 2, 2, 2, 2, 1, 1, 1, 1, 3, 2, 2, 3, 3(8) 1(10) 2(8)	
+      </script>
+    </main>
+
+    <!-- <script src="/part1/common.js"></script> -->
   </body>
 </html>
