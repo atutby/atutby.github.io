@@ -74,25 +74,33 @@ arr.push(function() {
 arr[2]();
 */
 
-// /*
-document.writeln('asdf');
+/*
 document.writeln('<h3>Сумма введённых чисел</h3>');
-let num, sum = 0, arr = [];
+let str, sum = 0;
 function sumInput(){
 	while (true) {
-		num = prompt('Your love number?', 0);
-		if (+num || +num == 0) {
-			arr.push(num);
-			sum += +num;
-		} else {
-			break;
-		}		
+		str = prompt('Your love number?', '');
+		if (!isFinite(str) || str === null || str === '') break;
+		sum += +str;
 	}
+	return sum;
 }
-// */
-// document.writeln(sumInput())
+document.writeln(sumInput());
+*/
 
-// let cat;
-document.writeln('catasdf');
+function getMaxSubSum(arr) {
+	document.writeln(arr);
+	let maxSum = 0;
+	let partialSum = 0;
+	 
+	for (let item of arr) {
+		partialSum += item;
+		maxSum = Math.max(maxSum, partialSum);
+		document.writeln('maxSum: ' + maxSum);
+		if (partialSum < 0) partialSum = 0;
+	}
 
+	return maxSum;
+}
 
+document.writeln(getMaxSubSum([2, -8, 5, -1, 2, -3, 2]));
