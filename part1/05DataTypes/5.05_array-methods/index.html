@@ -241,10 +241,30 @@
 
 		let soldiers = users.filter(army.canJoin, army);
 		for (let solder of soldiers){
-			console.log(solder);
+			document.write(solder.age + ' ' + solder.name + '<br>');
 		}
 		*/
-	</script>
+		
+		//===============================================
+/*
+		function camelize(str) {
+			return str.split('-')
+				.map( (item, index) => (index === 0) ? item : item[0].toUpperCase() + item.slice(1))
+				.join('')
+		}
+
+		document.writeln(camelize('cat-cat'));
+*/
+
+/*
+		let arr = [5, 3, 8, 1];
+		function filterRange(arr, a, b) {
+			return arr.filter( item => (item >= a && item <= b))
+		}
+		document.writeln(filterRange(arr, 1, 5)); // 3,1
+*/
+
+ 	</script>
 </body>
 
 </html>
