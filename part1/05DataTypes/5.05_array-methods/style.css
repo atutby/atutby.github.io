@@ -1,0 +1,23 @@
+* {
+	font-size: 21px;
+	letter-spacing: -0.003em;
+	line-height: 32px;
+}
+
+body {
+	max-width: 750px;
+	margin: auto;
+}
+
+p {
+	margin-top: 2em;
+	font-weight: 400;
+	font-size: 18px;
+	font-size: 21px;
+}
+
+/* @media (min-width: 727px){
+	* {
+		font-size: 21px;
+	}
+} */

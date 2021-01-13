@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>stamp</title>
 
-	<title>stamp</title>
+    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/images/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="/normalize.css" /> -->
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
 
-	<link rel="icon" href="/images/favicon.ico" />
-	<link rel="stylesheet" href="/images/bootstrap.min.css">
-	<!-- <link rel="stylesheet" href="/normalize.css" /> -->
-	<link rel="stylesheet" href="./style.css" />
-	<script src="./script.js"></script>
-</head>
+  <body>
+    <h1>Методы массивов</h1>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/array-methods">Методы массивов</a>
+      </li>
+      <li>
+        <a
+          href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array"
+        >
+          Web/JavaScript/Reference/Global_Objects/Array
+        </a>
+      </li>
+      <li>
+        <a href="https://puzzleweb.ru/javascript/16_arrays2.php">
+          Методы массива JavaScript
+        </a>
+      </li>
+      <li>
+        <a href="https://medium.com/webbdev/js-5e1519c6fb07">
+          https://medium.com
+        </a>
+      </li>
+    </ul>
 
-<body>
-	<h1>Методы массивов</h1>
-	<ul>
-		<li><a href="/" id="mainPage">root Main page</a></li>
-		<li><a href="https://learn.javascript.ru/array-methods">Методы массивов</a></li>
-	</ul>
+    <script>
+      //==============Добавление/удаление элементов=====================
+      // arr.splice(index[, deleteCount, elem1, ..., elemN])
 
-	<script>
-		//==============Добавление/удаление элементов=====================
-		// arr.splice(index[, deleteCount, elem1, ..., elemN])
-
-		/*
+      /*
 
 		let arr1 = ["Я", "изучаю", "JavaScript"];
 		arr1.splice(1, 1);
@@ -53,10 +71,9 @@
 
 		*/
 
+      //===============Метод arr.slice намного проще=========
 
-		//===============Метод arr.slice намного проще=========
-
-		/*
+      /*
 
 			let arr = ["t", "e", "s", "t"];
 
@@ -66,8 +83,8 @@
 
 		*/
 
-		//=============Метод arr.concat создаёт новый массив======
-		/*
+      //=============Метод arr.concat создаёт новый массив======
+      /*
 
 			let arr = [1,2];
 
@@ -90,8 +107,8 @@
 
 		*/
 
-		//==============Перебор: forEach===================
-		/*
+      //==============Перебор: forEach===================
+      /*
 		arr = ["Bilbo", "Gandalf", "Naxgul"];
 
 		arr.forEach(console.log);
@@ -100,8 +117,8 @@
 		console.log(`${item} имеет позицию ${index} в ${array}`));
 		*/
 
-		//========indexOf/lastIndexOf и includes========
-		/*
+      //========indexOf/lastIndexOf и includes========
+      /*
 			let arr = [1, 0, false, ,'cat'];
 
 			console.log(arr.indexOf(0)); // 1
@@ -116,8 +133,8 @@
 
 		*/
 
-		//===========find и findIndex==========================
-		/*
+      //===========find и findIndex==========================
+      /*
 		let users = [
 			{id: 1, name: "Вася"},
 			{id: 2, name: "Петя"},
@@ -131,8 +148,8 @@
 		console.log(userIndex);
 		*/
 
-		//=============== filter =========================
-		/*
+      //=============== filter =========================
+      /*
 		let users = [
 			{id: 1, name: "Вася"},
 			{id: 2, name: "Петя"},
@@ -143,8 +160,8 @@
 		console.log(someUsers.length);
 		*/
 
-		//================== sort(fn) ================
-		/*
+      //================== sort(fn) ================
+      /*
 		let arr1 = [1, 2, 15];
 		function compareNumeric(a, b) {
 			if (a > b) return 1;
@@ -167,16 +184,15 @@
 		console.log(arr3);
 		*/
 
-
-		//==================== reverse =========================
-		/*
+      //==================== reverse =========================
+      /*
 		let arr = [1, 2, 3, 4, 5];
 		arr.reverse();
 		console.log(arr);
 		*/
 
-		//================ split и join ==========================
-		/*
+      //================ split и join ==========================
+      /*
 		let names = 'Вася, Петя, Маша';
 		let arr1 = names.split(', ');
 		console.log(names);
@@ -195,8 +211,8 @@
 		console.log(str2);
 		*/
 
-		//=================== reduce/reduceRight =====================
-		/*
+      //=================== reduce/reduceRight =====================
+      /*
 		
 		// let value = arr.reduce(function(previousValue, item, index, array) {
 		// 	// ...
@@ -210,10 +226,9 @@
 		let result2 = arr2.reduce((sum, current) => sum + current, 5);
 		console.log(result2);
 		*/
-		
-		
-		//================ Array.isArray =====================
-		/*
+
+      //================ Array.isArray =====================
+      /*
 		console.log(typeof {}); // object
 		console.log(typeof []); // тоже object
 
@@ -221,9 +236,8 @@
 		console.log(Array.isArray([])); // true
 		*/
 
-
-		//================== thisArg ========================
-		/*
+      //================== thisArg ========================
+      /*
 		let army = {
 			minAge: 18,
 			maxAge: 27,
@@ -244,9 +258,9 @@
 			document.write(solder.age + ' ' + solder.name + '<br>');
 		}
 		*/
-		
-		//===============================================
-/*
+
+      //===============================================
+      /*
 		function camelize(str) {
 			return str.split('-')
 				.map( (item, index) => (index === 0) ? item : item[0].toUpperCase() + item.slice(1))
@@ -256,7 +270,7 @@
 		document.writeln(camelize('cat-cat'));
 */
 
-/*
+      /*
 		let arr = [5, 3, 8, 1];
 		function filterRange(arr, a, b) {
 			return arr.filter( item => (item >= a && item <= b))
@@ -264,7 +278,36 @@
 		document.writeln(filterRange(arr, 1, 5)); // 3,1
 */
 
- 	</script>
-</body>
+/*
+	let arr = [5, 3, 8, 1];
 
+	function filterRangeInPlace(arr, a, b) {
+		arr.forEach((item, index, arr) => {
+			if (item < a || item > b) {
+				arr.splice(index, 1);
+			}
+		});
+	}
+	filterRangeInPlace(arr, 1, 4);
+	document.writeln(arr + '<br>');
+*/
+
+/*
+	let arr = [5, 2, 1, -10, 8];
+	arr.sort((a, b) => b - a);
+	document.writeln(arr + '<br>');
+*/
+
+let arr = ["HTML", "JavaScript", "CSS"];
+function copySorted(arr){
+	return arr
+		.slice()
+		.sort();
+}
+document.writeln(arr + '<br>');
+document.writeln(copySorted(arr) + '<br>');
+
+
+    </script>
+  </body>
 </html>
