@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/images/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="/normalize.css" /> -->
+    <link rel="stylesheet" href="./style3.css" />
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <h1>Методы массивов</h1>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/array-methods">Методы массивов</a>
+      </li>
+      <li>
+        <a
+          href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array"
+        >
+          Web/JavaScript/Reference/Global_Objects/Array
+        </a>
+      </li>
+      <li>
+        <a href="https://puzzleweb.ru/javascript/16_arrays2.php">
+          Методы массива JavaScript
+        </a>
+      </li>
+      <li>
+        <a href="https://medium.com/webbdev/js-5e1519c6fb07">
+          https://medium.com
+        </a>
+      </li>
+    </ul>
+
+    <h3>Отсортировать пользователей по возрасту</h3>
+
+    <script>
+			let yakov = { name: "ГЯков", age: 27 }
+      let vasya = { name: "ВВася", age: 25 };
+      let petya = { name: "БПетя", age: 30 };
+      let petya2 = { name: "БПетя", age: 31 };
+      let masha = { name: "АМаша", age: 28 };
+
+			let arr = [vasya, petya, yakov, masha, petya2,];
+			
+			function sortByAge(arr) {
+				arr.sort((a,b) => 
+					a.name > b.name ? 1 : -1
+				)
+			}
+
+			sortByAge(arr);
+			console.log(arr);
+			
+    </script>
+
+    <div style="white-space: pre-line;">
+      <script></script>
+    </div>
+  </body>
+</html>

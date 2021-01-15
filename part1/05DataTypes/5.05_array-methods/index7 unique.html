@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/images/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="/normalize.css" /> -->
+    <link rel="stylesheet" href="./style3.css" />
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <h1>Методы массивов</h1>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/array-methods">Методы массивов</a>
+      </li>
+      <li>
+        <a
+          href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array"
+        >
+          Web/JavaScript/Reference/Global_Objects/Array
+        </a>
+      </li>
+      <li>
+        <a href="https://puzzleweb.ru/javascript/16_arrays2.php">
+          Методы массива JavaScript
+        </a>
+      </li>
+      <li>
+        <a href="https://medium.com/webbdev/js-5e1519c6fb07">
+          https://medium.com
+        </a>
+      </li>
+    </ul>
+
+    <h3>Оставить уникальные элементы массива</h3>
+
+    <script></script>
+
+    <div style="white-space: pre-line;">
+      <script>
+        function unique(arr) {
+					let result = [];
+					
+					for (str of arr) {
+						if(!result.includes(str)) {
+							result.push(str);
+						}
+					}
+
+					return result;
+        }
+
+        let strings = [
+          "кришна",
+          "кришна",
+          "харе",
+          "харе",
+          "харе",
+          "харе",
+          "кришна",
+          "кришна",
+          ":-O",
+        ];
+
+        console.log(unique(strings)); // кришна, харе, :-O
+      </script>
+    </div>
+  </body>
+</html>

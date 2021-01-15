@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/images/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="/normalize.css" /> -->
+    <link rel="stylesheet" href="./style3.css" />
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <h1>Методы массивов</h1>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/array-methods">Методы массивов</a>
+      </li>
+      <li>
+        <a
+          href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array"
+        >
+          Web/JavaScript/Reference/Global_Objects/Array
+        </a>
+      </li>
+      <li>
+        <a href="https://puzzleweb.ru/javascript/16_arrays2.php">
+          Методы массива JavaScript
+        </a>
+      </li>
+      <li>
+        <a href="https://medium.com/webbdev/js-5e1519c6fb07">
+          https://medium.com
+        </a>
+      </li>
+    </ul>
+
+    <h3>Трансформировать в объекты</h3>
+
+    <div class="codebox code-example__codebox">
+      <div class="codebox__code" data-code="1">
+        <pre
+          class="line-numbers language-javascript"
+        ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><span class="token keyword">let</span> vasya <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">"Вася"</span><span class="token punctuation">,</span> surname<span class="token operator">:</span> <span class="token string">"Пупкин"</span><span class="token punctuation">,</span> id<span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> petya <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">"Петя"</span><span class="token punctuation">,</span> surname<span class="token operator">:</span> <span class="token string">"Иванов"</span><span class="token punctuation">,</span> id<span class="token operator">:</span> <span class="token number">2</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> masha <span class="token operator">=</span> <span class="token punctuation">{</span> name<span class="token operator">:</span> <span class="token string">"Маша"</span><span class="token punctuation">,</span> surname<span class="token operator">:</span> <span class="token string">"Петрова"</span><span class="token punctuation">,</span> id<span class="token operator">:</span> <span class="token number">3</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> users <span class="token operator">=</span> <span class="token punctuation">[</span> vasya<span class="token punctuation">,</span> petya<span class="token punctuation">,</span> masha <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<em class="block-highlight"><span class="token keyword">let</span> usersMapped <span class="token operator">=</span> <span class="token comment">/* ... ваш код ... */</span></em>
+
+<span class="token comment">/*
+usersMapped = [
+{ fullName: "Вася Пупкин", id: 1 },
+{ fullName: "Петя Иванов", id: 2 },
+{ fullName: "Маша Петрова", id: 3 }
+]
+*/</span>
+
+<span class="token function">alert</span><span class="token punctuation">(</span> usersMapped<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>id <span class="token punctuation">)</span> <span class="token comment">// 1</span>
+<span class="token function">alert</span><span class="token punctuation">(</span> usersMapped<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fullName <span class="token punctuation">)</span> <span class="token comment">// Вася Пупкин</span></code></pre>
+      </div>
+    </div>
+
+    <script>
+      let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+      let petya = { name: "Петя", surname: "Иванов", id: 2 };
+      let masha = { name: "Маша", surname: "Петрова", id: 3 };
+
+      let users = [vasya, petya, masha];
+
+      let names = users.map((item, index, array) => " " + item.name);
+
+      let usersMapped = users.map((item, index, array) => ({
+        fullName: item.name + " " + item.surname,
+        id: item.id,
+      }));
+    </script>
+
+    <div style="white-space: pre-line;">
+      <script>
+        document.writeln(names);
+        console.log(users);
+        console.log(usersMapped);
+      </script>
+    </div>
+  </body>
+</html>
