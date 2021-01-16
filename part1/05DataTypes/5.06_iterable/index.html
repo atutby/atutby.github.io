@@ -16,11 +16,39 @@
   <body>
     <ul>
       <li><a href="/" id="mainPage">root Main page</a></li>
-      <li></li>
+      <li><a href="https://learn.javascript.ru/iterable">Перебираемые объекты</a></li>
     </ul>
 
 		<script>
-			
+			let range = {
+				from: 1,
+				to: 5
+			}
+
+			range[Symbol.iterator] = function() {
+				console.log('cat');
+				return {
+					current: this.from,
+					last: this.to,
+
+					
+
+					next() {
+						if (this.current <= this.last) {
+							console.log('cat2')
+							return { done: false, value: this.current++ }
+						} else {
+							console.log('cat3')
+							return { done: true }
+						}						
+					}
+				}
+			}
+
+			// теперь работает!
+			for (let num of range) {
+				document.write(num + ' ');
+			}
 		</script>
 		
     <script src="/part1/common.js"></script>

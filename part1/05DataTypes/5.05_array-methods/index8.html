@@ -9,7 +9,13 @@
     <link rel="stylesheet" href="/images/bootstrap.min.css" />
     <!-- <link rel="stylesheet" href="/normalize.css" /> -->
     <link rel="stylesheet" href="./style3.css" />
-    <script src="./script.js"></script>
+		<script src="./script.js"></script>
+		<style>
+			* {
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 20px;
+			}
+		</style>
   </head>
   <body>
     <h1>Методы массивов</h1>
@@ -37,37 +43,29 @@
       </li>
     </ul>
 
-    <h3>Оставить уникальные элементы массива</h3>
+    <h3>Переведите текст вида border-left-width в borderLeftWidth</h3>
 
-    <script></script>
+    <script>
+			function filterRange(arr, a, b) {
+				let arrN = [];
+				arr.forEach( item => {
+					if (item >= a && item <= b) {
+						arrN.push(item);
+					}
+				})
+				return arrN;
+			}
+
+			let arr = [5, 3, 8, 1];
+
+			let filtered = filterRange(arr, 1, 4);
+
+
+		</script>
 
     <div style="white-space: pre-line;">
       <script>
-        function unique(arr) {
-					let result = [];
-					
-					for (str of arr) {
-						
-							result.push(str);
-						
-					}
-
-					return result;
-        }
-
-        let strings = [
-          "кришна",
-          "кришна",
-          "харе",
-          "харе",
-          "харе",
-          "харе",
-          "кришна",
-          "кришна",
-          ":-O",
-        ];
-
-        console.log(unique(strings)); // кришна, харе, :-O
+				document.writeln(filtered);
       </script>
     </div>
   </body>
