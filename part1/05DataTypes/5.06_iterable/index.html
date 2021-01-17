@@ -20,6 +20,7 @@
     </ul>
 
 		<script>
+// /*
 			let range = {
 				from: 1,
 				to: 5
@@ -30,9 +31,6 @@
 				return {
 					current: this.from,
 					last: this.to,
-
-					
-
 					next() {
 						if (this.current <= this.last) {
 							console.log('cat2')
@@ -49,6 +47,48 @@
 			for (let num of range) {
 				document.write(num + ' ');
 			}
+// */
+
+/*
+let str = "Hello";
+let iterator = str[Symbol.iterator]();
+
+while (true) {
+	let result = iterator.next();
+	if (result.done) break;
+	document.writeln(result.value + ' ');
+}
+*/
+
+let arrayLike = {
+	0: "hello",
+	1: "World",
+	length: 2,
+};
+
+document.writeln('<hr>');
+let arr = Array.from(arrayLike); // (*)
+document.writeln(arr.pop());
+
+document.writeln('<hr>');
+let arr2 = Array.from(range);
+document.writeln(arr2); // 1,2,3,4,5 (преобразование массива через toString работает)
+
+document.writeln('<hr>');
+let arr3 = Array.from(range, num => num * num);
+document.writeln(arr3);
+
+document.writeln('<hr>');
+let str = '𝒳😂';
+// разбивает строку на массив её элементов
+let chars = Array.from(str);
+document.writeln(chars[0]); // 𝒳
+document.writeln(chars[1]); // 😂
+document.writeln(chars.length); // 2
+
+let wr = document.writeln.bind(this);
+
+wr('Hello');
 		</script>
 		
     <script src="/part1/common.js"></script>
