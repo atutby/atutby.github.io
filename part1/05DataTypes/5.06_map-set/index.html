@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<title>stamp</title>
+		
+    <link rel="icon" href="/images/favicon.ico" />
+		<link rel="stylesheet" href="/images/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="/normalize.css" /> -->
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li><a href="https://learn.javascript.ru/map-set">Map и Set</a></li>
+    </ul>
+
+		<script>
+			let map = new Map();
+			map.set("1", "str1");
+			map.set(1, "num1");
+			map.set(true, "bool1");
+			document.writeln(map.get(1),'  ',map.get('1'),' ', map.get(true));
+
+			let john = { name: "John" };
+			let john2 = { name: "John2" };
+
+			let visitsCountMap = new Map();
+			visitsCountMap.set(john, '123+c');
+			visitsCountMap.set(john2, '123+c5').set(101, 'littleCat').set(NaN, 'NaN');			
+			document.writeln(visitsCountMap.get(john),' ', visitsCountMap.get(john2));
+			document.writeln('<hr>')
+			for (let entry of visitsCountMap){
+				document.writeln(entry, "<br>");
+				console.log(entry)
+			}
+			document.writeln('<hr>')
+
+
+			let visitsCountObj = {}
+			visitsCountObj[john] = '123+b';
+			visitsCountObj[john2] = '123+bc';
+			document.writeln(visitsCountObj['[object Object]']);
+			document.writeln(visitsCountObj[john]);
+
+
+			
+
+
+		</script>
+		
+    <script src="/part1/common.js"></script>
+  </body>
+</html>

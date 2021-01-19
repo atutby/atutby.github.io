@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let cat = {
+			'asd': 'asdf',
+			'one': 'asdf  one'
+		}
+
+Object.keys(cat)
+.forEach((item,index) =>
+	document.writeln(item + ' = ' + cat[item] + ';')
+)
+document.writeln('<br>');
+		// for (item of cat) {
+		// 	// document.writeln(item);
+		// }
+
+
+		let range = {
+			from: 1,
+			to: 5,
+		};
+
+		range[Symbol.iterator] = function() {
+			return {
+				current: this.from,
+				last: this.to,
+				next() {
+					if (this.current <= this.last) {
+						return {done: false, value: this.current++}
+					} else {
+						return { done: true };
+					}
+				}
+			}
+		}
+
+		for (let num of range) {
+			document.writeln(num);
+		}
+
+
+	</script>
+</body>
+</html>

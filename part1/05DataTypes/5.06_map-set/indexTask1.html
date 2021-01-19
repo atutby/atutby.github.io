@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.task {
+				padding: 1em; background-color: #333; color: white;
+				border-radius: 30px;
+				margin-bottom: 1em;
+				margin-left: 2em;
+			}
+
+			@media (min-width: 500px) {
+				.task {
+					margin-left: 8em;
+				}
+			}
+		</style>
+  </head>
+  <body>
+    <div class="task">
+      Создайте функцию unique(arr), которая вернёт массив уникальных, не
+      повторяющихся значений массива arr.
+		</div>
+		
+    <script>
+      function unique(arr) {
+        let set = new Set(arr);
+        let result = [];
+        for (let item of set) {
+          result.push(item);
+        }
+        return result;
+      }
+
+      let values = [
+        "Hare",
+        "Krishna",
+        "Hare",
+        "Krishna",
+        "Krishna",
+        "Krishna",
+        "Hare",
+        "Hare",
+        ":-O",
+      ];
+			
+      document.writeln("<hr>");
+      for (let item of values) {
+        document.writeln(item + " ");
+      }
+      document.writeln("<hr>");
+      document.writeln(unique(values)); // Hare,Krishna,:-O
+    </script>
+  </body>
+</html>
