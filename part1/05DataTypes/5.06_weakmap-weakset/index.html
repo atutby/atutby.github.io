@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>stamp</title>
+
+    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/images/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="/normalize.css" /> -->
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/weakmap-weakset"
+          >WeakMap и WeakSet</a
+        >
+      </li>
+    </ul>
+
+    <script>
+/*
+let john = { name: "John" };
+console.log(john);
+document.writeln(john);
+
+john = null;
+console.log(john);
+*/
+
+/*
+let john = {name: "John"};
+let john1 = {name: "John"};
+let map = new Map();
+map.set(john, "...cat...");
+map.set(john1, "...cat2...");
+john = null;
+console.log(map.entries());
+console.log(Array.from(map.entries()));
+*/
+
+/*
+let weakMap = new WeakMap();
+console.log(weakMap);
+let obj = {};
+let obj2 = [];
+weakMap.set(obj, 'ok'); // работает объект в качестве ключа
+// weakMap.set('test', 'Whoops'); // index.html:51 Uncaught TypeError: Invalid value used as weak map key
+console.log(weakMap);
+obj = null;
+console.log(weakMap);
+weakMap.set(obj2, 'hren');
+console.log(weakMap);
+console.log(Array.from(weakMap));
+console.log(weakMap);
+console.log(weakMap.has(obj));
+*/
+
+// /*
+// FOLDER vistisCount.js
+let visitsCountMap = new WeakMap();
+function countUser(user) {
+	let count = visitsCountMap.get(user) || 0;
+	visitsCountMap.set(user, count + 1);
+}
+// FOLDER main.js
+let john = { name: 'John' };
+let john2= { name: 'John2' };
+countUser(john); // ведём подсчёт посещений
+countUser(john); // ведём подсчёт посещений
+countUser(john); // ведём подсчёт посещений
+countUser(john2); // ведём подсчёт посещений
+console.log(visitsCountMap);
+// console.log(Array.from(visitsCountMap.entries()));
+console.log(Array.from(visitsCountMap));
+john = null;
+john2 = null;
+console.log(visitsCountMap);
+// */
+
+
+
+    </script>
+
+    <script src="/part1/common.js"></script>
+  </body>
+</html>

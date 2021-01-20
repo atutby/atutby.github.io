@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .task {
+        padding: 1em;
+        background-color: #333;
+        color: white;
+        border-radius: 30px;
+        margin-bottom: 1em;
+        margin-left: 2em;
+      }
+
+      @media (min-width: 500px) {
+        .task {
+          margin-left: 8em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="task">
+			<h3>Отфильтруйте анаграммы</h3>
+			Анаграммы – это слова, у которых те же буквы в том же количестве,
+			но они располагаются в другом порядке.
+    </div> -->
+
+    <script>
+      function aclean(arr) {
+				let map = new Map();
+				for (let word of arr) {
+					map.set(word.toLowerCase().split('').sort().join(''), word);
+				}
+				return Array.from(map.values());
+			}
+
+      let arr = [
+        "nap",
+        "teachers",
+        "cheaters",
+        "PAN",
+        "ear",
+        "era",
+        "hectares",
+      ];
+
+      document.writeln(aclean(arr)); // "nap,teachers,ear" or "PAN,cheaters,era"
+    </script>
+  </body>
+</html>
