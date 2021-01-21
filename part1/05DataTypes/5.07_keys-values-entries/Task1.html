@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+			function sumSalaries(salaries) {
+				return Object.values(salaries)
+				.reduce((previousValue, item, index, array) => previousValue + item, 0)
+			}
+      let salaries = {
+        John: 100,
+        Pete: 300,
+        Mary: 250,
+      };
+      document.writeln(sumSalaries(salaries)); // 650
+    </script>
+  </body>
+</html>

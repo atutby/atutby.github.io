@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>stamp</title>
+
+    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/images/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="/normalize.css" /> -->
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/keys-values-entries"
+          >Object.keys, values, entries</a
+        >
+      </li>
+    </ul>
+
+    <script>
+      /*
+			let prices = {
+				banana: 1,
+				orange: 2,
+				meat: 4,
+			};
+
+			let doublePrices = Object.fromEntries(
+				Object.entries(prices).map(([key, value]) => [key, value * 2])
+			)
+
+			console.log(doublePrices);
+*/
+
+      /*
+console.log(Reflect.ownKeys({ z: 3, y: 2, x: 1 }));; // [ "z", "y", "x" ]
+console.log(Reflect.ownKeys([]));; // ["length"]
+
+var sym = Symbol.for("comet");
+var sym2 = Symbol.for("meteor");
+var obj = {
+	[sym]: 0,
+	str: 0,
+	"773": 0,
+	"0": 0,
+	[sym2]: 0,
+	"-1": 0,
+	"8": 0,
+	"second str": 0,
+};
+console.log(Reflect.ownKeys(obj));;
+// [ "0", "8", "773", "str", "-1", "second str", Symbol(comet), Symbol(meteor) ]
+// Индексы в порядке их перечисления,
+// Строки в порядке их ввода,
+// Symbols в порядке их ввода
+*/
+    </script>
+
+    <script src="/part1/common.js"></script>
+  </body>
+</html>

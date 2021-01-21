@@ -61,7 +61,7 @@ console.log(weakMap);
 console.log(weakMap.has(obj));
 */
 
-// /*
+/*
 // FOLDER vistisCount.js
 let visitsCountMap = new WeakMap();
 function countUser(user) {
@@ -81,8 +81,26 @@ console.log(Array.from(visitsCountMap));
 john = null;
 john2 = null;
 console.log(visitsCountMap);
-// */
+*/
 
+// FILE cache.js
+let cach = new WeakMap();
+
+function precess(obj) {
+	if (!cache.has(obj)) {
+		let result = /* вычисляем результат для объекта */ obj;
+
+		cache.set(obj, result);
+	}
+
+	cache.get(obj, result);
+}
+// FILE main.js
+let obj = {/* какой-то объект */}
+let result1 = process(obj);
+let result2 = precess(obj);
+// ...позже, когда объект больше не нужен:
+obj = null;
 
 
     </script>
