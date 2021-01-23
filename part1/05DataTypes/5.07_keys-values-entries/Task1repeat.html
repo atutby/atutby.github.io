@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let salaries = {
+			"John": 100,
+			"Pete": 300,
+			"Mary": 250,
+		};
+
+/*
+function sumSalaries(obj) {
+	let values = Object.values(obj);
+	let sum = 0;
+	for (let item of values) {
+		sum += item;
+	}
+	return sum;
+}
+*/
+
+function sumSalaries(obj) {
+	return Object.values(obj).reduce((first, item, index, array) => {
+		document.writeln(first + ' <br>');
+		return first + item
+		}, 0)
+}
+		document.writeln(sumSalaries(salaries));
+	</script>
+</body>
+</html>

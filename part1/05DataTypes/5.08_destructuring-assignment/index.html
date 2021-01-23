@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>stamp</title>
+
+    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/images/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="/normalize.css" /> -->
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/destructuring-assignment"
+          >Деструктурирующее присваивание</a
+        >
+      </li>
+    </ul>
+
+    <script>
+/*
+			let arr = ["Ilya", "Kantor"];
+			let [firstName, surname] = arr;
+			document.writeln(firstName);
+			document.writeln(surname);
+
+			document.writeln('<br/>');
+			[firstName, surname] = "Ilya Kantor".split(' ');
+			document.writeln(firstName);
+			document.writeln(surname);
+*/
+
+/*
+let [firstName, , title] = ["Julius", "Caesar", "Consul", "of the Roman Republic"]; 
+document.writeln( title );
+
+let [a, b, c]  = "abc";
+let [one, two, three] = new Set([1, 2, 3]);
+document.writeln(a); document.writeln(three);
+
+let user = {};
+[user.name, user.surname] = "Ilya Kantor".split(' ');
+document.writeln(user.surname);
+*/
+
+/*
+let user = {
+	name: "John",
+	age: 30
+};
+
+for (let [key, value] of Object.entries(user)) {
+	document.writeln(`${key}:${value}`);
+}
+*/
+
+/*
+let user = new Map();
+user.set("name", "John");
+user.set("age", "30");
+
+for (let [key, value] of user) {
+	document.writeln(`${key}:${value}`);
+}
+*/
+
+/*
+let [name1, name2, ...rest] = ["Julius", "Caesar", "Consul", "of the Roman Republic"]; 
+document.writeln(name1 + ' ' + name2);
+document.writeln('<br>');
+document.writeln(rest[0],' ', rest[1])
+document.writeln(rest.length);
+
+let [firstName, surname] = [];
+document.writeln(firstName,' ', surname);
+*/
+
+/*
+let [name = prompt('name?',''), surname = prompt('surname?', '')] = ["Julius"];
+document.writeln(name,' ', surname);
+*/
+
+		</script>
+		
+		<h3><a href="https://learn.javascript.ru/destructuring-assignment#destrukturizatsiya-obekta">
+			Деструктуризация объекта
+		</a></h3>
+
+		<script>
+/*
+			let options  = {
+				title: "Menu",
+				width: 100,
+				height: 200
+			}
+			let {title, width, height} = options;
+			document.writeln(title,' ',width,' ',height);
+			let {width: w, height: h, title: t} = options;
+			document.writeln(t,' ',w,' ',h);
+*/
+
+/*
+let options = {
+	title: "Menu",
+	name: 'Cat',
+	width: 100
+};
+// let {width = 100, height = 200, name, title} = options;
+// document.writeln(title,' ',width,' ',name);
+let {title, ...rest} = options;
+document.writeln(rest.name,' ',rest.width);
+*/
+
+let title, width, height;
+({title, width, height} = {title: "Menu", width: 200, height: 100});
+document.writeln(title);
+
+
+
+		</script>
+
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
