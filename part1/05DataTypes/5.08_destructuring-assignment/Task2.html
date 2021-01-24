@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task2</title>
+</head>
+<body>
+	<script>
+		'use strict';
+		let salaries = {
+			"John": 100,
+			"Pete": 300,
+			"Mary": 250
+		};
+
+		function topSalary(salaries = {}) {
+			let namePerson = null;
+			let max = 0;
+			for (const [name, salary] of Object.entries(salaries)) {
+				if (max < salary) {
+					max = salary;
+					namePerson = name;
+				}
+			}
+			return namePerson;
+		}		
+
+		document.writeln(topSalary());
+		console.log(topSalary());
+	</script>
+</body>
+</html>

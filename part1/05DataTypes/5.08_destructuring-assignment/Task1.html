@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task1</title>
+  </head>
+  <body>
+    <script>
+      let user = {
+        name: "John",
+        years: 30,
+      };
+
+      let { name, years: age, isAdmin = false } = user;
+      console.log(name); // John
+      console.log(age); // 30
+      console.log(isAdmin); // false
+    </script>
+  </body>
+</html>
