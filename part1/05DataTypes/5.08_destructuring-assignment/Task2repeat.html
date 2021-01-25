@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task2repeat</title>
+</head>
+<body>
+	<script>
+		let salaries = {
+			"John": 100,
+			"Pete": 300,
+			"Mary": 250,
+		}
+
+		function topSalary(salaries = {}){
+			let max = 0;
+			let nameHerou = null;
+			for (let [name, salary] of Object.entries(salaries)) {
+				if (max < salary) {
+					max = salary;
+					nameHerou = name;
+				}
+			}
+			return nameHerou;
+		}
+
+		document.writeln(topSalary(salaries));
+		document.writeln(topSalary());
+	</script>
+</body>
+</html>

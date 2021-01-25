@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>stamp</title>
+
+    <link rel="icon" href="/images/favicon.ico" />
+    <link rel="stylesheet" href="/images/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="/normalize.css" /> -->
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="/" id="mainPage">root Main page</a></li>
+      <li>
+        <a href="https://learn.javascript.ru/date"
+          >Дата и время</a
+        >
+			</li>
+			<li><a href="https://learn.javascript.ru/date#preobrazovanie-k-chislu-raznost-dat">
+				Преобразование к числу, разность дат
+			</a></li>
+    </ul>
+
+		<script>
+			let now = new Date();
+			document.writeln(now,'<br>');
+			document.writeln('1970 года UTC+0','<br>');
+			let Jan01_1970 = new Date(0);
+			document.writeln('Jan01_1970 ',Jan01_1970,'<br>');
+			let Jan02_1970 = new Date(24 * 3600 * 1000 + 5000);
+			document.writeln(Jan02_1970,'<br>');
+			// 31 декабря 1969 года
+			let Dec31_1969 = new Date(-24 * 3600 * 1000);
+			document.writeln(Dec31_1969,'<br>');
+			document.writeln(new Date("2019-01-25"),'<br>');
+			let date = new Date(2020, 0, 1, 2, 3, 4, 567)
+			document.writeln(date,'<br>');
+			document.writeln(date.getDay(),'<br>');
+			let dateNow = new Date();
+			document.writeln(dateNow.getHours(),'<br>');
+			document.writeln(dateNow.getUTCHours(),' ','dateNow.getUTCHours() ','<br>');
+			document.writeln(dateNow.getTimezoneOffset(),'<br>');
+			//setFullYear(year, [month], [dat])
+			//setMonth(month, [date])
+			//setDate(date)
+			//setHours(hour, [min], [sec], [ms])
+			//setMinutes(min,[sec],[ms])
+			//setSeconds(sec,[ms])
+			//setMilliseconds(ms)
+			//setTime(milliseconds);
+			today = new Date();
+			today.setHours(0,0,0)
+			document.writeln(today,'<br>');
+			document.writeln('Автоисправление даты','<br>');
+			document.writeln(new Date(2013, 0, 32),'<br>');
+			date = new Date(2016, 1, 28);
+			date.setDate(date.getDate() + 2)
+			document.writeln(date,'<br>');
+			date = new Date();
+			date.setSeconds(date.getSeconds() + 70);
+			document.writeln(date,'<br>');
+			
+			date = new Date(2016, 0, 2);
+			date.setDate(1);
+			document.writeln(date,'<br>');
+			date.setDate(0);
+			document.writeln(date,'<br>');
+
+
+
+
+
+
+
+
+
+
+
+
+		</script>
+		
+    <script src="/part1/common.js"></script>
+  </body>
+</html>
