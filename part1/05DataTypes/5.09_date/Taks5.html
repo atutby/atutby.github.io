@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task5</title>
+  </head>
+  <body>
+    <h2>Последнее чилсо месяца?</h2>
+    <script>
+      // function getLastDayOfMonth(year, month) {
+			// 	let day = 28;
+			// 	while(month === new Date(year, month, day).getMonth() ) {
+			// 		day++;
+			// 	}				
+			// 	return day - 1;
+			// }
+
+			function getLastDayOfMonth(year, month) {
+				let date = new Date(year, month + 1, 0);
+				return date.getDate();
+			}
+      document.writeln(getLastDayOfMonth(2012, 1), '<br>');
+      document.writeln(getLastDayOfMonth(2024, 1), '<br>');
+
+			function getSecondsToday() {
+
+				let date = new Date();
+				console.log(date);
+				let yesterday = new Date(date.getFullYear(), date.getMonth(), date.getDate())
+				console.log(yesterday);
+				return Math.round((date - yesterday) / (1000))
+			}
+
+			document.writeln(getSecondsToday(), '<br>')
+			// document.writeln(, '<br>')
+
+			function getSecondsToTomorrow() {
+				let date = new Date();
+				let tomorrow = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1)
+				return Math.round((tomorrow - date) / 1000);				
+			}
+
+			document.writeln(getSecondsToTomorrow(), '<br>');
+			document.writeln(getSecondsToday() + getSecondsToTomorrow(), '<br>');
+
+    </script>
+  </body>
+</html>

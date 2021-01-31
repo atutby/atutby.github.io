@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task4</title>
+</head>
+<body>
+	<h2>Какой день месяца был много дней назад?</h2>
+	<script>
+		function getDateAgo(date, days) {
+			let newDate = new Date(date.getTime());
+			newDate.setDate(date.getDate() - days);
+			return newDate.getDate();
+		}
+
+		let date = new Date(2015, 0, 2);
+		document.writeln(getDateAgo(date, 1), '<br>'); // 1, (1 Jan 2015)
+		document.writeln(getDateAgo(date, 2), '<br>'); // 31, (31 Dec 2014)
+		document.writeln(getDateAgo(date, 365), '<br>'); // 2, (2 Jan 2014)
+	</script>
+</body>
+</html>
