@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task8</title>
+  </head>
+  <body>
+    <script>
+      function formatDate(date) {
+        let now = new Date();
+        let diff = now - date;
+        const a = 1000 * 60 * 60; // час
+        const b = 1000 * 60; // минута
+        const c = 1000; // секунда
+        // document.writeln(diff,'<br>')
+
+        if (diff > a) {
+            let k = "0";
+          if ((date.getDate() + "").length === 1) {
+            k += date.getDate();
+          }
+						let kk = '0';
+          if ((+date.getMonth() + 1 + "").length === 1) {
+						kk += +date.getMonth() + 1;
+          }
+          return (
+            k +
+            "." +
+            kk +
+            "." +
+            (date.getFullYear() + "").slice(2) +
+            " " +
+            date.getHours() +
+            ":" +
+            date.getMinutes()
+          );
+        }
+        if (diff < a && diff > b) {
+          return diff / (1000 * 60) + " мин. назад";
+        }
+        if (diff < b && diff > c) {
+          return diff / 1000 + " сек. назад";
+        }
+        if (diff < c) {
+          return "прямо сейчас";
+        }
+      }
+
+      document.writeln(formatDate(new Date(new Date() - 1)), "<br>");
+      document.writeln(formatDate(new Date(new Date() - 3500)), "<br>");
+      document.writeln(
+        formatDate(new Date(new Date() - 5 * 60 * 1000)),
+        "<br>"
+      );
+      document.writeln(formatDate(new Date(new Date() - 86400 * 1000)), "<br>");
+      document.writeln(formatDate(new Date(2014, 2, 1, 11, 22, 33)), "<br>");
+    </script>
+  </body>
+</html>
