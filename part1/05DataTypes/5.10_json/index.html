@@ -127,7 +127,7 @@ document.writeln( JSON.stringify(meetup, function replacer(key, value) {
 */
     </script>
 
-    <div style="white-space: pre;">
+    <!-- <div style="white-space: pre;"> -->
       <script>
         /*
         let room = {
@@ -140,6 +140,7 @@ document.writeln( JSON.stringify(meetup, function replacer(key, value) {
         };
 				document.writeln(JSON.stringify(meetup, null, 2),'<br>');
 */
+/*
         (function () {
           //your code here...
           let room = {
@@ -156,12 +157,49 @@ document.writeln( JSON.stringify(meetup, function replacer(key, value) {
           document.writeln(JSON.stringify(room, null, 2), "<br>");
           document.writeln(JSON.stringify(meetup, null, 2));
         })();
+*/
       </script>
-    </div>
+    <!-- </div> -->
 
     <h2>
       <a href="https://learn.javascript.ru/json#json-parse">JSON.parse</a>
     </h2>
+
+		<script>
+/*
+			let user = '{ "name": "John", "age": 35, "isAdmin": false, "friends":[0,1,2,3]}';
+			user = JSON.parse(user);
+			document.writeln(user.friends[1]);
+*/
+
+/*
+let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
+let meetup = JSON.parse(str);
+document.writeln(meetup.date.getDate);
+console.log(meetup);
+*/
+
+/**/
+let str = '{"title":"Conference","date":"2017-11-30T12:00:00.000Z"}';
+let meetup = JSON.parse(str, function(key, value) {
+	if (key == 'date') return new Date(value);
+	return value;
+});
+document.writeln(meetup.date.getDate(),'<br>'); // 30 - теперь работает
+
+let schedule = `{
+	"meetups": [
+			{"title":"Conference","date":"2017-11-30T12:00:00.000Z"},
+			{"title":"Birthday","date":"2017-04-18T12:00:00.000Z"}
+		]
+	}`;
+	schedule = JSON.parse(schedule, function(key, value) {
+  if (key == 'date') return new Date(value);
+  return value;
+});
+document.writeln(schedule.meetups[1].date.getDate() ); // 18 - отлично
+
+		</script>
 
     <script src="/part1/common.js"></script>
   </body>

@@ -23,14 +23,36 @@
 		</header>
 
 		<main>		
-			<p>string, number, boolean, symbol, null, undefined, bigint</p>
-			
-			<img src="./Screenshot_54.png" alt="">
+			<p>string, number, boolean, symbol, null, undefined, bigint</p><p>string, number, boolean, symbol, null, undefined, bigint</p>
+			<!-- <img src="./Screenshot_54.png" alt=""> -->
 		<script>
 			// 'use strict';
+			let roma = {
+				name: "Рома",
+				sayHi: function() {
+					document.writeln("Привет, дружище!");
+				}
+			};
+			roma.sayHi();
+
 			let str = "Привет";
+			document.writeln(str.toUpperCase());
 			str.test = 5;
 			document.writeln(str.test);			
+
+			let n = 1.23456;
+			document.writeln(n.toFixed(2));
+
+			document.writeln(typeof 0 ); //
+			document.writeln(typeof new Number(0));
+			let zero = new Number(0);
+			console.log(zero);
+			if (zero) {
+				// zero возвращает "true", так как является объектом
+				document.writeln("zero имеет 'истинное' значение?!?")
+			}
+			// document.writeln(null.test) Uncaught TypeError: Cannot read property 'test' of null at index.html:54
+			
 		</script>
 
 		

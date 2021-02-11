@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task1</title>
+</head>
+<body>
+	<script>
+		let user = {
+			name: "Василий Иванов",
+			age: 35
+		};
+
+		let user2 = JSON.stringify(user);
+		console.log(user2);
+
+		user2 = JSON.parse(user2);
+		console.log(user2);
+	</script>
+</body>
+</html>

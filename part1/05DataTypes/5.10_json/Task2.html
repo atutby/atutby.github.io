@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Task2</title>
+</head>
+<body style="white-space: pre;">
+	<script>
+		let room = {
+			number: 23
+		};
+
+		let meetup = {
+			title: "Совещание",
+			occupiedBy: [{name: "Иванов"}, {name: "Петров"}],
+			place: room
+		};
+
+		// цикличные ссылки
+		room.occupiedBy = meetup;
+		meetup.self = meetup;
+
+		document.writeln(JSON.stringify(meetup, function replacer(key, value) {
+			return (key != '' && value == meetup) ? undefined : value;
+		}, 2));
+	</script>
+</body>
+</html>
