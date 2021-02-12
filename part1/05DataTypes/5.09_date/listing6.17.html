@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Листинг 6.17</title>
+</head>
+<body>
+	<script>
+		let today = new Date();
+		// let today = new Date(2021,0,31,9,0,0);
+		let tomorrow = new Date(today);
+		tomorrow.setDate(tomorrow.getDate() + 1);
+		let yesterday = new Date(today);
+		yesterday.setDate(yesterday.getDate() - 1);
+		let monthAfter=new Date(today);
+		monthAfter.setMonth(monthAfter.getMonth() + 1);
+		let yearAfter = new Date(Date.now());
+		yearAfter.setFullYear(yearAfter.getFullYear() + 1);
+
+		const DAYSWEEK = ['воскресенье','понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота']
+		document.write("<b>Сегодня: </b>"+today+"<br>")
+		document.write("<b>Год: </b>"+today.getFullYear()+"<br>")
+		document.write("<b>Дата: </b>"+today.toLocaleDateString()+"<br>")
+		document.write("<b>Время: </b>"+today.toLocaleTimeString()+"<br>")
+		document.write("<b>Завтра: </b>"+tomorrow+"<br>");
+		document.write("<b>Вчера: </b>"+yesterday+"<br>")
+		document.write("Через месяц: "+monthAfter+"<br>")
+		document.write("Через год: "+yearAfter+"<br>")
+		let meeting = new Date(2021,7,14,8,0,0);
+		document.write("<b>Сегодня: </b>"+today.toLocaleString()+"<br>")
+		document.write("<b>Время и дата встречи: </b>"+meeting.toLocaleString()+"<br>")
+		meeting.setDate(meeting.getDate()+1)
+		document.write("<b>Новое время и дата встречи: </b>"+meeting.toLocaleString()+" "
+		+DAYSWEEK[meeting.getDay()]+"<br>")
+		document.write("<u>До встречи: </u>"+(meeting-today)+" миллисекунд<br>")
+		document.write("<u>До встречи: </u>"+Math.round((meeting-today)/1000/60/60/24)+ " дней<br>")
+	</script>
+</body>
+</html>
