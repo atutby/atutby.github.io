@@ -21,15 +21,16 @@
 
     <script>
 
-      function pow(x, n) {
-        if (n == 1) {
-          return x;
-        } else {
-          return x * pow(x, n - 1);
-        }
-      }
-			console.log(pow(2, 3));
-
+			(function() {
+				function pow(x, n) {
+				return (n === 1) ? x : (x * pow(x, n - 1));
+			}
+			document.writeln(pow(2, 3));
+			})();
+			
+</script>
+<h2><a href="https://learn.javascript.ru/recursion#rekursivnye-obhody">Рекурсивные обходы</a></h2>
+<script>
 			let company = {
 				sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 600 }],
 				development: {
@@ -50,7 +51,7 @@
 				}
 			}
 
-			console.log(sumSalaries(company)); // 6700
+			document.writeln(sumSalaries(company)); // 6700
 
 			(function(){
 				function sumTo(n) {
