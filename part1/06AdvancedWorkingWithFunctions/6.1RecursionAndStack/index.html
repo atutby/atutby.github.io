@@ -20,67 +20,74 @@
     </ul>
 
     <script>
+      (function () {
+        function pow(x, n) {
+          return n === 1 ? x : x * pow(x, n - 1);
+        }
+        document.writeln(pow(2, 3));
+      })();
+    </script>
+    <h2>
+      <a href="https://learn.javascript.ru/recursion#rekursivnye-obhody"
+        >Рекурсивные обходы</a
+      >
+    </h2>
+    <script>
+      let company = {
+        sales: [
+          { name: "John", salary: 1000 },
+          { name: "Alice", salary: 600 },
+        ],
+        development: {
+          sites: [
+            { name: "Pete", salary: 2000 },
+            { name: "Alex", salary: 1800 },
+          ],
+          internals: [{ name: "Jack", salary: 1300 }],
+        },
+      };
 
-			(function() {
-				function pow(x, n) {
-				return (n === 1) ? x : (x * pow(x, n - 1));
-			}
-			document.writeln(pow(2, 3));
-			})();
-			
-</script>
-<h2><a href="https://learn.javascript.ru/recursion#rekursivnye-obhody">Рекурсивные обходы</a></h2>
-<script>
-			let company = {
-				sales: [{name: 'John', salary: 1000}, {name: 'Alice', salary: 600 }],
-				development: {
-					sites: [{name: 'Pete', salary: 2000}, {name: 'Alex', salary: 1800}],
-					internals: [{name: 'Jack', salary: 1300}]
-				}
-			};
+      function sumSalaries(department) {
+        if (Array.isArray(department)) {
+          return department.reduce((prev, current) => prev + current.salary, 0);
+        } else {
+          let sum = 0;
+          for (let subdep of Object.values(department)) {
+            sum += sumSalaries(subdep);
+          }
+          return sum;
+        }
+      }
 
-			function sumSalaries(department) {
-				if (Array.isArray(department)) {
-					return department.reduce((prev, current) => prev + current.salary, 0);
-				} else {
-						let sum = 0;
-						for (let subdep of Object.values(department)) {
-							sum += sumSalaries(subdep);
-						}
-						return sum;
-				}
-			}
+      document.writeln(sumSalaries(company)); // 6700
 
-			document.writeln(sumSalaries(company)); // 6700
+      (function () {
+        function sumTo(n) {
+          let sum = 0;
+          for (let i = 1; i <= n; i++) {
+            sum += i;
+          }
+          return sum;
+        }
+        console.log(sumTo(100));
+      })();
 
-			(function(){
-				function sumTo(n) {
-					let sum = 0;
-					for (let i = 1; i <= n; i++) {
-						sum += i;
-					}
-					return sum;
-				}
-				console.log(sumTo(100));
-			})();
+      (function () {
+        function sumTo(n) {
+          if (n == 1) {
+            return n;
+          }
+          return n + sumTo(n - 1);
+        }
+        console.log(sumTo(100));
+      })();
 
-
-			(function(){
-				function sumTo(n) {
-					if (n == 1){ return n;}
-					return n + sumTo(n-1)
-				};
-				console.log(sumTo(100));
-			})();
-
-
-			(function(){
-				function sumTo(n) {
-					return n * (n + 1) / 2;
-				}
-				console.log(sumTo(100));
-			})();
-			
+      (function () {
+        function sumTo(n) {
+          return (n * (n + 1)) / 2;
+        }
+        console.log(sumTo(100));
+      })();
     </script>
     <script src="/part1/common.js"></script>
   </body>
