@@ -18,16 +18,14 @@ describe("pow", function () {
   beforeEach(() => log("Перед тестом – начинаем выполнять тест"));
   afterEach(() => log("После теста – заканчиваем выполнение теста"));
 
-  //   it.only("тест 1", () => log(1));
-  it("тест 2", () => log(2));
+  describe("выдавать NaN", function () {
+    it("для отрицательных n возвращает NaN", function () {
+      assert.isNaN(pow(2, -1));
+    });
 
-  it("для отрицательных n возвращает NaN", function () {
-    assert.isNaN(pow(2, -1));
+    it("для дробных n возвращает NaN", function () {
+      assert.isNaN(pow(2, 3.5));
+    });
   });
-
-  it("для дробных n возвращает NaN", function () {
-    assert.isNaN(pow(2, 3.5));
-  });
-
   // ... другие тесты. Можно писать и describe, и it блоки.
 });

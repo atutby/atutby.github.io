@@ -7,8 +7,5 @@ function rndNum(from, to) {
 
 ; (function () {
 	//your code here...
-	console.log(`asdf`);
-
-	console.log(`xren`);
 
 })();
