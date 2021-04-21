@@ -25,15 +25,14 @@
         >
           Преобразование к числу, разность дат
         </a>
-			</li>
-			<li>
-				<a href="https://learn.javascript.ru/date#tasks">
-				Задачи</a>
-			</li>
+      </li>
+      <li>
+        <a href="https://learn.javascript.ru/date#tasks"> Задачи</a>
+      </li>
     </ul>
 
     <script>
-/*
+      /*
       let now = new Date();
       document.writeln(now, "<br>");
       document.writeln("1970 года UTC+0", "<br>");
@@ -66,7 +65,7 @@
       //setSeconds(sec,[ms])
       //setMilliseconds(ms)
       //setTime(milliseconds);
-/*
+      /*
       today = new Date();
       today.setHours(0, 0, 0);
       document.writeln(today, "<br>");
@@ -90,7 +89,7 @@
       document.writeln(+date, "<br>");
 */
 
-/*
+      /*
       let start = new Date();
       for (let i = 0; i < 1000000; i++) {
         let doSomething = i * i * i;
@@ -106,7 +105,7 @@
       document.writeln(`Цикл отработал за ${end - start} миллисекунд`,'<br>');
 */
 
-/*
+      /*
 function diffSubtract(date1, date2) {
 	return date2 - date1;
 }
@@ -138,11 +137,11 @@ document.writeln(`Итоговое время diffSubtract: ${time1}<br>`);
 document.writeln(`Итоговое время diffGetTime: ${time2}<br>`);
 */
 
-let ms = Date.parse('2012-01-26T13:51:50.417-07:00');
-document.writeln(ms);
-let date = new Date(ms);
-document.writeln(date);
-document.writeln(`Загрузка началась ${performance.now()} мс назад`);
+      let ms = Date.parse("2012-01-26T13:51:50.417-07:00");
+      document.writeln(ms + "<br>");
+      let date = new Date(ms);
+      document.writeln(date + "<br>");
+      document.writeln(`Загрузка началась ${performance.now()} мс назад <br>`);
     </script>
 
     <script src="/part1/common.js"></script>
